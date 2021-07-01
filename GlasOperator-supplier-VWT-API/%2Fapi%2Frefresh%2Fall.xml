@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/refresh/all" path="/api/refresh/all" id="3fcce727-df19-4c02-a1a1-f65d9b764743" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="3fcce727-df19-4c02-a1a1-f65d9b764743fileName">%2Fapi%2Frefresh%2Fall</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="08c9b880-1dc8-44da-84fc-5251741d9b69" method="GET">
+    <con:description>Retrieves the latest patch status and updates our patch state for all open patch orders</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="caf43212-422d-4b81-b8c5-5a35c01a2c37" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

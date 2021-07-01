@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/state-summary" path="/api/patches/{connectionId}/state-summary" id="ec2afe7d-3ddf-4ab2-a837-ac2f3300f2ee" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ec2afe7d-3ddf-4ab2-a837-ac2f3300f2eefileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Fstate-summary</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="ba4ca2d8-89eb-4fa9-a09f-0ab7efb51121" method="GET">
+    <con:description>Returns state of the patch for the given connectionId</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "state" : 0,
+  "sentDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00",
+  "patchOrderScenario" : 0,
+  "numberOfCustomerReplans" : 0,
+  "numberOfPartnerReplans" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "state" : 0,
+  "sentDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00",
+  "patchOrderScenario" : 0,
+  "numberOfCustomerReplans" : 0,
+  "numberOfPartnerReplans" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>404</con:status>
+      <con:params/>
+      <con:description>Not Found</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>string</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>"string"</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>"string"</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>string</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>"string"</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>"string"</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="3dc4387e-cbb6-450c-b61f-9e8fdab0d21e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

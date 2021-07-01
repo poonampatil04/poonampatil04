@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/confirmed" path="/api/patches/{connectionId}/orders/{sequenceNumber}/confirmed" id="bf3995ee-57ec-4482-8a6a-f8b72d401640" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="bf3995ee-57ec-4482-8a6a-f8b72d401640fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Fconfirmed</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="ef4d06dd-4ff4-45be-94aa-c19b374500f7" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>planDt</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>resumeText</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="02f820c1-37b9-4600-af4e-648fbf92d929" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

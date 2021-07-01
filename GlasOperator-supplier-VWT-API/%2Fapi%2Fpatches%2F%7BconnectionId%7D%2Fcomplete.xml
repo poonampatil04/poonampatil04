@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/complete" path="/api/patches/{connectionId}/complete" id="cfdf14d7-04c5-4823-81f0-952d04ce6e95" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cfdf14d7-04c5-4823-81f0-952d04ce6e95fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Fcomplete</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="057ca728-f3e7-4859-b4c4-dde98be2da42" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="25f8eba8-b759-459f-a9c8-aef3b154921e" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

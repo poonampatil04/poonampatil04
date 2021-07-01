@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches" path="/api/patches" id="fa0e3d79-daed-43e0-878e-81d57d42cb26" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fa0e3d79-daed-43e0-878e-81d57d42cb26fileName">%2Fapi%2Fpatches</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST" id="dae488cf-87ad-4192-af93-553fde3d64a6" method="POST">
+    <con:description>Attempts to reach the target InService state</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "postalCode" : "string",
+  "houseNumber" : 0,
+  "houseNumberExtension" : "string",
+  "room" : "string",
+  "initials" : "string",
+  "prefix" : "string",
+  "lastName" : "string",
+  "phoneNumber" : "string",
+  "email" : "string",
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "ppfPort" : 0,
+  "patchPanel" : "string",
+  "ppfCabinet" : "string",
+  "pop" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "postalCode" : "string",
+  "houseNumber" : 0,
+  "houseNumberExtension" : "string",
+  "room" : "string",
+  "initials" : "string",
+  "prefix" : "string",
+  "lastName" : "string",
+  "phoneNumber" : "string",
+  "email" : "string",
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "ppfPort" : 0,
+  "patchPanel" : "string",
+  "ppfCabinet" : "string",
+  "pop" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "postalCode" : "string",
+  "houseNumber" : 0,
+  "houseNumberExtension" : "string",
+  "room" : "string",
+  "initials" : "string",
+  "prefix" : "string",
+  "lastName" : "string",
+  "phoneNumber" : "string",
+  "email" : "string",
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "ppfPort" : 0,
+  "patchPanel" : "string",
+  "ppfCabinet" : "string",
+  "pop" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "postalCode" : "string",
+  "houseNumber" : 0,
+  "houseNumberExtension" : "string",
+  "room" : "string",
+  "initials" : "string",
+  "prefix" : "string",
+  "lastName" : "string",
+  "phoneNumber" : "string",
+  "email" : "string",
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "ppfPort" : 0,
+  "patchPanel" : "string",
+  "ppfCabinet" : "string",
+  "pop" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="8fa732da-1e6e-4672-b953-db25e3ad0f1e" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "connectionId" : "string",\r
+  "postalCode" : "string",\r
+  "houseNumber" : 0,\r
+  "houseNumberExtension" : "string",\r
+  "room" : "string",\r
+  "initials" : "string",\r
+  "prefix" : "string",\r
+  "lastName" : "string",\r
+  "phoneNumber" : "string",\r
+  "email" : "string",\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "ppfPort" : 0,\r
+  "patchPanel" : "string",\r
+  "ppfCabinet" : "string",\r
+  "pop" : "string"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="0d2e9175-3dd9-46e2-b807-3effee5ce02d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "connectionId" : "string",\r
+  "postalCode" : "string",\r
+  "houseNumber" : 0,\r
+  "houseNumberExtension" : "string",\r
+  "room" : "string",\r
+  "initials" : "string",\r
+  "prefix" : "string",\r
+  "lastName" : "string",\r
+  "phoneNumber" : "string",\r
+  "email" : "string",\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "ppfPort" : 0,\r
+  "patchPanel" : "string",\r
+  "ppfCabinet" : "string",\r
+  "pop" : "string"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="5777443f-1a40-478f-ac13-0d3df144d51c" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "connectionId" : "string",\r
+  "postalCode" : "string",\r
+  "houseNumber" : 0,\r
+  "houseNumberExtension" : "string",\r
+  "room" : "string",\r
+  "initials" : "string",\r
+  "prefix" : "string",\r
+  "lastName" : "string",\r
+  "phoneNumber" : "string",\r
+  "email" : "string",\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "ppfPort" : 0,\r
+  "patchPanel" : "string",\r
+  "ppfCabinet" : "string",\r
+  "pop" : "string"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="92d194f2-5390-4dda-afc7-01a4af225183" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "connectionId" : "string",\r
+  "postalCode" : "string",\r
+  "houseNumber" : 0,\r
+  "houseNumberExtension" : "string",\r
+  "room" : "string",\r
+  "initials" : "string",\r
+  "prefix" : "string",\r
+  "lastName" : "string",\r
+  "phoneNumber" : "string",\r
+  "email" : "string",\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "ppfPort" : 0,\r
+  "patchPanel" : "string",\r
+  "ppfCabinet" : "string",\r
+  "pop" : "string"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

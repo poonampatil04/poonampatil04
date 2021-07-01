@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/delivered" path="/api/patches/{connectionId}/orders/{sequenceNumber}/delivered" id="624831f4-a862-4ff8-8dee-2000ee9efc29" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="624831f4-a862-4ff8-8dee-2000ee9efc29fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Fdelivered</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="5478db6c-c731-4adc-9021-08ac95b7aa34" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>executedDt</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="1b986a61-afb5-4b35-9ee6-e31c55d4624a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

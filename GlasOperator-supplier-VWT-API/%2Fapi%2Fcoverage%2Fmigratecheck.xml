@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/coverage/migratecheck" path="/api/coverage/migratecheck" id="6c5f167c-f503-454b-a6dc-7b90a316479e" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6c5f167c-f503-454b-a6dc-7b90a316479efileName">%2Fapi%2Fcoverage%2Fmigratecheck</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="5856c1f6-150d-4c97-9e4c-0326d8c2eeb7" method="GET">
+    <con:description>Returns whether the given address requires a migration.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>postalCode</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>houseNumber</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>houseNumberAddition</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>room</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>true</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>true</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>true</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="32a48126-1136-4347-a710-518a7b4dc089" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

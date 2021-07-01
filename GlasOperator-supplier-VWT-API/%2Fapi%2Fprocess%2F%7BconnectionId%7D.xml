@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/process/{connectionId}" path="/api/process/{connectionId}" id="fa9d597f-7bc4-4e8b-9130-f77f09bf0402" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fa9d597f-7bc4-4e8b-9130-f77f09bf0402fileName">%2Fapi%2Fprocess%2F%7BconnectionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="69dd58a2-3ab8-4ab1-afe2-f8fcc197b4e0" method="GET">
+    <con:description>Processes patch order updates for the given connection id.</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="2dff8ca1-68a7-40b7-9f9d-ee811cf00e37" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

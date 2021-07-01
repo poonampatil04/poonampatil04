@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/ScheduledDowntime/DeleteScheduledDowntime" path="/api/ScheduledDowntime/DeleteScheduledDowntime" id="decbcaa0-6f9d-4c02-a6a8-00db5ae65204" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="decbcaa0-6f9d-4c02-a6a8-00db5ae65204fileName">%2Fapi%2FScheduledDowntime%2FDeleteScheduledDowntime</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="DELETE" id="dc9c4ebe-43fe-4363-a613-dc0a831f1b39" method="DELETE">
+    <con:description>Removes a scheduled downtime.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "beginDt" : "2015-07-20T15:49:04-07:00",
+  "endDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "beginDt" : "2015-07-20T15:49:04-07:00",
+  "endDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "beginDt" : "2015-07-20T15:49:04-07:00",
+  "endDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "beginDt" : "2015-07-20T15:49:04-07:00",
+  "endDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="6380ea16-f6d1-446a-be12-db14e9929069" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "beginDt" : "2015-07-20T15:49:04-07:00",\r
+  "endDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="92b71185-77c6-4cde-b4dd-25c9d23abbe1" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "beginDt" : "2015-07-20T15:49:04-07:00",\r
+  "endDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="55af7d1b-8edc-43af-8c19-7692b445c781" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "beginDt" : "2015-07-20T15:49:04-07:00",\r
+  "endDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="7b89b889-4a2d-4d27-bc59-ac01f70c2567" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "beginDt" : "2015-07-20T15:49:04-07:00",\r
+  "endDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

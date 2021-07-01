@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="507a4a21-559e-4a09-9d66-f49a8435700d" name="GlasOperator supplier VWT API" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://vwtapi-dev.glasoperator.nl/swagger/v1/swagger.json" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <con:description>VWT Supplier order handler API</con:description>
+  <con:settings>
+    <con:setting id="507a4a21-559e-4a09-9d66-f49a8435700dfileName">GlasOperator-supplier-VWT-API</con:setting>
+  </con:settings>
+  <con:definitionCache/>
+  <con:endpoints>
+    <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+  </con:endpoints>
+</con:interface>

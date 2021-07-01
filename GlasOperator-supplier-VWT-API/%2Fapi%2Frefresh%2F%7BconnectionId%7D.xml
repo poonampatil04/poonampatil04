@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/refresh/{connectionId}" path="/api/refresh/{connectionId}" id="a8b66752-fbb4-4b0d-b08e-72c005ffca8e" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a8b66752-fbb4-4b0d-b08e-72c005ffca8efileName">%2Fapi%2Frefresh%2F%7BconnectionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="5e640924-caa1-4cac-ba13-44482ad377cb" method="GET">
+    <con:description>Retrieves the latest patch status and updates our patch state</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="f6ae8c42-fe85-4fbd-bb8b-124a3c500453" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

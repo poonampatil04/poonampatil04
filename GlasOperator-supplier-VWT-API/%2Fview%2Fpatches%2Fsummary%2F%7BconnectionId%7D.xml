@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/view/patches/summary/{connectionId}" path="/view/patches/summary/{connectionId}" id="cc34b6dd-6cee-4cdf-91c3-27b13104007b" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="cc34b6dd-6cee-4cdf-91c3-27b13104007bfileName">%2Fview%2Fpatches%2Fsummary%2F%7BconnectionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="e2173d4a-c71a-4703-ab3e-c98f188ff795" method="GET">
+    <con:description>Provides a SupplierOrderSummary, used for creating a supplier order tab</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "title" : "string",
+  "description" : "string",
+  "createdDt" : "2015-07-20T15:49:04-07:00",
+  "failed" : true,
+  "type" : "string",
+  "key" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "title" : "string",
+  "description" : "string",
+  "createdDt" : "2015-07-20T15:49:04-07:00",
+  "failed" : true,
+  "type" : "string",
+  "key" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="0969f67f-2751-4153-b38e-619310accaeb" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

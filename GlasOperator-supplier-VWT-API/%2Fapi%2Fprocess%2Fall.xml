@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/process/all" path="/api/process/all" id="225e41e5-225b-4c40-b084-d2979a170ba8" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="225e41e5-225b-4c40-b084-d2979a170ba8fileName">%2Fapi%2Fprocess%2Fall</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="95b5d3a8-28a2-4c41-93c8-aaffdebf5a06" method="GET">
+    <con:description>Processes all patch order updates ready to be parsed.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="10407ef1-1360-4a4a-8b09-5f36a7ccb5d9" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

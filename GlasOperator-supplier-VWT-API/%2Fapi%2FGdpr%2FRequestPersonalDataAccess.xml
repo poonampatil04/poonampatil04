@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Gdpr/RequestPersonalDataAccess" path="/api/Gdpr/RequestPersonalDataAccess" id="ba7f4c05-068a-421c-953a-bf5712e56efb" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ba7f4c05-068a-421c-953a-bf5712e56efbfileName">%2Fapi%2FGdpr%2FRequestPersonalDataAccess</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="df2eeb96-2369-4d28-8d16-d443f44ead11" method="GET">
+    <con:description>Request to access personal data</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>gdprRequestKey</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Identifier for the GDPR request, needs to be sent on the return call</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>ConnectionId</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>callBackUrl</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "serviceIdentifier" : "string",
+  "entityKey" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "serviceIdentifier" : "string",
+  "entityKey" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="b6a9e92b-28dd-47ed-b6d1-5c6d46f765ee" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

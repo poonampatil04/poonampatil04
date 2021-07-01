@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/xml/{addressId}" path="/api/xml/{addressId}" id="a31fb68c-fe4b-416c-ba10-4e51626c8aaa" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a31fb68c-fe4b-416c-ba10-4e51626c8aaafileName">%2Fapi%2Fxml%2F%7BaddressId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="ccddf0d1-7c02-415e-9db2-603a8b4f2177" method="GET">
+    <con:description>Polls VWT and returns XML for one connection</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>addressId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="95497a12-ffc2-4412-8556-98d013484837" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

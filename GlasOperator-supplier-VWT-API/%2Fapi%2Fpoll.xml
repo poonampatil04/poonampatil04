@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/poll" path="/api/poll" id="40cf0198-cf1f-40f9-a3d6-f46c679730c1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="40cf0198-cf1f-40f9-a3d6-f46c679730c1fileName">%2Fapi%2Fpoll</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="2a2b3430-47fe-4621-ab14-578a77e1b587" method="GET">
+    <con:description>Polls VWT and processes patch order updates</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="54a144cb-e4d3-4df4-988d-9349ab648570" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

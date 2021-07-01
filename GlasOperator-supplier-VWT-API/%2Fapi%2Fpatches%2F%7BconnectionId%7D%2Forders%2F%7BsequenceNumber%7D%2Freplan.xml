@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/replan" path="/api/patches/{connectionId}/orders/{sequenceNumber}/replan" id="f72994d1-8a81-42a6-88c0-72a1e5c57a61" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f72994d1-8a81-42a6-88c0-72a1e5c57a61fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Freplan</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="b8c8d36c-61d4-46fe-a3ff-868461c8b408" method="PUT">
+    <con:description>Replan patch order with given date</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "planDate" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "planDate" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "planDate" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "planDate" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="c734c5ca-8c92-4fd5-bbdf-3e18abe6da3b" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "planDate" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="a5a80825-cb4c-4a42-b129-af294e1d5a3d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "planDate" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="d1613020-e299-4e40-b981-881f36f650f0" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "planDate" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="6d449e41-33b7-4d2c-9a6a-03b65e107fc6" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request>{\r
+  "planDate" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

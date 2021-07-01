@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}" path="/api/patches/{connectionId}" id="01c9dd75-5eec-4815-a745-342852effa8d" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="01c9dd75-5eec-4815-a745-342852effa8dfileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="DELETE" id="1e06dfb8-3705-41b5-b84c-afe56df52883" method="DELETE">
+    <con:description>Attempts to reach the target OutService state</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+        <con:description>connectionId the patch should be removed for</con:description>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wishDt</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>optional wishDateTimeOffset to remove the patch</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="ace398e4-534e-4fd8-862f-ae4b899b0673" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

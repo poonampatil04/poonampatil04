@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/replanned" path="/api/patches/{connectionId}/orders/{sequenceNumber}/replanned" id="ae385afc-167a-4220-828c-2aee7335414d" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ae385afc-167a-4220-828c-2aee7335414dfileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Freplanned</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="5f6fb2b6-6175-4ff6-9af6-898d496975e1" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>planDt</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>holdCode</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>holdText</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="2fb3e264-4c83-4b77-b0cd-d7ed85b58ae9" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

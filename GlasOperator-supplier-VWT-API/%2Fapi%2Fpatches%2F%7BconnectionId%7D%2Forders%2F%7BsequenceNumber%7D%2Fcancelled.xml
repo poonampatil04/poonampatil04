@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/cancelled" path="/api/patches/{connectionId}/orders/{sequenceNumber}/cancelled" id="ddf77de4-02da-482a-916d-2fbb76c52786" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="ddf77de4-02da-482a-916d-2fbb76c52786fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Fcancelled</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="d5242c6a-07dd-4396-8fda-8e28e215248c" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="ca8e16a4-27f2-4193-b42b-a834f21c2889" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

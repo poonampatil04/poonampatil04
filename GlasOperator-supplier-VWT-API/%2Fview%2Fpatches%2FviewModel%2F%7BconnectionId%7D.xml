@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/view/patches/viewModel/{connectionId}" path="/view/patches/viewModel/{connectionId}" id="b7763ae6-951f-404c-90d1-b260ca564bc4" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b7763ae6-951f-404c-90d1-b260ca564bc4fileName">%2Fview%2Fpatches%2FviewModel%2F%7BconnectionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="33e6b259-5ea2-4409-9430-85874ca63ba1" method="GET">
+    <con:description>Provides a patch view model, for use in blazor components</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "installRequestDt" : "2015-07-20T15:49:04-07:00",
+  "installPlanDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "removeRequestDt" : "2015-07-20T15:49:04-07:00",
+  "removePlanDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00",
+  "cancelRequestDt" : "2015-07-20T15:49:04-07:00",
+  "cancelledDt" : "2015-07-20T15:49:04-07:00",
+  "deniedDt" : "2015-07-20T15:49:04-07:00",
+  "patchState" : 0,
+  "customerDetails" : {
+    "addressId" : 0,
+    "fiber" : 0,
+    "initials" : "string",
+    "prefix" : "string",
+    "lastName" : "string",
+    "phoneNumber" : "string",
+    "email" : "string"
+  },
+  "patchDetails" : {
+    "pop" : "string",
+    "frame" : "string",
+    "row" : 0,
+    "block" : "string",
+    "patchPanel" : "string",
+    "port" : 0
+  },
+  "patchOrderViewModels" : [ {
+    "connectionId" : "string",
+    "sequenceNumber" : 0,
+    "patchOrderId" : "string",
+    "vwtOrderId" : 0,
+    "state" : 1,
+    "type" : "string",
+    "requestDt" : "2015-07-20T15:49:04-07:00",
+    "wishDt" : "2015-07-20T15:49:04-07:00",
+    "confirmedDt" : "2015-07-20T15:49:04-07:00",
+    "planDt" : "2015-07-20T15:49:04-07:00",
+    "completedDt" : "2015-07-20T15:49:04-07:00",
+    "cancelRequestDt" : "2015-07-20T15:49:04-07:00",
+    "closeCode" : 0,
+    "closeText" : "string",
+    "holdDt" : "2015-07-20T15:49:04-07:00",
+    "holdCode" : 0,
+    "holdText" : "string",
+    "resumeCode" : 0,
+    "resumeText" : "string",
+    "cancelAcceptCode" : 0,
+    "cancelAcceptText" : "string",
+    "denyCode" : 0,
+    "denyText" : "string",
+    "exceptionText" : "string",
+    "requestMessage" : "string",
+    "responseMessage" : "string"
+  } ],
+  "stateChanges" : [ "string" ],
+  "vwtSupplierWebApiBaseUrl" : "string",
+  "numberOfCustomerReplans" : 0,
+  "numberOfPartnerReplans" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "installRequestDt" : "2015-07-20T15:49:04-07:00",
+  "installPlanDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "removeRequestDt" : "2015-07-20T15:49:04-07:00",
+  "removePlanDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00",
+  "cancelRequestDt" : "2015-07-20T15:49:04-07:00",
+  "cancelledDt" : "2015-07-20T15:49:04-07:00",
+  "deniedDt" : "2015-07-20T15:49:04-07:00",
+  "patchState" : 0,
+  "customerDetails" : {
+    "addressId" : 0,
+    "fiber" : 0,
+    "initials" : "string",
+    "prefix" : "string",
+    "lastName" : "string",
+    "phoneNumber" : "string",
+    "email" : "string"
+  },
+  "patchDetails" : {
+    "pop" : "string",
+    "frame" : "string",
+    "row" : 0,
+    "block" : "string",
+    "patchPanel" : "string",
+    "port" : 0
+  },
+  "patchOrderViewModels" : [ {
+    "connectionId" : "string",
+    "sequenceNumber" : 0,
+    "patchOrderId" : "string",
+    "vwtOrderId" : 0,
+    "state" : 1,
+    "type" : "string",
+    "requestDt" : "2015-07-20T15:49:04-07:00",
+    "wishDt" : "2015-07-20T15:49:04-07:00",
+    "confirmedDt" : "2015-07-20T15:49:04-07:00",
+    "planDt" : "2015-07-20T15:49:04-07:00",
+    "completedDt" : "2015-07-20T15:49:04-07:00",
+    "cancelRequestDt" : "2015-07-20T15:49:04-07:00",
+    "closeCode" : 0,
+    "closeText" : "string",
+    "holdDt" : "2015-07-20T15:49:04-07:00",
+    "holdCode" : 0,
+    "holdText" : "string",
+    "resumeCode" : 0,
+    "resumeText" : "string",
+    "cancelAcceptCode" : 0,
+    "cancelAcceptText" : "string",
+    "denyCode" : 0,
+    "denyText" : "string",
+    "exceptionText" : "string",
+    "requestMessage" : "string",
+    "responseMessage" : "string"
+  } ],
+  "stateChanges" : [ "string" ],
+  "vwtSupplierWebApiBaseUrl" : "string",
+  "numberOfCustomerReplans" : 0,
+  "numberOfPartnerReplans" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="77d0e98b-5d4b-4eac-87d2-f2bc4a9f289d" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

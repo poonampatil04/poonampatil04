@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/process/migrateout" path="/api/process/migrateout" id="67c0eecd-9b35-4c68-b2b3-6b56497650e7" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="67c0eecd-9b35-4c68-b2b3-6b56497650e7fileName">%2Fapi%2Fprocess%2Fmigrateout</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="587115b6-1ce6-48d1-9ec2-06609f3c460b" method="GET">
+    <con:description>Processes all migrate out messages ready to be parsed.</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="cf50ceb2-fc85-4ce3-9a51-3c89882f7c24" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

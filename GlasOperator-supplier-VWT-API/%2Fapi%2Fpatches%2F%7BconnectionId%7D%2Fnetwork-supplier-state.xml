@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/network-supplier-state" path="/api/patches/{connectionId}/network-supplier-state" id="d50fb012-b352-4068-861e-96b63361ac31" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="d50fb012-b352-4068-861e-96b63361ac31fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Fnetwork-supplier-state</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="2dbe6e68-6658-4a1d-b06d-8a1bbccab438" method="GET">
+    <con:description>Returns network supplier state for the given connectionId</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "state" : 0,
+  "sentDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "removeRequestDt" : "2015-07-20T15:49:04-07:00",
+  "removePlanDt" : "2015-07-20T15:49:04-07:00",
+  "removeCancelledDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "state" : 0,
+  "sentDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "removeRequestDt" : "2015-07-20T15:49:04-07:00",
+  "removePlanDt" : "2015-07-20T15:49:04-07:00",
+  "removeCancelledDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="1e91cb0c-5def-4667-8787-5e345a16577a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

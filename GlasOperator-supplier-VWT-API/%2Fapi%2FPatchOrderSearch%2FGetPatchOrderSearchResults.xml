@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/PatchOrderSearch/GetPatchOrderSearchResults" path="/api/PatchOrderSearch/GetPatchOrderSearchResults" id="70acf5d4-5b54-40f1-a265-f6aa6023958c" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="70acf5d4-5b54-40f1-a265-f6aa6023958cfileName">%2Fapi%2FPatchOrderSearch%2FGetPatchOrderSearchResults</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="17103bce-ecbc-461b-a9bd-a84c74f64ffd" method="GET">
+    <con:description>Returns a list of view models containing the search results of performing a query upon all patches using the provided filters</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>connectionIdFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>typeFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>stateFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>pageSize</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>currentPage</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>sortColumnName</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderDescending</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "patchOrderSearchResults" : [ {
+    "connectionId" : "string",
+    "sequenceNumber" : 0,
+    "typeName" : "string",
+    "patchOrderState" : "string",
+    "relevantDt" : "2015-07-20T15:49:04-07:00",
+    "requestDt" : "2015-07-20T15:49:04-07:00",
+    "confirmDt" : "2015-07-20T15:49:04-07:00",
+    "planDt" : "2015-07-20T15:49:04-07:00",
+    "holdCode" : 0,
+    "holdCodeText" : "string",
+    "holdText" : "string",
+    "resumeCode" : 0,
+    "resumeCodeText" : "string",
+    "resumeText" : "string",
+    "closeCode" : 0,
+    "closeCodeText" : "string",
+    "closeText" : "string",
+    "denyCode" : 0,
+    "denyText" : "string",
+    "denyCodeText" : "string"
+  } ],
+  "totalCount" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "patchOrderSearchResults" : [ {
+    "connectionId" : "string",
+    "sequenceNumber" : 0,
+    "typeName" : "string",
+    "patchOrderState" : "string",
+    "relevantDt" : "2015-07-20T15:49:04-07:00",
+    "requestDt" : "2015-07-20T15:49:04-07:00",
+    "confirmDt" : "2015-07-20T15:49:04-07:00",
+    "planDt" : "2015-07-20T15:49:04-07:00",
+    "holdCode" : 0,
+    "holdCodeText" : "string",
+    "holdText" : "string",
+    "resumeCode" : 0,
+    "resumeCodeText" : "string",
+    "resumeText" : "string",
+    "closeCode" : 0,
+    "closeCodeText" : "string",
+    "closeText" : "string",
+    "denyCode" : 0,
+    "denyText" : "string",
+    "denyCodeText" : "string"
+  } ],
+  "totalCount" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="8883fbab-b526-43b4-b551-5865b4335b80" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

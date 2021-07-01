@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/coverage/projects" path="/api/coverage/projects" id="a95c160d-9483-4227-9a52-46745aeeb928" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a95c160d-9483-4227-9a52-46745aeeb928fileName">%2Fapi%2Fcoverage%2Fprojects</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="4f7f2f65-ccc5-4bed-a62d-d1639f634867" method="GET">
+    <con:description>Triggers the retrieval of coverage info from VWT</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>sinceDt</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>When filled in, only records updated since this date are retrieved</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "mainProject" : "string",
+  "totalAddresses" : 0,
+  "duration" : "string",
+  "updatedAddresses" : 0
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "mainProject" : "string",
+  "totalAddresses" : 0,
+  "duration" : "string",
+  "updatedAddresses" : 0
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="42fcdbb4-9a24-4a68-9bb0-cfb17ea3b53a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

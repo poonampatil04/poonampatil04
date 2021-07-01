@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Gdpr/RunDailyDataCleanup" path="/api/Gdpr/RunDailyDataCleanup" id="2350abf2-bec7-4ef1-bee3-e8577cc74211" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="2350abf2-bec7-4ef1-bee3-e8577cc74211fileName">%2Fapi%2FGdpr%2FRunDailyDataCleanup</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="3bd299a1-f243-403d-a601-d77830c17c6b" method="GET">
+    <con:description>Removes all personal information on patch orders (and related information) that went out service</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "affectedPatches" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "affectedPatches" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="af16a34c-9a21-4a6d-9941-84bd6bb8b4f5" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

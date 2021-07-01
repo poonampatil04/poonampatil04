@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/resume" path="/api/patches/{connectionId}/orders/{sequenceNumber}/resume" id="b789bec0-ebbe-4181-98c0-097ea2f40757" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b789bec0-ebbe-4181-98c0-097ea2f40757fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Fresume</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="ecbe8998-843e-4f77-befc-2ecf170f01f7" method="PUT">
+    <con:description>Resumes an on-hold patch order</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="09262301-74f4-460c-a48b-b2150841cc67" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/PatchSearch/GetPatchSearchResults" path="/api/PatchSearch/GetPatchSearchResults" id="97974b70-457b-42d7-9792-c01f1ba75f11" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="97974b70-457b-42d7-9792-c01f1ba75f11fileName">%2Fapi%2FPatchSearch%2FGetPatchSearchResults</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="e916b7c7-c0ff-4b54-a23c-cd74a2ab5cee" method="GET">
+    <con:description>Returns a list of view models containing the search results of performing a query upon all patches using the provided filters</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>connectionIdFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>stateFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>popFilter</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>pageSize</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>currentPage</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>sortColumnName</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>orderDescending</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "patchOrderSearchResults" : [ {
+    "connectionId" : "string",
+    "patchState" : "string",
+    "relevantDateTimeOffset" : "2015-07-20T15:49:04-07:00",
+    "pop" : "string"
+  } ],
+  "totalCount" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "patchOrderSearchResults" : [ {
+    "connectionId" : "string",
+    "patchState" : "string",
+    "relevantDateTimeOffset" : "2015-07-20T15:49:04-07:00",
+    "pop" : "string"
+  } ],
+  "totalCount" : 0
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="18ae1808-01cb-4f90-a943-7482c511f964" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

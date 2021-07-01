@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/PatchOrderUpdate/GetPatchOrderUpdates" path="/api/PatchOrderUpdate/GetPatchOrderUpdates" id="f6dbee91-f60f-48b9-947f-493ef2652e93" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f6dbee91-f60f-48b9-947f-493ef2652e93fileName">%2Fapi%2FPatchOrderUpdate%2FGetPatchOrderUpdates</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="f968cf36-5313-4983-a77c-86571edc6402" method="GET">
+    <con:description>Returns a list of PatchOrderUpdates for given connectionId</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>The connectionId to filter on.</con:description>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>QUERY</con:style>
+        <con:description>Sequence number of the patch order.</con:description>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "connectionId" : "string",
+  "sequenceNumber" : 0,
+  "patchOrderId" : "string",
+  "syncDt" : "2015-07-20T15:49:04-07:00",
+  "parseDt" : "2015-07-20T15:49:04-07:00",
+  "parseSuccess" : true,
+  "parseMessage" : "string",
+  "status" : "string",
+  "acceptDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "executedDt" : "2015-07-20T15:49:04-07:00",
+  "denyCode" : 0,
+  "denyCodeText" : "string",
+  "denyText" : "string",
+  "closeCode" : 0,
+  "closeCodeText" : "string",
+  "closeText" : "string",
+  "holdDt" : "2015-07-20T15:49:04-07:00",
+  "holdCode" : 0,
+  "holdCodeText" : "string",
+  "holdText" : "string",
+  "resumeCode" : 0,
+  "resumeCodeText" : "string",
+  "resumeText" : "string",
+  "cancelAcceptCode" : 0,
+  "cancelAcceptCodeText" : "string",
+  "cancelAcceptText" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "connectionId" : "string",
+  "sequenceNumber" : 0,
+  "patchOrderId" : "string",
+  "syncDt" : "2015-07-20T15:49:04-07:00",
+  "parseDt" : "2015-07-20T15:49:04-07:00",
+  "parseSuccess" : true,
+  "parseMessage" : "string",
+  "status" : "string",
+  "acceptDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "executedDt" : "2015-07-20T15:49:04-07:00",
+  "denyCode" : 0,
+  "denyCodeText" : "string",
+  "denyText" : "string",
+  "closeCode" : 0,
+  "closeCodeText" : "string",
+  "closeText" : "string",
+  "holdDt" : "2015-07-20T15:49:04-07:00",
+  "holdCode" : 0,
+  "holdCodeText" : "string",
+  "holdText" : "string",
+  "resumeCode" : 0,
+  "resumeCodeText" : "string",
+  "resumeText" : "string",
+  "cancelAcceptCode" : 0,
+  "cancelAcceptCodeText" : "string",
+  "cancelAcceptText" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="2620d720-d076-4ba7-bf6f-7347e78ed657" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

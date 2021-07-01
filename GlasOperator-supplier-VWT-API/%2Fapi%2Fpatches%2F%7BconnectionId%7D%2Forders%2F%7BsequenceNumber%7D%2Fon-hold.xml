@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/on-hold" path="/api/patches/{connectionId}/orders/{sequenceNumber}/on-hold" id="f73f0eea-3e2a-4554-8fbf-53e96a64f6f6" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f73f0eea-3e2a-4554-8fbf-53e96a64f6f6fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Fon-hold</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="ec49b7f4-f819-4485-81e4-ee9d21919283" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>holdCode</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>holdText</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="97a7baa7-7abe-4bc0-babf-0733936b2114" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

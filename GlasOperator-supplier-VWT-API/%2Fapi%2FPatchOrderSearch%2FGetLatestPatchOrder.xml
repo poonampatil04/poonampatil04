@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/PatchOrderSearch/GetLatestPatchOrder" path="/api/PatchOrderSearch/GetLatestPatchOrder" id="e193aa7f-b5ff-44b7-af9b-ec7e80c145d1" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e193aa7f-b5ff-44b7-af9b-ec7e80c145d1fileName">%2Fapi%2FPatchOrderSearch%2FGetLatestPatchOrder</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="d56066e8-6946-40db-b4b4-1b860107fc0c" method="GET">
+    <con:description>Returns the most recent (created) install/migrate patch order for the given connectionId</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "sequenceNumber" : 0,
+  "patchOrderId" : "string",
+  "vwtOrderId" : 0,
+  "state" : 1,
+  "type" : "string",
+  "requestDt" : "2015-07-20T15:49:04-07:00",
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "confirmedDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "completedDt" : "2015-07-20T15:49:04-07:00",
+  "cancelRequestDt" : "2015-07-20T15:49:04-07:00",
+  "closeCode" : 0,
+  "closeText" : "string",
+  "holdDt" : "2015-07-20T15:49:04-07:00",
+  "holdCode" : 0,
+  "holdText" : "string",
+  "resumeCode" : 0,
+  "resumeText" : "string",
+  "cancelAcceptCode" : 0,
+  "cancelAcceptText" : "string",
+  "denyCode" : 0,
+  "denyText" : "string",
+  "exceptionText" : "string",
+  "requestMessage" : "string",
+  "responseMessage" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "connectionId" : "string",
+  "sequenceNumber" : 0,
+  "patchOrderId" : "string",
+  "vwtOrderId" : 0,
+  "state" : 1,
+  "type" : "string",
+  "requestDt" : "2015-07-20T15:49:04-07:00",
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "confirmedDt" : "2015-07-20T15:49:04-07:00",
+  "planDt" : "2015-07-20T15:49:04-07:00",
+  "completedDt" : "2015-07-20T15:49:04-07:00",
+  "cancelRequestDt" : "2015-07-20T15:49:04-07:00",
+  "closeCode" : 0,
+  "closeText" : "string",
+  "holdDt" : "2015-07-20T15:49:04-07:00",
+  "holdCode" : 0,
+  "holdText" : "string",
+  "resumeCode" : 0,
+  "resumeText" : "string",
+  "cancelAcceptCode" : 0,
+  "cancelAcceptText" : "string",
+  "denyCode" : 0,
+  "denyText" : "string",
+  "exceptionText" : "string",
+  "requestMessage" : "string",
+  "responseMessage" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="5f9058bf-2057-41fd-89a6-7e5cc2dee071" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

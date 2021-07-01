@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/cancel-received" path="/api/patches/{connectionId}/orders/{sequenceNumber}/cancel-received" id="03e33af1-eb57-4d06-9321-65654de7aea4" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="03e33af1-eb57-4d06-9321-65654de7aea4fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Fcancel-received</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="7b619753-451e-4163-ad37-02dcb1726ecb" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>cancelAcceptCode</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>cancelAcceptText</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="e52ce9e3-5e93-4b35-9650-0a51fb38c7bc" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/patches/{connectionId}/orders/{sequenceNumber}/rejected" path="/api/patches/{connectionId}/orders/{sequenceNumber}/rejected" id="e986e2fb-cbe3-478e-b7c6-00a824763ef8" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e986e2fb-cbe3-478e-b7c6-00a824763ef8fileName">%2Fapi%2Fpatches%2F%7BconnectionId%7D%2Forders%2F%7BsequenceNumber%7D%2Frejected</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="ea3c3f59-97d0-45fd-b5a1-888047c07920" method="PUT">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>sequenceNumber</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>denyCode</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>denyText</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="415abb1d-9e6f-4f44-8d4b-4c4f94e3423a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
