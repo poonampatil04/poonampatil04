@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="0d515c6d-835d-4d7b-97a3-367b1440be71" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CoverageCheck_vwt" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0d515c6d-835d-4d7b-97a3-367b1440be71fileName">CoverageCheck_vwt</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

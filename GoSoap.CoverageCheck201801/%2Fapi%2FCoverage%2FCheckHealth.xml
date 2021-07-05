@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Coverage/CheckHealth" path="/api/Coverage/CheckHealth" id="1fa8ecb0-99ed-4e55-88ed-ae4287a47499" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="1fa8ecb0-99ed-4e55-88ed-ae4287a47499fileName">%2Fapi%2FCoverage%2FCheckHealth</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="c87fc813-079a-47e9-b696-416ce1fbba73" method="GET">
+    <con:description>Validate health</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>clientTypeNamesToSkip</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "Healthy" : true,
+  "Health" : "Dead",
+  "TimeStamp" : "2015-07-20T15:49:04-07:00",
+  "AssemblyName" : "string",
+  "AssemblyVersion" : "string",
+  "AssemblyFileVersion" : "string",
+  "AssemblyFileTime" : "2015-07-20T15:49:04-07:00",
+  "LinkedTime" : "2015-07-20T15:49:04-07:00",
+  "Environment" : "Unknown",
+  "Username" : "string",
+  "WebServerName" : "string",
+  "AspNetVersion" : "string",
+  "Items" : [ {
+    "Healthy" : true,
+    "Health" : "Dead",
+    "Description" : "string",
+    "TimeStamp" : "2015-07-20T15:49:04-07:00",
+    "ErrorMessage" : "string",
+    "TestDetails" : "string",
+    "IsRemoteTest" : true,
+    "Duration" : {
+      "Ticks" : 0,
+      "Days" : 0,
+      "Hours" : 0,
+      "Milliseconds" : 0,
+      "Minutes" : 0,
+      "Seconds" : 0,
+      "TotalDays" : 1.100000023841858,
+      "TotalHours" : 1.100000023841858,
+      "TotalMilliseconds" : 1.100000023841858,
+      "TotalMinutes" : 1.100000023841858,
+      "TotalSeconds" : 1.100000023841858
+    }
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "Healthy" : true,
+  "Health" : "Dead",
+  "TimeStamp" : "2015-07-20T15:49:04-07:00",
+  "AssemblyName" : "string",
+  "AssemblyVersion" : "string",
+  "AssemblyFileVersion" : "string",
+  "AssemblyFileTime" : "2015-07-20T15:49:04-07:00",
+  "LinkedTime" : "2015-07-20T15:49:04-07:00",
+  "Environment" : "Unknown",
+  "Username" : "string",
+  "WebServerName" : "string",
+  "AspNetVersion" : "string",
+  "Items" : [ {
+    "Healthy" : true,
+    "Health" : "Dead",
+    "Description" : "string",
+    "TimeStamp" : "2015-07-20T15:49:04-07:00",
+    "ErrorMessage" : "string",
+    "TestDetails" : "string",
+    "IsRemoteTest" : true,
+    "Duration" : {
+      "Ticks" : 0,
+      "Days" : 0,
+      "Hours" : 0,
+      "Milliseconds" : 0,
+      "Minutes" : 0,
+      "Seconds" : 0,
+      "TotalDays" : 1.100000023841858,
+      "TotalHours" : 1.100000023841858,
+      "TotalMilliseconds" : 1.100000023841858,
+      "TotalMinutes" : 1.100000023841858,
+      "TotalSeconds" : 1.100000023841858
+    }
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>{
+  "Code" : 0,
+  "Message" : "string",
+  "ObjectPath" : "string",
+  "ObjectValue" : "string",
+  "StackTrace" : "string",
+  "Type" : "string",
+  "InnerException" : {
+    "Code" : 0,
+    "Message" : "string",
+    "ObjectPath" : "string",
+    "ObjectValue" : "string",
+    "StackTrace" : "string",
+    "Type" : "string",
+    "InnerException" : { },
+    "Source" : "string"
+  },
+  "Source" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>{
+  "Code" : 0,
+  "Message" : "string",
+  "ObjectPath" : "string",
+  "ObjectValue" : "string",
+  "StackTrace" : "string",
+  "Type" : "string",
+  "InnerException" : {
+    "Code" : 0,
+    "Message" : "string",
+    "ObjectPath" : "string",
+    "ObjectValue" : "string",
+    "StackTrace" : "string",
+    "Type" : "string",
+    "InnerException" : { },
+    "Source" : "string"
+  },
+  "Source" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="752b6e16-ca33-4309-9983-bc197df18c64" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+          <con:authProfile>test</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+          <con:authProfile>ReadyApi_Test</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+          <con:authProfile>ReadyAPI_Dev</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

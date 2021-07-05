@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/tmf-api/serviceQualificationManagement/v3/listener/serviceQualificationChangeNotification" path="/tmf-api/serviceQualificationManagement/v3/listener/serviceQualificationChangeNotification" id="7ecc04d7-3c5a-4d59-938e-729f5cf5fced" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7ecc04d7-3c5a-4d59-938e-729f5cf5fcedfileName">%2Ftmf-api%2FserviceQualificationManagement%2Fv3%2Flistener%2FserviceQualificationChangeNotification</con:setting>
+  </con:settings>
+  <con:parameters/>
+</con:resource>

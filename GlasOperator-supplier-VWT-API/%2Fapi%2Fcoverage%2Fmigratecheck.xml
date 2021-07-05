@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/coverage/migratecheck" path="/api/coverage/migratecheck" id="6c5f167c-f503-454b-a6dc-7b90a316479e" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/coverage/migratecheck" path="/api/coverage/migratecheck" id="6c5f167c-f503-454b-a6dc-7b90a316479e" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="6c5f167c-f503-454b-a6dc-7b90a316479efileName">%2Fapi%2Fcoverage%2Fmigratecheck</con:setting>
   </con:settings>
@@ -49,7 +49,44 @@
     <con:request name="Request 1" id="32a48126-1136-4347-a710-518a7b4dc089" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+          <con:authProfile>Inherit From Parent</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
     </con:request>
+    <con:environmentSpec>
+      <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+      <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+        <con:authProfile>Inherit From Parent</con:authProfile>
+      </con:entry>
+    </con:environmentSpec>
   </con:method>
+  <con:environmentSpec>
+    <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+      <con:authProfile>Inherit From Parent</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
 </con:resource>
