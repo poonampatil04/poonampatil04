@@ -11,52 +11,26 @@
   <con:jmsConnectionContainer/>
   <con:oAuth2ProfileContainer>
     <con:oAuth2Profile>
-      <con:name>Auth_Test</con:name>
-      <con:type>OAuth 2.0</con:type>
-      <con:accessTokenURI>https://thuis-sso-test.glasoperator.nl/oauth/token</con:accessTokenURI>
-      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
-      <con:clientID>glasoperator.readyapi</con:clientID>
-      <con:clientSecret>D4A9B4582589A3F8FA183BD4BB98336CB1E5D80F</con:clientSecret>
-      <con:oAuth2Flow>RESOURCE_OWNER_PASSWORD_CREDENTIALS</con:oAuth2Flow>
-      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
-      <con:useAuthHeader>false</con:useAuthHeader>
-      <con:jwtConfiguration/>
-      <con:responseType>id_token</con:responseType>
-    </con:oAuth2Profile>
-    <con:oAuth2Profile>
       <con:name>ReadyAPI_Dev</con:name>
       <con:type>OAuth 2.0</con:type>
       <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
-      <con:accessToken>D753014C3B4BDE18905FEB4B82D4E3E6F52BE4C0931688DFC4AEED5BA58E72E9</con:accessToken>
-      <con:accessTokenPosition>QUERY</con:accessTokenPosition>
+      <con:accessToken>9D6DAB3722FC25B2EFC6CC7254C7324EA7DD5DE2FE71CD8C03C574F23175F8F2</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
       <con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus>
       <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
-      <con:accessTokenIssuedTime>1625486852</con:accessTokenIssuedTime>
-      <con:manualAccessTokenExpirationTime>24</con:manualAccessTokenExpirationTime>
+      <con:accessTokenIssuedTime>1625559439</con:accessTokenIssuedTime>
+      <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
       <con:useManualAccessTokenExpirationTime>false</con:useManualAccessTokenExpirationTime>
       <con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit>
       <con:clientID>glasoperator.readyapi</con:clientID>
       <con:clientSecret>A64FF00502E55AECA3FEE4F84DCBA09FB52FA6AF</con:clientSecret>
       <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
-      <con:refreshAccessTokenMethod>MANUAL</con:refreshAccessTokenMethod>
-      <con:scope/>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
       <con:accessTokenExpirationTime>1200</con:accessTokenExpirationTime>
-      <con:useAuthHeader>false</con:useAuthHeader>
+      <con:useAuthHeader>true</con:useAuthHeader>
       <con:jwtConfiguration/>
       <con:enablePKCE>true</con:enablePKCE>
       <con:PKCECodeChallengeMethod>S256</con:PKCECodeChallengeMethod>
-      <con:responseType>id_token</con:responseType>
-    </con:oAuth2Profile>
-    <con:oAuth2Profile>
-      <con:name>Dev_OpfCoverage</con:name>
-      <con:type>OAuth 2.0</con:type>
-      <con:accessToken>eyJhbGciOiJSUzI1NiIsImtpZCI6IkE2NEZGMDA1MDJFNTVBRUNBM0ZFRTRGODREQ0JBMDlGQjUyRkE2QUZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InBrX3dCUUxsV3V5al91VDRUY3VnbjdVdnBxOCJ9.eyJuYmYiOjE2MjU0ODY3OTAsImV4cCI6MTYyNTQ5MDM5MCwiaXNzIjoiaHR0cHM6Ly90aHVpcy1zc28tZGV2LmdsYXNvcGVyYXRvci5ubCIsImF1ZCI6WyJnb3NvYXAuY292ZXJhZ2VjaGVjayIsImdvc29hcC5hc3N1cmFuY2UiLCJnb3NvYXAuYmlsbGluZyIsImdvc29hcC5mdWxmaWxsbWVudCIsImdvc29hcC50aWNrZXRpbmciLCJnbGFzb3BlcmF0b3IuY292ZXJhZ2UiXSwiY2xpZW50X2lkIjoiZ2xhc29wZXJhdG9yLmJhY2tvZmZpY2V3ZWJhcHAiLCJzdWIiOiJzb3VteWEucGlsbGFpQHQtbW9iaWxlLm5sIiwiYXV0aF90aW1lIjoxNjI1NDg0NzQ5LCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJzb3VteWEucGlsbGFpQHQtbW9iaWxlLm5sIiwicm9sZSI6WyJhZ2VudCIsIkFDU01hbmFnZW1lbnQuR09QIiwiR2Rwci5WREYiLCJHZHByUmVhZE9ubHkuVkRGIiwiR29BZG1pbi5HT1AiLCJHb0JpbGxBcHByb3ZhbC5HT1AiLCJHb0JpbGxVcGRhdGUuR09QIiwiR29SZWFkLkdPUCIsIkdvVGVjaC5HT1AiLCJJc3BCaWxsUmVhZC5HT1AiLCJJc3BCaWxsUmVhZC5WREYiLCJJc3BCaWxsV3JpdGUuVkRGIiwiSXNwQ292Q2hlY2suVkRGIiwiSXNwUmVhZC5WREYiLCJJc3BSZXBvcnRzLlZERiIsIklzcFdyaXRlT3JkZXJzLlZERiIsIk1hbmFnZVJvbGVzLkdPUCIsIk1hbmFnZVJvbGVzLlZERiIsIk1hbmFnZVVzZXJzLkdPUCIsIk1hbmFnZVVzZXJzLlZERiIsIk5pbVVwbG9hZC5HT1AiLCJOaW1Xcml0ZS5HT1AiLCJWaXNwQmFja09mZmljZS5WREYiXSwianRpIjoiNEYwOUNGMDIxODY2NTcwQ0Q1MDVCOTExNzE2QkU2NUUiLCJzaWQiOiIzRDNBMjc5MUU3QTQ0NDY4QTQ4MTAwRDk1N0Y0NTdDMSIsImlhdCI6MTYyNTQ4Njc5MCwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsImdvdmVybiIsImdvc29hcC5jb3ZlcmFnZWNoZWNrIiwiZ29zb2FwLmFzc3VyYW5jZSIsImdvc29hcC5iaWxsaW5nIiwiZ29zb2FwLmZ1bGZpbGxtZW50IiwiZ29zb2FwLnRpY2tldGluZyIsImdsYXNvcGVyYXRvci5jb3ZlcmFnZSJdLCJhbXIiOlsicHdkIl19.iugXeUYnqKSDog_colrl8jWyI5K5ZR4PgflNaRwzLiemiUAomFYinI5XakFb4PxsjOwS6CS6YQhkGNZlmPr83Fo8ZoEwDyw_GwPYSPmOyEINjXJhi6xgbrXYDmF3EwF02cpEEgYeoG-GCLvAyKLh3yYr-QmB_Slqk4VVC1hRV-xMnQHdb0i9rfSwr_ZVtWdp4wAvbXRv-iVeH6eqet7AIo3KsAPhGWSXZ3pvU-r7paJifyMIIYsmHsfIr_P-8ub9m2VkELgGPj60HOiASWBbtznN1SL1CD-Vjno_INCAJAFaX_cETmrJo_Vew1vvSTPR80N8-Vg6RNrGlPcBE-orvA</con:accessToken>
-      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
-      <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
-      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
-      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
-      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
-      <con:jwtConfiguration/>
       <con:responseType>id_token</con:responseType>
     </con:oAuth2Profile>
   </con:oAuth2ProfileContainer>
@@ -92,73 +66,47 @@
   </con:eventHandlers>
   <con:environment id="8b18c016-7cf1-4def-ac45-e447b6c2efd7" name="Dev" index="0">
     <con:service type="REST" name="GoSoap.CoverageCheck201801">
-      <con:endpoint authProfile="ReadyAPI_Dev" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-dev.glasoperator.nl/swagger/v1/swagger.json</con:endpoint>
+      <con:endpoint authProfile="ReadyAPI_Dev" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-dev.glasoperator.nl/</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
   <con:environment id="c6dd11d2-45d8-4197-b7b7-981e4798e119" name="Test" index="1">
     <con:service type="REST" name="GoSoap.CoverageCheck201801">
-      <con:endpoint authProfile="ReadyApi_Test" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-test.glasoperator.nl/swagger/v1/swagger.json</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-test.glasoperator.nl/</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
   <con:environment id="2a159e40-3e93-4e94-914a-11146d1254b9" name="Acc" index="2">
     <con:service type="REST" name="GoSoap.CoverageCheck201801">
-      <con:endpoint authProfile="test" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-acc.glasoperator.nl/swagger/v1/swagger.json</con:endpoint>
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
     </con:service>
     <con:databaseConnectionContainer/>
     <con:jmsConnectionContainer/>
   </con:environment>
   <con:authRepository>
     <con:oAuth20AuthEntry>
-      <con:name>Auth_Test</con:name>
-      <con:type>OAuth 2.0</con:type>
-      <con:accessTokenURI>https://thuis-sso-test.glasoperator.nl/oauth/token</con:accessTokenURI>
-      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
-      <con:clientID>glasoperator.readyapi</con:clientID>
-      <con:clientSecret>D4A9B4582589A3F8FA183BD4BB98336CB1E5D80F</con:clientSecret>
-      <con:oAuth2Flow>RESOURCE_OWNER_PASSWORD_CREDENTIALS</con:oAuth2Flow>
-      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
-      <con:useAuthHeader>false</con:useAuthHeader>
-      <con:jwtConfiguration/>
-      <con:responseType>id_token</con:responseType>
-    </con:oAuth20AuthEntry>
-    <con:oAuth20AuthEntry>
       <con:name>ReadyAPI_Dev</con:name>
       <con:type>OAuth 2.0</con:type>
       <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
-      <con:accessToken>D753014C3B4BDE18905FEB4B82D4E3E6F52BE4C0931688DFC4AEED5BA58E72E9</con:accessToken>
-      <con:accessTokenPosition>QUERY</con:accessTokenPosition>
+      <con:accessToken>9D6DAB3722FC25B2EFC6CC7254C7324EA7DD5DE2FE71CD8C03C574F23175F8F2</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
       <con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus>
       <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
-      <con:accessTokenIssuedTime>1625486852</con:accessTokenIssuedTime>
-      <con:manualAccessTokenExpirationTime>24</con:manualAccessTokenExpirationTime>
+      <con:accessTokenIssuedTime>1625559439</con:accessTokenIssuedTime>
+      <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
       <con:useManualAccessTokenExpirationTime>false</con:useManualAccessTokenExpirationTime>
       <con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit>
       <con:clientID>glasoperator.readyapi</con:clientID>
       <con:clientSecret>A64FF00502E55AECA3FEE4F84DCBA09FB52FA6AF</con:clientSecret>
       <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
-      <con:refreshAccessTokenMethod>MANUAL</con:refreshAccessTokenMethod>
-      <con:scope/>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
       <con:accessTokenExpirationTime>1200</con:accessTokenExpirationTime>
-      <con:useAuthHeader>false</con:useAuthHeader>
+      <con:useAuthHeader>true</con:useAuthHeader>
       <con:jwtConfiguration/>
       <con:enablePKCE>true</con:enablePKCE>
       <con:PKCECodeChallengeMethod>S256</con:PKCECodeChallengeMethod>
-      <con:responseType>id_token</con:responseType>
-    </con:oAuth20AuthEntry>
-    <con:oAuth20AuthEntry>
-      <con:name>Dev_OpfCoverage</con:name>
-      <con:type>OAuth 2.0</con:type>
-      <con:accessToken>eyJhbGciOiJSUzI1NiIsImtpZCI6IkE2NEZGMDA1MDJFNTVBRUNBM0ZFRTRGODREQ0JBMDlGQjUyRkE2QUZSUzI1NiIsInR5cCI6ImF0K2p3dCIsIng1dCI6InBrX3dCUUxsV3V5al91VDRUY3VnbjdVdnBxOCJ9.eyJuYmYiOjE2MjU0ODY3OTAsImV4cCI6MTYyNTQ5MDM5MCwiaXNzIjoiaHR0cHM6Ly90aHVpcy1zc28tZGV2LmdsYXNvcGVyYXRvci5ubCIsImF1ZCI6WyJnb3NvYXAuY292ZXJhZ2VjaGVjayIsImdvc29hcC5hc3N1cmFuY2UiLCJnb3NvYXAuYmlsbGluZyIsImdvc29hcC5mdWxmaWxsbWVudCIsImdvc29hcC50aWNrZXRpbmciLCJnbGFzb3BlcmF0b3IuY292ZXJhZ2UiXSwiY2xpZW50X2lkIjoiZ2xhc29wZXJhdG9yLmJhY2tvZmZpY2V3ZWJhcHAiLCJzdWIiOiJzb3VteWEucGlsbGFpQHQtbW9iaWxlLm5sIiwiYXV0aF90aW1lIjoxNjI1NDg0NzQ5LCJpZHAiOiJsb2NhbCIsIm5hbWUiOiJzb3VteWEucGlsbGFpQHQtbW9iaWxlLm5sIiwicm9sZSI6WyJhZ2VudCIsIkFDU01hbmFnZW1lbnQuR09QIiwiR2Rwci5WREYiLCJHZHByUmVhZE9ubHkuVkRGIiwiR29BZG1pbi5HT1AiLCJHb0JpbGxBcHByb3ZhbC5HT1AiLCJHb0JpbGxVcGRhdGUuR09QIiwiR29SZWFkLkdPUCIsIkdvVGVjaC5HT1AiLCJJc3BCaWxsUmVhZC5HT1AiLCJJc3BCaWxsUmVhZC5WREYiLCJJc3BCaWxsV3JpdGUuVkRGIiwiSXNwQ292Q2hlY2suVkRGIiwiSXNwUmVhZC5WREYiLCJJc3BSZXBvcnRzLlZERiIsIklzcFdyaXRlT3JkZXJzLlZERiIsIk1hbmFnZVJvbGVzLkdPUCIsIk1hbmFnZVJvbGVzLlZERiIsIk1hbmFnZVVzZXJzLkdPUCIsIk1hbmFnZVVzZXJzLlZERiIsIk5pbVVwbG9hZC5HT1AiLCJOaW1Xcml0ZS5HT1AiLCJWaXNwQmFja09mZmljZS5WREYiXSwianRpIjoiNEYwOUNGMDIxODY2NTcwQ0Q1MDVCOTExNzE2QkU2NUUiLCJzaWQiOiIzRDNBMjc5MUU3QTQ0NDY4QTQ4MTAwRDk1N0Y0NTdDMSIsImlhdCI6MTYyNTQ4Njc5MCwic2NvcGUiOlsib3BlbmlkIiwicHJvZmlsZSIsImdvdmVybiIsImdvc29hcC5jb3ZlcmFnZWNoZWNrIiwiZ29zb2FwLmFzc3VyYW5jZSIsImdvc29hcC5iaWxsaW5nIiwiZ29zb2FwLmZ1bGZpbGxtZW50IiwiZ29zb2FwLnRpY2tldGluZyIsImdsYXNvcGVyYXRvci5jb3ZlcmFnZSJdLCJhbXIiOlsicHdkIl19.iugXeUYnqKSDog_colrl8jWyI5K5ZR4PgflNaRwzLiemiUAomFYinI5XakFb4PxsjOwS6CS6YQhkGNZlmPr83Fo8ZoEwDyw_GwPYSPmOyEINjXJhi6xgbrXYDmF3EwF02cpEEgYeoG-GCLvAyKLh3yYr-QmB_Slqk4VVC1hRV-xMnQHdb0i9rfSwr_ZVtWdp4wAvbXRv-iVeH6eqet7AIo3KsAPhGWSXZ3pvU-r7paJifyMIIYsmHsfIr_P-8ub9m2VkELgGPj60HOiASWBbtznN1SL1CD-Vjno_INCAJAFaX_cETmrJo_Vew1vvSTPR80N8-Vg6RNrGlPcBE-orvA</con:accessToken>
-      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
-      <con:accessTokenStatus>ENTERED_MANUALLY</con:accessTokenStatus>
-      <con:accessTokenStartingStatus>ENTERED_MANUALLY</con:accessTokenStartingStatus>
-      <con:oAuth2Flow>AUTHORIZATION_CODE_GRANT</con:oAuth2Flow>
-      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
-      <con:jwtConfiguration/>
       <con:responseType>id_token</con:responseType>
     </con:oAuth20AuthEntry>
   </con:authRepository>

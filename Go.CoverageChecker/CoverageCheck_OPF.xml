@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="123f12a5-8868-48d0-a675-bcd9b451ab72" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CoverageCheck_OPF" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="123f12a5-8868-48d0-a675-bcd9b451ab72" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CoverageCheck_OPF" searchProperties="true" timeout="0" maxResults="12" wsrmEnabled="false" wsrmVersion="1.0" wsrmAckTo="" zephyrTestName="" zephyrTestId="" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="123f12a5-8868-48d0-a675-bcd9b451ab72fileName">CoverageCheck_OPF</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="restrequest" name="Gof_NL6" id="0f5a266f-7805-4d4d-87e0-52dd554cba91">
+  <con:testStep type="datasource" name="OpfAddresses" id="85d9a34c-bf13-40a6-8660-3cae12d1bc4b">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Grid">
+        <con:configuration>
+          <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">VDF</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1234XX</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AllowOpenDutchFiberOdf</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">D</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">VDF</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1234XX</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AllowOpenDutchFiberOdf</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">D-eight</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <row><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">VDF</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">1234XX</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">2</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">AllowOpenDutchFiberOdf</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">false</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">D-lead</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config"/></xml-fragment>]]></row>
+          <recognizeAsPlainText>true</recognizeAsPlainText>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>ispId</con:property>
+      <con:property>postalCode</con:property>
+      <con:property>houseNumber</con:property>
+      <con:property>filter</con:property>
+      <con:property>showClosed</con:property>
+      <con:property>houseNumberAdditions</con:property>
+      <con:startRow/>
+      <con:endRow/>
+      <con:recordsPerIteration>1</con:recordsPerIteration>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:gotoLoopOnEmpty>true</con:gotoLoopOnEmpty>
+      <con:trimValues>false</con:trimValues>
+      <con:entitizeValues>false</con:entitizeValues>
+      <con:restartOnRun>true</con:restartOnRun>
+      <con:expandProperties>false</con:expandProperties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="OrderableOpfCoverageChecks" id="0f5a266f-7805-4d4d-87e0-52dd554cba91">
     <con:settings/>
     <con:config service="GoSoap.CoverageCheck201801" resourcePath="/api/Coverage/CheckCoverage" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="Gof_NL6" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
+      <con:restRequest name="OrderableOpfCoverageChecks" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">Data</con:setting>
         </con:settings>
         <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
         <con:request/>
@@ -18,6 +50,859 @@
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="7b62e560-278a-4c39-a6cf-3a6614fb8b39" name="Message Content Assertion 2">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:PostalCode[1]</con:xpath>
+              <con:element>PostalCode</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1234XX</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:HouseNumber[1]</con:xpath>
+              <con:element>HouseNumber</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:HouseNumberAddition[1]</con:xpath>
+              <con:element>HouseNumberAddition</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>D-lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:Street[1]</con:xpath>
+              <con:element>Street</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Klipperaak</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:City[1]</con:xpath>
+              <con:element>City</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>BODEGRAVEN</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:IspId[1]</con:xpath>
+              <con:element>IspId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>VDF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:Technology[1]</con:xpath>
+              <con:element>Technology</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GofWithFallback</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:PassiveOperator[1]</con:xpath>
+              <con:element>PassiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:ActiveOperator[1]</con:xpath>
+              <con:element>ActiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GlasOperator</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:CoverageArea[1]</con:xpath>
+              <con:element>CoverageArea</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF TST-ODF1 103A</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:TariffRegion[1]</con:xpath>
+              <con:element>TariffRegion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>ODF-OpenDutchFiber</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:FirstPossibleDeliveryDate[1]</con:xpath>
+              <con:element>FirstPossibleDeliveryDate</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-12T00:00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:State[1]</con:xpath>
+              <con:element>State</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:LeadTimeWorkingDays[1]</con:xpath>
+              <con:element>LeadTimeWorkingDays</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:ExpectedDownSpeed[1]</con:xpath>
+              <con:element>ExpectedDownSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:ExpectedUpSpeed[1]</con:xpath>
+              <con:element>ExpectedUpSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:DeliveryScenario[1]</con:xpath>
+              <con:element>DeliveryScenario</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>IO_H</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:FtuType[1]</con:xpath>
+              <con:element>FtuType</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>FTU-AU_AT01</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:DataProvider[1]</con:xpath>
+              <con:element>DataProvider</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>TelcoSys Supplier</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:AllowOdfPatchByInstaller[1]</con:xpath>
+              <con:element>AllowOdfPatchByInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:RequireInHouseInstaller[1]</con:xpath>
+              <con:element>RequireInHouseInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:IsDslOption[1]</con:xpath>
+              <con:element>IsDslOption</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:KpnFpiDown[1]</con:xpath>
+              <con:element>KpnFpiDown</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:IspId[1]</con:xpath>
+              <con:element>IspId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>VDF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:Technology[1]</con:xpath>
+              <con:element>Technology</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Xgspon</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:PassiveOperator[1]</con:xpath>
+              <con:element>PassiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:ActiveOperator[1]</con:xpath>
+              <con:element>ActiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GlasOperator</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:CoverageArea[1]</con:xpath>
+              <con:element>CoverageArea</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF TST-ODF1 103A</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:TariffRegion[1]</con:xpath>
+              <con:element>TariffRegion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>ODF-OpenDutchFiber</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:FirstPossibleDeliveryDate[1]</con:xpath>
+              <con:element>FirstPossibleDeliveryDate</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-12T00:00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:State[1]</con:xpath>
+              <con:element>State</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:LeadTimeWorkingDays[1]</con:xpath>
+              <con:element>LeadTimeWorkingDays</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:ExpectedDownSpeed[1]</con:xpath>
+              <con:element>ExpectedDownSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:ExpectedUpSpeed[1]</con:xpath>
+              <con:element>ExpectedUpSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:DeliveryScenario[1]</con:xpath>
+              <con:element>DeliveryScenario</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>IO_H</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:FtuType[1]</con:xpath>
+              <con:element>FtuType</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>FTU-AU_AT01</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:DataProvider[1]</con:xpath>
+              <con:element>DataProvider</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>TelcoSys Supplier</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:AllowOdfPatchByInstaller[1]</con:xpath>
+              <con:element>AllowOdfPatchByInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:RequireInHouseInstaller[1]</con:xpath>
+              <con:element>RequireInHouseInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:IsDslOption[1]</con:xpath>
+              <con:element>IsDslOption</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:KpnFpiDown[1]</con:xpath>
+              <con:element>KpnFpiDown</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:IspId[1]</con:xpath>
+              <con:element>IspId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>VDF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:Technology[1]</con:xpath>
+              <con:element>Technology</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Gpon</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:PassiveOperator[1]</con:xpath>
+              <con:element>PassiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:ActiveOperator[1]</con:xpath>
+              <con:element>ActiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GlasOperator</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:CoverageArea[1]</con:xpath>
+              <con:element>CoverageArea</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF TST-ODF1 103A</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:TariffRegion[1]</con:xpath>
+              <con:element>TariffRegion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>ODF-OpenDutchFiber</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:FirstPossibleDeliveryDate[1]</con:xpath>
+              <con:element>FirstPossibleDeliveryDate</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-12T00:00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:State[1]</con:xpath>
+              <con:element>State</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:LeadTimeWorkingDays[1]</con:xpath>
+              <con:element>LeadTimeWorkingDays</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:ExpectedDownSpeed[1]</con:xpath>
+              <con:element>ExpectedDownSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:ExpectedUpSpeed[1]</con:xpath>
+              <con:element>ExpectedUpSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:DeliveryScenario[1]</con:xpath>
+              <con:element>DeliveryScenario</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>IO_H</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:FtuType[1]</con:xpath>
+              <con:element>FtuType</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>FTU-AU_AT01</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:DataProvider[1]</con:xpath>
+              <con:element>DataProvider</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>TelcoSys Supplier</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:AllowOdfPatchByInstaller[1]</con:xpath>
+              <con:element>AllowOdfPatchByInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:RequireInHouseInstaller[1]</con:xpath>
+              <con:element>RequireInHouseInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:IsDslOption[1]</con:xpath>
+              <con:element>IsDslOption</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:KpnFpiDown[1]</con:xpath>
+              <con:element>KpnFpiDown</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:RawRequest[1]</con:xpath>
+              <con:element>RawRequest</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>PFN0dWJiZWQ+Tm8gYWN0dWFsIG1lc3NhZ2UuIFJlc3VsdCB3YXMgc3R1YmJlZCBmb3IgMTIzNFhYPC9TdHViYmVkPg==</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:RawReply[1]</con:xpath>
+              <con:element>RawReply</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>PFN0dWJiZWQ+Tm90IGFuIGFjdHVhbCBtZXNzYWdlIGZyb20gS1BOLCB0aGlzIGlzIHdoYXQgYSByZXNwb25zZSBDT1VMRCBoYXZlIGxvb2tlZCBsaWtlLiBSZXN1bHRzIGFyZSBzdHViYmVkIGZvciAxMjM0WFg8L1N0dWJiZWQ+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48RW52ZWxvcGUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48Qm9keT48YnNhZnBpcmVzcG9uc2UgeG1sbnM9Imh0dHA6Ly94ZHNsLmtwbi5jb20vZnBpLzI2L3Jlc3BvbnNlIj48bWVzc2FnZWhlYWRlcj48b3JpZ2luYXRvcj5TVFVCPC9vcmlnaW5hdG9yPjxyZWNpcGllbnQ+TFRFTDwvcmVjaXBpZW50Pjx0aW1lc3RhbXA+MjAyMTA3MDUwOTQ3MzU8L3RpbWVzdGFtcD48L21lc3NhZ2VoZWFkZXI+PG1lc3NhZ2Vib2R5PjxlbmR1c2VyaW5mbz48cmVxdWVzdGVkLWhvdXNlbnVtYmVyPjI8L3JlcXVlc3RlZC1ob3VzZW51bWJlcj48cmVxdWVzdGVkLWhvdXNlbnJleHQ+RC1sZWFkPC9yZXF1ZXN0ZWQtaG91c2VucmV4dD48cmVxdWVzdGVkLXppcGNvZGU+MTIzNFhYPC9yZXF1ZXN0ZWQtemlwY29kZT48L2VuZHVzZXJpbmZvPjxhY3R1YWx1c2VyaW5mbz48aG91c2VudW1iZXI+MjwvaG91c2VudW1iZXI+PGhvdXNlbnJleHQ+RC1sZWFkPC9ob3VzZW5yZXh0Pjx6aXBjb2RlPjEyMzRYWDwvemlwY29kZT48L2FjdHVhbHVzZXJpbmZvPjxjYXJyaWVydmVuZG9yPjxjYXJyaWVyLXZlbmRvci1pZD5TREY8L2NhcnJpZXItdmVuZG9yLWlkPjxjYXJyaWVyLXN0YXR1cz5PPC9jYXJyaWVyLXN0YXR1cz48bmwtdHlwZT4xPC9ubC10eXBlPjwvY2FycmllcnZlbmRvcj48Y2FycmllcnZlbmRvcj48Y2Fycmllci12ZW5kb3ItaWQ+UkVHRzwvY2Fycmllci12ZW5kb3ItaWQ+PGNhcnJpZXItc3RhdHVzPk88L2NhcnJpZXItc3RhdHVzPjxmdHUtdHlwZT5GVFVfVFkwMTwvZnR1LXR5cGU+PG5sLXR5cGU+NjwvbmwtdHlwZT48L2NhcnJpZXJ2ZW5kb3I+PGVycm9yaW5mbz48ZXJyb3Jjb2RlPjA8L2Vycm9yY29kZT48L2Vycm9yaW5mbz48L21lc3NhZ2Vib2R5PjwvYnNhZnBpcmVzcG9uc2U+PC9Cb2R5PjwvRW52ZWxvcGU+</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:Source[1]</con:xpath>
+              <con:element>Source</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>KPN FPI</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:CommentCode[1]</con:xpath>
+              <con:element>CommentCode</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:FpiErrorCode[1]</con:xpath>
+              <con:element>FpiErrorCode</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[2]/ns1:RawRequest[1]</con:xpath>
+              <con:element>RawRequest</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>MTIzNFhYIDIgRC1sZWFk</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[2]/ns1:RawReply[1]</con:xpath>
+              <con:element>RawReply</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>W3siUG9zdGFsQ29kZSI6IjEyMzRYWCIsIkhvdXNlTnVtYmVyIjoyLCJIb3VzZU51bWJlckFkZGl0aW9uIjoiRC1MRUFEIiwiUm9vbSI6bnVsbCwiU3RyZWV0IjoiVGVzdGxhbmUiLCJDaXR5IjoiTWFnZW50YXRvd24iLCJGaWJlciI6MSwiUGFzc2l2ZU9wZXJhdG9yIjoiT1BGIiwiQ292ZXJhZ2VBcmVhIjoiT1BGIFRTVC1PREYxIDEwM0EiLCJQYXNzaXZlQ29ubmVjdFNjZW5hcmlvIjoiSU9fSCIsIkZ0dVR5cGUiOiJGVFUtQVVfQVQwMSIsIlBsYW5EYXRlIjoiMjAyMS0wMS0wMVQwMDowMDowMCswMjowMCJ9XQ==</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[2]/ns1:Source[1]</con:xpath>
+              <con:element>Source</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Open Dutch Fiber coverage check</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage><![CDATA[<Response xmlns="https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage">
+   <Coverage>
+      <e>
+         <Address>
+            <PostalCode>1234XX</PostalCode>
+            <HouseNumber>2</HouseNumber>
+            <HouseNumberAddition>D-lead</HouseNumberAddition>
+            <Street>Klipperaak</Street>
+            <City>BODEGRAVEN</City>
+         </Address>
+         <Options>
+            <e>
+               <IspId>VDF</IspId>
+               <Technology>GofWithFallback</Technology>
+               <PassiveOperator>OPF</PassiveOperator>
+               <ActiveOperator>GlasOperator</ActiveOperator>
+               <CoverageArea>OPF TST-ODF1 103A</CoverageArea>
+               <TariffRegion>ODF-OpenDutchFiber</TariffRegion>
+               <FirstPossibleDeliveryDate>2021-07-12T00:00:00</FirstPossibleDeliveryDate>
+               <State>Lead</State>
+               <LeadTimeWorkingDays>5</LeadTimeWorkingDays>
+               <ExpectedDownSpeed>1000000</ExpectedDownSpeed>
+               <ExpectedUpSpeed>1000000</ExpectedUpSpeed>
+               <DeliveryScenario>IO_H</DeliveryScenario>
+               <FtuType>FTU-AU_AT01</FtuType>
+               <DataProvider>TelcoSys Supplier</DataProvider>
+               <AllowOdfPatchByInstaller>false</AllowOdfPatchByInstaller>
+               <RequireInHouseInstaller>true</RequireInHouseInstaller>
+               <IsDslOption>false</IsDslOption>
+               <KpnFpiDown>false</KpnFpiDown>
+            </e>
+            <e>
+               <IspId>VDF</IspId>
+               <Technology>Xgspon</Technology>
+               <PassiveOperator>OPF</PassiveOperator>
+               <ActiveOperator>GlasOperator</ActiveOperator>
+               <CoverageArea>OPF TST-ODF1 103A</CoverageArea>
+               <TariffRegion>ODF-OpenDutchFiber</TariffRegion>
+               <FirstPossibleDeliveryDate>2021-07-12T00:00:00</FirstPossibleDeliveryDate>
+               <State>Lead</State>
+               <LeadTimeWorkingDays>5</LeadTimeWorkingDays>
+               <ExpectedDownSpeed>1000000</ExpectedDownSpeed>
+               <ExpectedUpSpeed>1000000</ExpectedUpSpeed>
+               <DeliveryScenario>IO_H</DeliveryScenario>
+               <FtuType>FTU-AU_AT01</FtuType>
+               <DataProvider>TelcoSys Supplier</DataProvider>
+               <AllowOdfPatchByInstaller>false</AllowOdfPatchByInstaller>
+               <RequireInHouseInstaller>true</RequireInHouseInstaller>
+               <IsDslOption>false</IsDslOption>
+               <KpnFpiDown>false</KpnFpiDown>
+            </e>
+            <e>
+               <IspId>VDF</IspId>
+               <Technology>Gpon</Technology>
+               <PassiveOperator>OPF</PassiveOperator>
+               <ActiveOperator>GlasOperator</ActiveOperator>
+               <CoverageArea>OPF TST-ODF1 103A</CoverageArea>
+               <TariffRegion>ODF-OpenDutchFiber</TariffRegion>
+               <FirstPossibleDeliveryDate>2021-07-12T00:00:00</FirstPossibleDeliveryDate>
+               <State>Lead</State>
+               <LeadTimeWorkingDays>5</LeadTimeWorkingDays>
+               <ExpectedDownSpeed>1000000</ExpectedDownSpeed>
+               <ExpectedUpSpeed>1000000</ExpectedUpSpeed>
+               <DeliveryScenario>IO_H</DeliveryScenario>
+               <FtuType>FTU-AU_AT01</FtuType>
+               <DataProvider>TelcoSys Supplier</DataProvider>
+               <AllowOdfPatchByInstaller>false</AllowOdfPatchByInstaller>
+               <RequireInHouseInstaller>true</RequireInHouseInstaller>
+               <IsDslOption>false</IsDslOption>
+               <KpnFpiDown>false</KpnFpiDown>
+            </e>
+         </Options>
+      </e>
+   </Coverage>
+   <CommunicationLogs>
+      <e>
+         <RawRequest>PFN0dWJiZWQ+Tm8gYWN0dWFsIG1lc3NhZ2UuIFJlc3VsdCB3YXMgc3R1YmJlZCBmb3IgMTIzNFhYPC9TdHViYmVkPg==</RawRequest>
+         <RawReply>PFN0dWJiZWQ+Tm90IGFuIGFjdHVhbCBtZXNzYWdlIGZyb20gS1BOLCB0aGlzIGlzIHdoYXQgYSByZXNwb25zZSBDT1VMRCBoYXZlIGxvb2tlZCBsaWtlLiBSZXN1bHRzIGFyZSBzdHViYmVkIGZvciAxMjM0WFg8L1N0dWJiZWQ+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48RW52ZWxvcGUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48Qm9keT48YnNhZnBpcmVzcG9uc2UgeG1sbnM9Imh0dHA6Ly94ZHNsLmtwbi5jb20vZnBpLzI2L3Jlc3BvbnNlIj48bWVzc2FnZWhlYWRlcj48b3JpZ2luYXRvcj5TVFVCPC9vcmlnaW5hdG9yPjxyZWNpcGllbnQ+TFRFTDwvcmVjaXBpZW50Pjx0aW1lc3RhbXA+MjAyMTA3MDUwOTQ3MzU8L3RpbWVzdGFtcD48L21lc3NhZ2VoZWFkZXI+PG1lc3NhZ2Vib2R5PjxlbmR1c2VyaW5mbz48cmVxdWVzdGVkLWhvdXNlbnVtYmVyPjI8L3JlcXVlc3RlZC1ob3VzZW51bWJlcj48cmVxdWVzdGVkLWhvdXNlbnJleHQ+RC1sZWFkPC9yZXF1ZXN0ZWQtaG91c2VucmV4dD48cmVxdWVzdGVkLXppcGNvZGU+MTIzNFhYPC9yZXF1ZXN0ZWQtemlwY29kZT48L2VuZHVzZXJpbmZvPjxhY3R1YWx1c2VyaW5mbz48aG91c2VudW1iZXI+MjwvaG91c2VudW1iZXI+PGhvdXNlbnJleHQ+RC1sZWFkPC9ob3VzZW5yZXh0Pjx6aXBjb2RlPjEyMzRYWDwvemlwY29kZT48L2FjdHVhbHVzZXJpbmZvPjxjYXJyaWVydmVuZG9yPjxjYXJyaWVyLXZlbmRvci1pZD5TREY8L2NhcnJpZXItdmVuZG9yLWlkPjxjYXJyaWVyLXN0YXR1cz5PPC9jYXJyaWVyLXN0YXR1cz48bmwtdHlwZT4xPC9ubC10eXBlPjwvY2FycmllcnZlbmRvcj48Y2FycmllcnZlbmRvcj48Y2Fycmllci12ZW5kb3ItaWQ+UkVHRzwvY2Fycmllci12ZW5kb3ItaWQ+PGNhcnJpZXItc3RhdHVzPk88L2NhcnJpZXItc3RhdHVzPjxmdHUtdHlwZT5GVFVfVFkwMTwvZnR1LXR5cGU+PG5sLXR5cGU+NjwvbmwtdHlwZT48L2NhcnJpZXJ2ZW5kb3I+PGVycm9yaW5mbz48ZXJyb3Jjb2RlPjA8L2Vycm9yY29kZT48L2Vycm9yaW5mbz48L21lc3NhZ2Vib2R5PjwvYnNhZnBpcmVzcG9uc2U+PC9Cb2R5PjwvRW52ZWxvcGU+</RawReply>
+         <Source>KPN FPI</Source>
+         <CommentCode/>
+         <FpiErrorCode>0</FpiErrorCode>
+      </e>
+      <e>
+         <RawRequest>MTIzNFhYIDIgRC1sZWFk</RawRequest>
+         <RawReply>W3siUG9zdGFsQ29kZSI6IjEyMzRYWCIsIkhvdXNlTnVtYmVyIjoyLCJIb3VzZU51bWJlckFkZGl0aW9uIjoiRC1MRUFEIiwiUm9vbSI6bnVsbCwiU3RyZWV0IjoiVGVzdGxhbmUiLCJDaXR5IjoiTWFnZW50YXRvd24iLCJGaWJlciI6MSwiUGFzc2l2ZU9wZXJhdG9yIjoiT1BGIiwiQ292ZXJhZ2VBcmVhIjoiT1BGIFRTVC1PREYxIDEwM0EiLCJQYXNzaXZlQ29ubmVjdFNjZW5hcmlvIjoiSU9fSCIsIkZ0dVR5cGUiOiJGVFUtQVVfQVQwMSIsIlBsYW5EYXRlIjoiMjAyMS0wMS0wMVQwMDowMDowMCswMjowMCJ9XQ==</RawReply>
+         <Source>Open Dutch Fiber coverage check</Source>
+      </e>
+   </CommunicationLogs>
+</Response>]]></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="AssertionGroup" id="eafeb7e4-0051-40b9-8f7b-40436b906161" name="StateAssertion">
+          <con:configuration xsi:type="con:AssertionGroup">
+            <con:selectedAssertions type="JsonPath Match" id="07154df8-c77e-44da-aaf6-8bb0f1195bbb" name="Match content of [State]">
+              <con:configuration>
+                <path>$['Coverage'][0]['Options'][0]['State']</path>
+                <content>"Lead"</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:selectedAssertions>
+            <con:selectedAssertions type="JsonPath Match" id="938e4608-1ae4-49f0-90bb-023869200808" name="Match content of [State]">
+              <con:configuration>
+                <path>$['Coverage'][0]['Options'][0]['State']</path>
+                <content>"Orderable"</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:selectedAssertions>
+            <con:groupLogic>OR</con:groupLogic>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -27,19 +912,21 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="filter" value="All"/>
-          <con:entry key="showClosed" value="true"/>
-          <con:entry key="postalCode" value="1234XX"/>
-          <con:entry key="houseNumber" value="2"/>
-          <con:entry key="ispId" value="VDF"/>
-          <con:entry key="houseNumberAddition" value="d"/>
+          <con:entry key="filter" value="${OpfAddresses#filter}"/>
+          <con:entry key="clientLogInfo" value="${OpfAddresses#clientLogInfo}"/>
+          <con:entry key="showClosed" value="${OpfAddresses#showClosed}"/>
+          <con:entry key="useOfflineFpiData" value="${OpfAddresses#useOfflineFpiData}"/>
+          <con:entry key="postalCode" value="${OpfAddresses#postalCode}"/>
+          <con:entry key="houseNumber" value="${OpfAddresses#houseNumber}"/>
+          <con:entry key="ispId" value="${OpfAddresses#ispId}"/>
+          <con:entry key="houseNumberAddition" value="${OpfAddresses#houseNumberAdditions}"/>
         </con:parameters>
         <con:environmentSpec>
           <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
             <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-            <con:authProfile>API_Test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
             <con:authProfile>ReadyAPI_Dev</con:authProfile>
@@ -48,12 +935,20 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="NL8" id="9b4b79ae-afbe-4a1f-b64d-dff4395040f8">
+  <con:testStep type="datasourceloop" name="Data Source Loop" id="95a7e799-e4cd-4275-bbf4-e83862015f2f">
+    <con:settings/>
+    <con:config>
+      <dataSourceStep>OpfAddresses</dataSourceStep>
+      <targetStep>Gof_NL6</targetStep>
+      <discardResults>false</discardResults>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="NL8" id="9b4b79ae-afbe-4a1f-b64d-dff4395040f8" disabled="true">
     <con:settings/>
     <con:config service="GoSoap.CoverageCheck201801" resourcePath="/api/Coverage/CheckCoverage" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="NL8" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
         <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="accept" value="text/plain" xmlns="http://eviware.com/soapui/config"/></con:setting>
         </con:settings>
         <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
         <con:request/>
@@ -70,19 +965,21 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="filter" value="AllowOpenDutchFiberOdf"/>
-          <con:entry key="showClosed" value="true"/>
-          <con:entry key="postalCode" value="1234XX"/>
-          <con:entry key="houseNumber" value="2"/>
-          <con:entry key="ispId" value="VDF"/>
-          <con:entry key="houseNumberAddition" value="d-eight"/>
+          <con:entry key="filter" value="${OpfAddresses#filter}"/>
+          <con:entry key="clientLogInfo" value="${OpfAddresses#clientLogInfo}"/>
+          <con:entry key="showClosed" value="${OpfAddresses#showClosed}"/>
+          <con:entry key="useOfflineFpiData" value="${OpfAddresses#useOfflineFpiData}"/>
+          <con:entry key="postalCode" value="${OpfAddresses#postalCode}"/>
+          <con:entry key="houseNumber" value="${OpfAddresses#houseNumber}"/>
+          <con:entry key="ispId" value="${OpfAddresses#ispId}"/>
+          <con:entry key="houseNumberAddition" value="${#TestCase#HouseNumberAdditionNL8}"/>
         </con:parameters>
         <con:environmentSpec>
           <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
-            <con:authProfile>test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-            <con:authProfile>ReadyApi_Test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
             <con:authProfile>ReadyAPI_Dev</con:authProfile>
@@ -91,7 +988,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Lead" id="7b50cd05-356a-4533-abbb-5099f4032f01">
+  <con:testStep type="restrequest" name="Lead" id="7b50cd05-356a-4533-abbb-5099f4032f01" disabled="true">
     <con:settings/>
     <con:config service="GoSoap.CoverageCheck201801" resourcePath="/api/Coverage/CheckCoverage" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Lead" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
@@ -113,19 +1010,21 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="filter" value="AllowOpenDutchFiberOdf"/>
-          <con:entry key="showClosed" value="true"/>
-          <con:entry key="postalCode" value="1234XX"/>
-          <con:entry key="houseNumber" value="2"/>
-          <con:entry key="ispId" value="VDF"/>
-          <con:entry key="houseNumberAddition" value="d-lead"/>
+          <con:entry key="filter" value="${OpfAddresses#filter}"/>
+          <con:entry key="clientLogInfo" value="${OpfAddresses#clientLogInfo}"/>
+          <con:entry key="showClosed" value="${OpfAddresses#showClosed}"/>
+          <con:entry key="useOfflineFpiData" value="${OpfAddresses#useOfflineFpiData}"/>
+          <con:entry key="postalCode" value="${OpfAddresses#postalCode}"/>
+          <con:entry key="houseNumber" value="${OpfAddresses#houseNumber}"/>
+          <con:entry key="ispId" value="${OpfAddresses#ispId}"/>
+          <con:entry key="houseNumberAddition" value="${OpfAddresses#houseNumberAddition}"/>
         </con:parameters>
         <con:environmentSpec>
           <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
-            <con:authProfile>test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-            <con:authProfile>ReadyApi_Test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
             <con:authProfile>ReadyAPI_Dev</con:authProfile>
@@ -134,7 +1033,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="Pon_NL6" id="723b69e8-af79-40c7-aa2d-67643f854a14">
+  <con:testStep type="restrequest" name="Pon_NL6" id="723b69e8-af79-40c7-aa2d-67643f854a14" disabled="true">
     <con:settings/>
     <con:config service="GoSoap.CoverageCheck201801" resourcePath="/api/Coverage/CheckCoverage" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="Pon_NL6" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
@@ -156,19 +1055,937 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="filter" value="AllowOpenDutchFiberOdf"/>
-          <con:entry key="showClosed" value="true"/>
-          <con:entry key="postalCode" value="1234XX"/>
-          <con:entry key="houseNumber" value="7"/>
-          <con:entry key="ispId" value="VDF"/>
-          <con:entry key="houseNumberAddition" value="d"/>
+          <con:entry key="filter" value="${OpfAddresses#filter}"/>
+          <con:entry key="clientLogInfo" value="${OpfAddresses#clientLogInfo}"/>
+          <con:entry key="showClosed" value="${OpfAddresses#showClosed}"/>
+          <con:entry key="useOfflineFpiData" value="${OpfAddresses#useOfflineFpiData}"/>
+          <con:entry key="postalCode" value="${OpfAddresses#postalCode}"/>
+          <con:entry key="houseNumber" value="${OpfAddresses#houseNumber}"/>
+          <con:entry key="ispId" value="${OpfAddresses#ispId}"/>
+          <con:entry key="houseNumberAddition" value="${OpfAddresses#houseNumberAddition}"/>
         </con:parameters>
         <con:environmentSpec>
           <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
-            <con:authProfile>test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-            <con:authProfile>ReadyApi_Test</con:authProfile>
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+            <con:authProfile>ReadyAPI_Dev</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="datasource" name="CombinedOpfAddresses" id="bf0d68b9-bd88-46a9-9a4e-f79d9c713e18">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Grid">
+        <con:configuration>
+          <check><![CDATA[<xml-fragment><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry><con:entry xmlns:con="http://eviware.com/soapui/config">true</con:entry></xml-fragment>]]></check>
+          <row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">100D&lt;/con:entry>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row>
+          <row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">100DL&lt;/con:entry>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row>
+          <row>&lt;xml-fragment>&lt;con:entry xmlns:con="http://eviware.com/soapui/config">100fD&lt;/con:entry>&lt;con:entry xmlns:con="http://eviware.com/soapui/config"/>&lt;/xml-fragment></row>
+          <recognizeAsPlainText>true</recognizeAsPlainText>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>houseNumberAddition</con:property>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CombinedTechnologyOpfCoverageChecks" id="66f3031e-c1e3-40cf-948b-93fe732717a0">
+    <con:settings/>
+    <con:config service="GoSoap.CoverageCheck201801" resourcePath="/api/Coverage/CheckCoverage" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CombinedTechnologyOpfCoverageChecks" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          <con:setting id="com.eviware.soapui.support.editor.views.xml.form2.FormEditorView@ViewType">Data</con:setting>
+        </con:settings>
+        <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="98902cda-38f1-45e0-b254-1c770e8f89a3" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="7b62e560-278a-4c39-a6cf-3a6614fb8b39" name="Message Content Assertion 2">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:PostalCode[1]</con:xpath>
+              <con:element>PostalCode</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1234XX</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:HouseNumber[1]</con:xpath>
+              <con:element>HouseNumber</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:HouseNumberAddition[1]</con:xpath>
+              <con:element>HouseNumberAddition</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>D-lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:Street[1]</con:xpath>
+              <con:element>Street</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Klipperaak</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Address[1]/ns1:City[1]</con:xpath>
+              <con:element>City</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>BODEGRAVEN</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:IspId[1]</con:xpath>
+              <con:element>IspId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>VDF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:Technology[1]</con:xpath>
+              <con:element>Technology</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GofWithFallback</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:PassiveOperator[1]</con:xpath>
+              <con:element>PassiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>true</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:ActiveOperator[1]</con:xpath>
+              <con:element>ActiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GlasOperator</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:CoverageArea[1]</con:xpath>
+              <con:element>CoverageArea</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF TST-ODF1 103A</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:TariffRegion[1]</con:xpath>
+              <con:element>TariffRegion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>ODF-OpenDutchFiber</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:FirstPossibleDeliveryDate[1]</con:xpath>
+              <con:element>FirstPossibleDeliveryDate</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-12T00:00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:State[1]</con:xpath>
+              <con:element>State</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:LeadTimeWorkingDays[1]</con:xpath>
+              <con:element>LeadTimeWorkingDays</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:ExpectedDownSpeed[1]</con:xpath>
+              <con:element>ExpectedDownSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:ExpectedUpSpeed[1]</con:xpath>
+              <con:element>ExpectedUpSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:DeliveryScenario[1]</con:xpath>
+              <con:element>DeliveryScenario</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>IO_H</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:FtuType[1]</con:xpath>
+              <con:element>FtuType</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>FTU-AU_AT01</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:DataProvider[1]</con:xpath>
+              <con:element>DataProvider</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>TelcoSys Supplier</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:AllowOdfPatchByInstaller[1]</con:xpath>
+              <con:element>AllowOdfPatchByInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:RequireInHouseInstaller[1]</con:xpath>
+              <con:element>RequireInHouseInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:IsDslOption[1]</con:xpath>
+              <con:element>IsDslOption</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[1]/ns1:KpnFpiDown[1]</con:xpath>
+              <con:element>KpnFpiDown</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:IspId[1]</con:xpath>
+              <con:element>IspId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>VDF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:Technology[1]</con:xpath>
+              <con:element>Technology</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Xgspon</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:PassiveOperator[1]</con:xpath>
+              <con:element>PassiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:ActiveOperator[1]</con:xpath>
+              <con:element>ActiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GlasOperator</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:CoverageArea[1]</con:xpath>
+              <con:element>CoverageArea</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF TST-ODF1 103A</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:TariffRegion[1]</con:xpath>
+              <con:element>TariffRegion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>ODF-OpenDutchFiber</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:FirstPossibleDeliveryDate[1]</con:xpath>
+              <con:element>FirstPossibleDeliveryDate</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-12T00:00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:State[1]</con:xpath>
+              <con:element>State</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:LeadTimeWorkingDays[1]</con:xpath>
+              <con:element>LeadTimeWorkingDays</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:ExpectedDownSpeed[1]</con:xpath>
+              <con:element>ExpectedDownSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:ExpectedUpSpeed[1]</con:xpath>
+              <con:element>ExpectedUpSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:DeliveryScenario[1]</con:xpath>
+              <con:element>DeliveryScenario</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>IO_H</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:FtuType[1]</con:xpath>
+              <con:element>FtuType</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>FTU-AU_AT01</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:DataProvider[1]</con:xpath>
+              <con:element>DataProvider</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>TelcoSys Supplier</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:AllowOdfPatchByInstaller[1]</con:xpath>
+              <con:element>AllowOdfPatchByInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:RequireInHouseInstaller[1]</con:xpath>
+              <con:element>RequireInHouseInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:IsDslOption[1]</con:xpath>
+              <con:element>IsDslOption</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[2]/ns1:KpnFpiDown[1]</con:xpath>
+              <con:element>KpnFpiDown</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:IspId[1]</con:xpath>
+              <con:element>IspId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>VDF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:Technology[1]</con:xpath>
+              <con:element>Technology</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Gpon</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:PassiveOperator[1]</con:xpath>
+              <con:element>PassiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:ActiveOperator[1]</con:xpath>
+              <con:element>ActiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GlasOperator</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:CoverageArea[1]</con:xpath>
+              <con:element>CoverageArea</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF TST-ODF1 103A</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:TariffRegion[1]</con:xpath>
+              <con:element>TariffRegion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>ODF-OpenDutchFiber</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:FirstPossibleDeliveryDate[1]</con:xpath>
+              <con:element>FirstPossibleDeliveryDate</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-12T00:00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:State[1]</con:xpath>
+              <con:element>State</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Lead</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:LeadTimeWorkingDays[1]</con:xpath>
+              <con:element>LeadTimeWorkingDays</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>5</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:ExpectedDownSpeed[1]</con:xpath>
+              <con:element>ExpectedDownSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:ExpectedUpSpeed[1]</con:xpath>
+              <con:element>ExpectedUpSpeed</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1000000</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:DeliveryScenario[1]</con:xpath>
+              <con:element>DeliveryScenario</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>IO_H</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:FtuType[1]</con:xpath>
+              <con:element>FtuType</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>FTU-AU_AT01</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:DataProvider[1]</con:xpath>
+              <con:element>DataProvider</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>TelcoSys Supplier</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:AllowOdfPatchByInstaller[1]</con:xpath>
+              <con:element>AllowOdfPatchByInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:RequireInHouseInstaller[1]</con:xpath>
+              <con:element>RequireInHouseInstaller</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:IsDslOption[1]</con:xpath>
+              <con:element>IsDslOption</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:Coverage[1]/ns1:e[1]/ns1:Options[1]/ns1:e[3]/ns1:KpnFpiDown[1]</con:xpath>
+              <con:element>KpnFpiDown</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>false</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:RawRequest[1]</con:xpath>
+              <con:element>RawRequest</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>PFN0dWJiZWQ+Tm8gYWN0dWFsIG1lc3NhZ2UuIFJlc3VsdCB3YXMgc3R1YmJlZCBmb3IgMTIzNFhYPC9TdHViYmVkPg==</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:RawReply[1]</con:xpath>
+              <con:element>RawReply</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>PFN0dWJiZWQ+Tm90IGFuIGFjdHVhbCBtZXNzYWdlIGZyb20gS1BOLCB0aGlzIGlzIHdoYXQgYSByZXNwb25zZSBDT1VMRCBoYXZlIGxvb2tlZCBsaWtlLiBSZXN1bHRzIGFyZSBzdHViYmVkIGZvciAxMjM0WFg8L1N0dWJiZWQ+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48RW52ZWxvcGUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48Qm9keT48YnNhZnBpcmVzcG9uc2UgeG1sbnM9Imh0dHA6Ly94ZHNsLmtwbi5jb20vZnBpLzI2L3Jlc3BvbnNlIj48bWVzc2FnZWhlYWRlcj48b3JpZ2luYXRvcj5TVFVCPC9vcmlnaW5hdG9yPjxyZWNpcGllbnQ+TFRFTDwvcmVjaXBpZW50Pjx0aW1lc3RhbXA+MjAyMTA3MDUwOTQ3MzU8L3RpbWVzdGFtcD48L21lc3NhZ2VoZWFkZXI+PG1lc3NhZ2Vib2R5PjxlbmR1c2VyaW5mbz48cmVxdWVzdGVkLWhvdXNlbnVtYmVyPjI8L3JlcXVlc3RlZC1ob3VzZW51bWJlcj48cmVxdWVzdGVkLWhvdXNlbnJleHQ+RC1sZWFkPC9yZXF1ZXN0ZWQtaG91c2VucmV4dD48cmVxdWVzdGVkLXppcGNvZGU+MTIzNFhYPC9yZXF1ZXN0ZWQtemlwY29kZT48L2VuZHVzZXJpbmZvPjxhY3R1YWx1c2VyaW5mbz48aG91c2VudW1iZXI+MjwvaG91c2VudW1iZXI+PGhvdXNlbnJleHQ+RC1sZWFkPC9ob3VzZW5yZXh0Pjx6aXBjb2RlPjEyMzRYWDwvemlwY29kZT48L2FjdHVhbHVzZXJpbmZvPjxjYXJyaWVydmVuZG9yPjxjYXJyaWVyLXZlbmRvci1pZD5TREY8L2NhcnJpZXItdmVuZG9yLWlkPjxjYXJyaWVyLXN0YXR1cz5PPC9jYXJyaWVyLXN0YXR1cz48bmwtdHlwZT4xPC9ubC10eXBlPjwvY2FycmllcnZlbmRvcj48Y2FycmllcnZlbmRvcj48Y2Fycmllci12ZW5kb3ItaWQ+UkVHRzwvY2Fycmllci12ZW5kb3ItaWQ+PGNhcnJpZXItc3RhdHVzPk88L2NhcnJpZXItc3RhdHVzPjxmdHUtdHlwZT5GVFVfVFkwMTwvZnR1LXR5cGU+PG5sLXR5cGU+NjwvbmwtdHlwZT48L2NhcnJpZXJ2ZW5kb3I+PGVycm9yaW5mbz48ZXJyb3Jjb2RlPjA8L2Vycm9yY29kZT48L2Vycm9yaW5mbz48L21lc3NhZ2Vib2R5PjwvYnNhZnBpcmVzcG9uc2U+PC9Cb2R5PjwvRW52ZWxvcGU+</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:Source[1]</con:xpath>
+              <con:element>Source</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>KPN FPI</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:CommentCode[1]</con:xpath>
+              <con:element>CommentCode</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[1]/ns1:FpiErrorCode[1]</con:xpath>
+              <con:element>FpiErrorCode</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[2]/ns1:RawRequest[1]</con:xpath>
+              <con:element>RawRequest</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>MTIzNFhYIDIgRC1sZWFk</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[2]/ns1:RawReply[1]</con:xpath>
+              <con:element>RawReply</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>exists</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>W3siUG9zdGFsQ29kZSI6IjEyMzRYWCIsIkhvdXNlTnVtYmVyIjoyLCJIb3VzZU51bWJlckFkZGl0aW9uIjoiRC1MRUFEIiwiUm9vbSI6bnVsbCwiU3RyZWV0IjoiVGVzdGxhbmUiLCJDaXR5IjoiTWFnZW50YXRvd24iLCJGaWJlciI6MSwiUGFzc2l2ZU9wZXJhdG9yIjoiT1BGIiwiQ292ZXJhZ2VBcmVhIjoiT1BGIFRTVC1PREYxIDEwM0EiLCJQYXNzaXZlQ29ubmVjdFNjZW5hcmlvIjoiSU9fSCIsIkZ0dVR5cGUiOiJGVFUtQVVfQVQwMSIsIlBsYW5EYXRlIjoiMjAyMS0wMS0wMVQwMDowMDowMCswMjowMCJ9XQ==</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage';
+//ns1:Response[1]/ns1:CommunicationLogs[1]/ns1:e[2]/ns1:Source[1]</con:xpath>
+              <con:element>Source</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Open Dutch Fiber coverage check</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage><![CDATA[<Response xmlns="https://goispapicoveragecheck2018-acc.glasoperator.nl/api/Coverage/CheckCoverage">
+   <Coverage>
+      <e>
+         <Address>
+            <PostalCode>1234XX</PostalCode>
+            <HouseNumber>2</HouseNumber>
+            <HouseNumberAddition>D-lead</HouseNumberAddition>
+            <Street>Klipperaak</Street>
+            <City>BODEGRAVEN</City>
+         </Address>
+         <Options>
+            <e>
+               <IspId>VDF</IspId>
+               <Technology>GofWithFallback</Technology>
+               <PassiveOperator>OPF</PassiveOperator>
+               <ActiveOperator>GlasOperator</ActiveOperator>
+               <CoverageArea>OPF TST-ODF1 103A</CoverageArea>
+               <TariffRegion>ODF-OpenDutchFiber</TariffRegion>
+               <FirstPossibleDeliveryDate>2021-07-12T00:00:00</FirstPossibleDeliveryDate>
+               <State>Lead</State>
+               <LeadTimeWorkingDays>5</LeadTimeWorkingDays>
+               <ExpectedDownSpeed>1000000</ExpectedDownSpeed>
+               <ExpectedUpSpeed>1000000</ExpectedUpSpeed>
+               <DeliveryScenario>IO_H</DeliveryScenario>
+               <FtuType>FTU-AU_AT01</FtuType>
+               <DataProvider>TelcoSys Supplier</DataProvider>
+               <AllowOdfPatchByInstaller>false</AllowOdfPatchByInstaller>
+               <RequireInHouseInstaller>true</RequireInHouseInstaller>
+               <IsDslOption>false</IsDslOption>
+               <KpnFpiDown>false</KpnFpiDown>
+            </e>
+            <e>
+               <IspId>VDF</IspId>
+               <Technology>Xgspon</Technology>
+               <PassiveOperator>OPF</PassiveOperator>
+               <ActiveOperator>GlasOperator</ActiveOperator>
+               <CoverageArea>OPF TST-ODF1 103A</CoverageArea>
+               <TariffRegion>ODF-OpenDutchFiber</TariffRegion>
+               <FirstPossibleDeliveryDate>2021-07-12T00:00:00</FirstPossibleDeliveryDate>
+               <State>Lead</State>
+               <LeadTimeWorkingDays>5</LeadTimeWorkingDays>
+               <ExpectedDownSpeed>1000000</ExpectedDownSpeed>
+               <ExpectedUpSpeed>1000000</ExpectedUpSpeed>
+               <DeliveryScenario>IO_H</DeliveryScenario>
+               <FtuType>FTU-AU_AT01</FtuType>
+               <DataProvider>TelcoSys Supplier</DataProvider>
+               <AllowOdfPatchByInstaller>false</AllowOdfPatchByInstaller>
+               <RequireInHouseInstaller>true</RequireInHouseInstaller>
+               <IsDslOption>false</IsDslOption>
+               <KpnFpiDown>false</KpnFpiDown>
+            </e>
+            <e>
+               <IspId>VDF</IspId>
+               <Technology>Gpon</Technology>
+               <PassiveOperator>OPF</PassiveOperator>
+               <ActiveOperator>GlasOperator</ActiveOperator>
+               <CoverageArea>OPF TST-ODF1 103A</CoverageArea>
+               <TariffRegion>ODF-OpenDutchFiber</TariffRegion>
+               <FirstPossibleDeliveryDate>2021-07-12T00:00:00</FirstPossibleDeliveryDate>
+               <State>Lead</State>
+               <LeadTimeWorkingDays>5</LeadTimeWorkingDays>
+               <ExpectedDownSpeed>1000000</ExpectedDownSpeed>
+               <ExpectedUpSpeed>1000000</ExpectedUpSpeed>
+               <DeliveryScenario>IO_H</DeliveryScenario>
+               <FtuType>FTU-AU_AT01</FtuType>
+               <DataProvider>TelcoSys Supplier</DataProvider>
+               <AllowOdfPatchByInstaller>false</AllowOdfPatchByInstaller>
+               <RequireInHouseInstaller>true</RequireInHouseInstaller>
+               <IsDslOption>false</IsDslOption>
+               <KpnFpiDown>false</KpnFpiDown>
+            </e>
+         </Options>
+      </e>
+   </Coverage>
+   <CommunicationLogs>
+      <e>
+         <RawRequest>PFN0dWJiZWQ+Tm8gYWN0dWFsIG1lc3NhZ2UuIFJlc3VsdCB3YXMgc3R1YmJlZCBmb3IgMTIzNFhYPC9TdHViYmVkPg==</RawRequest>
+         <RawReply>PFN0dWJiZWQ+Tm90IGFuIGFjdHVhbCBtZXNzYWdlIGZyb20gS1BOLCB0aGlzIGlzIHdoYXQgYSByZXNwb25zZSBDT1VMRCBoYXZlIGxvb2tlZCBsaWtlLiBSZXN1bHRzIGFyZSBzdHViYmVkIGZvciAxMjM0WFg8L1N0dWJiZWQ+PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48RW52ZWxvcGUgeG1sbnM6eHNpPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYS1pbnN0YW5jZSIgeG1sbnM6eHNkPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeG1sbnM9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIj48Qm9keT48YnNhZnBpcmVzcG9uc2UgeG1sbnM9Imh0dHA6Ly94ZHNsLmtwbi5jb20vZnBpLzI2L3Jlc3BvbnNlIj48bWVzc2FnZWhlYWRlcj48b3JpZ2luYXRvcj5TVFVCPC9vcmlnaW5hdG9yPjxyZWNpcGllbnQ+TFRFTDwvcmVjaXBpZW50Pjx0aW1lc3RhbXA+MjAyMTA3MDUwOTQ3MzU8L3RpbWVzdGFtcD48L21lc3NhZ2VoZWFkZXI+PG1lc3NhZ2Vib2R5PjxlbmR1c2VyaW5mbz48cmVxdWVzdGVkLWhvdXNlbnVtYmVyPjI8L3JlcXVlc3RlZC1ob3VzZW51bWJlcj48cmVxdWVzdGVkLWhvdXNlbnJleHQ+RC1sZWFkPC9yZXF1ZXN0ZWQtaG91c2VucmV4dD48cmVxdWVzdGVkLXppcGNvZGU+MTIzNFhYPC9yZXF1ZXN0ZWQtemlwY29kZT48L2VuZHVzZXJpbmZvPjxhY3R1YWx1c2VyaW5mbz48aG91c2VudW1iZXI+MjwvaG91c2VudW1iZXI+PGhvdXNlbnJleHQ+RC1sZWFkPC9ob3VzZW5yZXh0Pjx6aXBjb2RlPjEyMzRYWDwvemlwY29kZT48L2FjdHVhbHVzZXJpbmZvPjxjYXJyaWVydmVuZG9yPjxjYXJyaWVyLXZlbmRvci1pZD5TREY8L2NhcnJpZXItdmVuZG9yLWlkPjxjYXJyaWVyLXN0YXR1cz5PPC9jYXJyaWVyLXN0YXR1cz48bmwtdHlwZT4xPC9ubC10eXBlPjwvY2FycmllcnZlbmRvcj48Y2FycmllcnZlbmRvcj48Y2Fycmllci12ZW5kb3ItaWQ+UkVHRzwvY2Fycmllci12ZW5kb3ItaWQ+PGNhcnJpZXItc3RhdHVzPk88L2NhcnJpZXItc3RhdHVzPjxmdHUtdHlwZT5GVFVfVFkwMTwvZnR1LXR5cGU+PG5sLXR5cGU+NjwvbmwtdHlwZT48L2NhcnJpZXJ2ZW5kb3I+PGVycm9yaW5mbz48ZXJyb3Jjb2RlPjA8L2Vycm9yY29kZT48L2Vycm9yaW5mbz48L21lc3NhZ2Vib2R5PjwvYnNhZnBpcmVzcG9uc2U+PC9Cb2R5PjwvRW52ZWxvcGU+</RawReply>
+         <Source>KPN FPI</Source>
+         <CommentCode/>
+         <FpiErrorCode>0</FpiErrorCode>
+      </e>
+      <e>
+         <RawRequest>MTIzNFhYIDIgRC1sZWFk</RawRequest>
+         <RawReply>W3siUG9zdGFsQ29kZSI6IjEyMzRYWCIsIkhvdXNlTnVtYmVyIjoyLCJIb3VzZU51bWJlckFkZGl0aW9uIjoiRC1MRUFEIiwiUm9vbSI6bnVsbCwiU3RyZWV0IjoiVGVzdGxhbmUiLCJDaXR5IjoiTWFnZW50YXRvd24iLCJGaWJlciI6MSwiUGFzc2l2ZU9wZXJhdG9yIjoiT1BGIiwiQ292ZXJhZ2VBcmVhIjoiT1BGIFRTVC1PREYxIDEwM0EiLCJQYXNzaXZlQ29ubmVjdFNjZW5hcmlvIjoiSU9fSCIsIkZ0dVR5cGUiOiJGVFUtQVVfQVQwMSIsIlBsYW5EYXRlIjoiMjAyMS0wMS0wMVQwMDowMDowMCswMjowMCJ9XQ==</RawReply>
+         <Source>Open Dutch Fiber coverage check</Source>
+      </e>
+   </CommunicationLogs>
+</Response>]]></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="AssertionGroup" id="eafeb7e4-0051-40b9-8f7b-40436b906161" name="StateAssertion">
+          <con:configuration xsi:type="con:AssertionGroup">
+            <con:selectedAssertions type="JsonPath Match" id="07154df8-c77e-44da-aaf6-8bb0f1195bbb" name="Match content of [State]">
+              <con:configuration>
+                <path>$['Coverage'][0]['Options'][0]['State']</path>
+                <content>"Lead"</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:selectedAssertions>
+            <con:selectedAssertions type="JsonPath Match" id="938e4608-1ae4-49f0-90bb-023869200808" name="Match content of [State]">
+              <con:configuration>
+                <path>$['Coverage'][0]['Options'][0]['State']</path>
+                <content>"Orderable"</content>
+                <allowWildcards>false</allowWildcards>
+                <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+                <ignoreComments>false</ignoreComments>
+              </con:configuration>
+            </con:selectedAssertions>
+            <con:groupLogic>OR</con:groupLogic>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="filter" value="All"/>
+          <con:entry key="showClosed" value="false"/>
+          <con:entry key="postalCode" value="1234XX"/>
+          <con:entry key="houseNumber" value="2"/>
+          <con:entry key="ispId" value="VDF"/>
+          <con:entry key="houseNumberAddition" value="${CombinedOpfAddresses#houseNumberAddition}"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+            <con:authProfile>No Authorization</con:authProfile>
           </con:entry>
           <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
             <con:authProfile>ReadyAPI_Dev</con:authProfile>
@@ -179,4 +1996,34 @@
   </con:testStep>
   <con:properties/>
   <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>0f5a266f-7805-4d4d-87e0-52dd554cba91</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>9b4b79ae-afbe-4a1f-b64d-dff4395040f8</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>7b50cd05-356a-4533-abbb-5099f4032f01</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>723b69e8-af79-40c7-aa2d-67643f854a14</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>85d9a34c-bf13-40a6-8660-3cae12d1bc4b</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>95a7e799-e4cd-4275-bbf4-e83862015f2f</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
 </con:testCase>

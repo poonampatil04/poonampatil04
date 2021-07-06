@@ -10,7 +10,9 @@
     <con:parameters>
       <con:parameter>
         <con:name>clientTypeNamesToSkip</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE">
@@ -234,13 +236,15 @@
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
-      <con:parameters/>
+      <con:parameters>
+        <con:entry key="clientTypeNamesToSkip" value=""/>
+      </con:parameters>
       <con:environmentSpec>
         <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
-          <con:authProfile>test</con:authProfile>
+          <con:authProfile>No Authorization</con:authProfile>
         </con:entry>
         <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-          <con:authProfile>ReadyApi_Test</con:authProfile>
+          <con:authProfile>No Authorization</con:authProfile>
         </con:entry>
         <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
           <con:authProfile>ReadyAPI_Dev</con:authProfile>

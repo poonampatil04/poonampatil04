@@ -10,35 +10,51 @@
     <con:parameters>
       <con:parameter>
         <con:name>ispId</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter required="true">
         <con:name>postalCode</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter>
         <con:name>houseNumber</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter>
         <con:name>houseNumberAddition</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter>
         <con:name>filter</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter>
         <con:name>showClosed</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter>
         <con:name>clientLogInfo</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
       <con:parameter>
         <con:name>useOfflineFpiData</con:name>
+        <con:value/>
         <con:style>QUERY</con:style>
+        <con:default/>
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE">
@@ -267,7 +283,7 @@
     </con:representation>
     <con:request name="Request 1" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
       <con:settings>
-        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="accept" value="text/plain" xmlns="http://eviware.com/soapui/config"/></con:setting>
       </con:settings>
       <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
       <con:request/>
@@ -277,13 +293,22 @@
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-      <con:parameters/>
+      <con:parameters>
+        <con:entry key="filter" value=""/>
+        <con:entry key="clientLogInfo" value=""/>
+        <con:entry key="showClosed" value=""/>
+        <con:entry key="useOfflineFpiData" value=""/>
+        <con:entry key="postalCode" value=""/>
+        <con:entry key="houseNumber" value=""/>
+        <con:entry key="ispId" value=""/>
+        <con:entry key="houseNumberAddition" value=""/>
+      </con:parameters>
       <con:environmentSpec>
         <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
-          <con:authProfile>test</con:authProfile>
+          <con:authProfile>No Authorization</con:authProfile>
         </con:entry>
         <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-          <con:authProfile>ReadyApi_Test</con:authProfile>
+          <con:authProfile>No Authorization</con:authProfile>
         </con:entry>
         <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
           <con:authProfile>ReadyAPI_Dev</con:authProfile>
