@@ -14,11 +14,11 @@
       <con:name>ReadyAPI_Dev</con:name>
       <con:type>OAuth 2.0</con:type>
       <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
-      <con:accessToken>9D6DAB3722FC25B2EFC6CC7254C7324EA7DD5DE2FE71CD8C03C574F23175F8F2</con:accessToken>
+      <con:accessToken>DF52E7CF514C63E16B0EFAF16D9FBC3DE6CE761AAAEFA606D249A88B6ADF6637</con:accessToken>
       <con:accessTokenPosition>HEADER</con:accessTokenPosition>
       <con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus>
       <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
-      <con:accessTokenIssuedTime>1625559439</con:accessTokenIssuedTime>
+      <con:accessTokenIssuedTime>1625564446</con:accessTokenIssuedTime>
       <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
       <con:useManualAccessTokenExpirationTime>false</con:useManualAccessTokenExpirationTime>
       <con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit>
@@ -90,11 +90,11 @@
       <con:name>ReadyAPI_Dev</con:name>
       <con:type>OAuth 2.0</con:type>
       <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
-      <con:accessToken>9D6DAB3722FC25B2EFC6CC7254C7324EA7DD5DE2FE71CD8C03C574F23175F8F2</con:accessToken>
+      <con:accessToken>DF52E7CF514C63E16B0EFAF16D9FBC3DE6CE761AAAEFA606D249A88B6ADF6637</con:accessToken>
       <con:accessTokenPosition>HEADER</con:accessTokenPosition>
       <con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus>
       <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
-      <con:accessTokenIssuedTime>1625559439</con:accessTokenIssuedTime>
+      <con:accessTokenIssuedTime>1625564446</con:accessTokenIssuedTime>
       <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
       <con:useManualAccessTokenExpirationTime>false</con:useManualAccessTokenExpirationTime>
       <con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit>
