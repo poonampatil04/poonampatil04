@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/tmf-api/serviceQualificationManagement/v3/hub" path="/tmf-api/serviceQualificationManagement/v3/hub" id="562fb3a5-3a48-420e-a8f0-ed90e5cb195b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="562fb3a5-3a48-420e-a8f0-ed90e5cb195bfileName">%2Ftmf-api%2FserviceQualificationManagement%2Fv3%2Fhub</con:setting>
+  </con:settings>
+  <con:parameters/>
+</con:resource>

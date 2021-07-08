@@ -1,0 +1,2214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/tmf-api/serviceQualificationManagement/v3/serviceQualification" path="/tmf-api/serviceQualificationManagement/v3/serviceQualification" id="c8503021-1bac-404d-881f-c6eb47f940b9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c8503021-1bac-404d-881f-c6eb47f940b9fileName">%2Ftmf-api%2FserviceQualificationManagement%2Fv3%2FserviceQualification</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST" id="f9df6a52-fc61-4e5d-99c5-c56f2344dfbb" method="POST">
+    <con:description>Creates a ServiceQualification</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "id" : "string",
+  "href" : "string",
+  "description" : "string",
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "expirationDate" : "2015-07-20T15:49:04-07:00",
+  "externalId" : "string",
+  "provideAlternative" : true,
+  "provideOnlyAvailable" : true,
+  "provideUnavailabilityReason" : true,
+  "qualificationResult" : "string",
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "state" : "string",
+  "relatedParty" : [ {
+    "id" : "string",
+    "href" : "string",
+    "name" : "string",
+    "role" : "string",
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string",
+    "@referredType" : "string"
+  } ],
+  "serviceQualificationItem" : [ {
+    "id" : "string",
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+    "expirationDate" : "2015-07-20T15:49:04-07:00",
+    "qualificationResult" : "string",
+    "state" : "string",
+    "alternateServiceProposal" : [ {
+      "id" : "string",
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+      "alternateService" : {
+        "id" : "string",
+        "href" : "string",
+        "category" : "string",
+        "name" : "string",
+        "serviceType" : "string",
+        "place" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "relatedParty" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "serviceCharacteristic" : [ {
+          "name" : "string",
+          "valueType" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceRelationship" : [ {
+          "relationshipType" : "string",
+          "service" : {
+            "id" : "string",
+            "href" : "string",
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string",
+            "@referredType" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceSpecification" : {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "version" : "string",
+          "targetServiceSchema" : {
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "state" : "FeasibilityChecked",
+        "supportingResource" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "supportingService" : [ {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      },
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "category" : {
+      "id" : "string",
+      "href" : "string",
+      "name" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string",
+      "@referredType" : "string"
+    },
+    "eligibilityUnavailabilityReason" : [ {
+      "code" : "string",
+      "label" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationItemRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "service" : {
+      "id" : "string",
+      "href" : "string",
+      "category" : "string",
+      "name" : "string",
+      "serviceType" : "string",
+      "place" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "relatedParty" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "serviceCharacteristic" : [ {
+        "name" : "string",
+        "valueType" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceRelationship" : [ {
+        "relationshipType" : "string",
+        "service" : {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceSpecification" : {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "version" : "string",
+        "targetServiceSchema" : {
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      },
+      "state" : "FeasibilityChecked",
+      "supportingResource" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "supportingService" : [ {
+        "id" : "string",
+        "href" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    },
+    "terminationError" : [ {
+      "id" : "string",
+      "value" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string"
+  } ],
+  "@baseType" : "string",
+  "@schemaLocation" : "string",
+  "@type" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "id" : "string",
+  "href" : "string",
+  "description" : "string",
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "expirationDate" : "2015-07-20T15:49:04-07:00",
+  "externalId" : "string",
+  "provideAlternative" : true,
+  "provideOnlyAvailable" : true,
+  "provideUnavailabilityReason" : true,
+  "qualificationResult" : "string",
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "state" : "string",
+  "relatedParty" : [ {
+    "id" : "string",
+    "href" : "string",
+    "name" : "string",
+    "role" : "string",
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string",
+    "@referredType" : "string"
+  } ],
+  "serviceQualificationItem" : [ {
+    "id" : "string",
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+    "expirationDate" : "2015-07-20T15:49:04-07:00",
+    "qualificationResult" : "string",
+    "state" : "string",
+    "alternateServiceProposal" : [ {
+      "id" : "string",
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+      "alternateService" : {
+        "id" : "string",
+        "href" : "string",
+        "category" : "string",
+        "name" : "string",
+        "serviceType" : "string",
+        "place" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "relatedParty" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "serviceCharacteristic" : [ {
+          "name" : "string",
+          "valueType" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceRelationship" : [ {
+          "relationshipType" : "string",
+          "service" : {
+            "id" : "string",
+            "href" : "string",
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string",
+            "@referredType" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceSpecification" : {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "version" : "string",
+          "targetServiceSchema" : {
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "state" : "FeasibilityChecked",
+        "supportingResource" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "supportingService" : [ {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      },
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "category" : {
+      "id" : "string",
+      "href" : "string",
+      "name" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string",
+      "@referredType" : "string"
+    },
+    "eligibilityUnavailabilityReason" : [ {
+      "code" : "string",
+      "label" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationItemRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "service" : {
+      "id" : "string",
+      "href" : "string",
+      "category" : "string",
+      "name" : "string",
+      "serviceType" : "string",
+      "place" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "relatedParty" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "serviceCharacteristic" : [ {
+        "name" : "string",
+        "valueType" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceRelationship" : [ {
+        "relationshipType" : "string",
+        "service" : {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceSpecification" : {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "version" : "string",
+        "targetServiceSchema" : {
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      },
+      "state" : "FeasibilityChecked",
+      "supportingResource" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "supportingService" : [ {
+        "id" : "string",
+        "href" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    },
+    "terminationError" : [ {
+      "id" : "string",
+      "value" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string"
+  } ],
+  "@baseType" : "string",
+  "@schemaLocation" : "string",
+  "@type" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>{
+  "Code" : 0,
+  "Message" : "string",
+  "ObjectPath" : "string",
+  "ObjectValue" : "string",
+  "StackTrace" : "string",
+  "Type" : "string",
+  "InnerException" : {
+    "Code" : 0,
+    "Message" : "string",
+    "ObjectPath" : "string",
+    "ObjectValue" : "string",
+    "StackTrace" : "string",
+    "Type" : "string",
+    "InnerException" : { },
+    "Source" : "string"
+  },
+  "Source" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>{
+  "Code" : 0,
+  "Message" : "string",
+  "ObjectPath" : "string",
+  "ObjectValue" : "string",
+  "StackTrace" : "string",
+  "Type" : "string",
+  "InnerException" : {
+    "Code" : 0,
+    "Message" : "string",
+    "ObjectPath" : "string",
+    "ObjectValue" : "string",
+    "StackTrace" : "string",
+    "Type" : "string",
+    "InnerException" : { },
+    "Source" : "string"
+  },
+  "Source" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "description" : "string",
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "expirationDate" : "2015-07-20T15:49:04-07:00",
+  "externalId" : "string",
+  "provideAlternative" : true,
+  "provideOnlyAvailable" : true,
+  "provideUnavailabilityReason" : true,
+  "qualificationResult" : "string",
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "state" : "string",
+  "relatedParty" : [ {
+    "id" : "string",
+    "href" : "string",
+    "name" : "string",
+    "role" : "string",
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string",
+    "@referredType" : "string"
+  } ],
+  "serviceQualificationItem" : [ {
+    "id" : "string",
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+    "expirationDate" : "2015-07-20T15:49:04-07:00",
+    "qualificationResult" : "string",
+    "state" : "string",
+    "alternateServiceProposal" : [ {
+      "id" : "string",
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+      "alternateService" : {
+        "id" : "string",
+        "href" : "string",
+        "category" : "string",
+        "name" : "string",
+        "serviceType" : "string",
+        "place" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "relatedParty" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "serviceCharacteristic" : [ {
+          "name" : "string",
+          "valueType" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceRelationship" : [ {
+          "relationshipType" : "string",
+          "service" : {
+            "id" : "string",
+            "href" : "string",
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string",
+            "@referredType" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceSpecification" : {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "version" : "string",
+          "targetServiceSchema" : {
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "state" : "FeasibilityChecked",
+        "supportingResource" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "supportingService" : [ {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      },
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "category" : {
+      "id" : "string",
+      "href" : "string",
+      "name" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string",
+      "@referredType" : "string"
+    },
+    "eligibilityUnavailabilityReason" : [ {
+      "code" : "string",
+      "label" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationItemRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "service" : {
+      "id" : "string",
+      "href" : "string",
+      "category" : "string",
+      "name" : "string",
+      "serviceType" : "string",
+      "place" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "relatedParty" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "serviceCharacteristic" : [ {
+        "name" : "string",
+        "valueType" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceRelationship" : [ {
+        "relationshipType" : "string",
+        "service" : {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceSpecification" : {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "version" : "string",
+        "targetServiceSchema" : {
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      },
+      "state" : "FeasibilityChecked",
+      "supportingResource" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "supportingService" : [ {
+        "id" : "string",
+        "href" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    },
+    "terminationError" : [ {
+      "id" : "string",
+      "value" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string"
+  } ],
+  "@baseType" : "string",
+  "@schemaLocation" : "string",
+  "@type" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "description" : "string",
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "expirationDate" : "2015-07-20T15:49:04-07:00",
+  "externalId" : "string",
+  "provideAlternative" : true,
+  "provideOnlyAvailable" : true,
+  "provideUnavailabilityReason" : true,
+  "qualificationResult" : "string",
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "state" : "string",
+  "relatedParty" : [ {
+    "id" : "string",
+    "href" : "string",
+    "name" : "string",
+    "role" : "string",
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string",
+    "@referredType" : "string"
+  } ],
+  "serviceQualificationItem" : [ {
+    "id" : "string",
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+    "expirationDate" : "2015-07-20T15:49:04-07:00",
+    "qualificationResult" : "string",
+    "state" : "string",
+    "alternateServiceProposal" : [ {
+      "id" : "string",
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+      "alternateService" : {
+        "id" : "string",
+        "href" : "string",
+        "category" : "string",
+        "name" : "string",
+        "serviceType" : "string",
+        "place" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "relatedParty" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "serviceCharacteristic" : [ {
+          "name" : "string",
+          "valueType" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceRelationship" : [ {
+          "relationshipType" : "string",
+          "service" : {
+            "id" : "string",
+            "href" : "string",
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string",
+            "@referredType" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceSpecification" : {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "version" : "string",
+          "targetServiceSchema" : {
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "state" : "FeasibilityChecked",
+        "supportingResource" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "supportingService" : [ {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      },
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "category" : {
+      "id" : "string",
+      "href" : "string",
+      "name" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string",
+      "@referredType" : "string"
+    },
+    "eligibilityUnavailabilityReason" : [ {
+      "code" : "string",
+      "label" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationItemRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "service" : {
+      "id" : "string",
+      "href" : "string",
+      "category" : "string",
+      "name" : "string",
+      "serviceType" : "string",
+      "place" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "relatedParty" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "serviceCharacteristic" : [ {
+        "name" : "string",
+        "valueType" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceRelationship" : [ {
+        "relationshipType" : "string",
+        "service" : {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceSpecification" : {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "version" : "string",
+        "targetServiceSchema" : {
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      },
+      "state" : "FeasibilityChecked",
+      "supportingResource" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "supportingService" : [ {
+        "id" : "string",
+        "href" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    },
+    "terminationError" : [ {
+      "id" : "string",
+      "value" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string"
+  } ],
+  "@baseType" : "string",
+  "@schemaLocation" : "string",
+  "@type" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "description" : "string",
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "expirationDate" : "2015-07-20T15:49:04-07:00",
+  "externalId" : "string",
+  "provideAlternative" : true,
+  "provideOnlyAvailable" : true,
+  "provideUnavailabilityReason" : true,
+  "qualificationResult" : "string",
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",
+  "state" : "string",
+  "relatedParty" : [ {
+    "id" : "string",
+    "href" : "string",
+    "name" : "string",
+    "role" : "string",
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string",
+    "@referredType" : "string"
+  } ],
+  "serviceQualificationItem" : [ {
+    "id" : "string",
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+    "expirationDate" : "2015-07-20T15:49:04-07:00",
+    "qualificationResult" : "string",
+    "state" : "string",
+    "alternateServiceProposal" : [ {
+      "id" : "string",
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",
+      "alternateService" : {
+        "id" : "string",
+        "href" : "string",
+        "category" : "string",
+        "name" : "string",
+        "serviceType" : "string",
+        "place" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "relatedParty" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "role" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "serviceCharacteristic" : [ {
+          "name" : "string",
+          "valueType" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceRelationship" : [ {
+          "relationshipType" : "string",
+          "service" : {
+            "id" : "string",
+            "href" : "string",
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string",
+            "@referredType" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        } ],
+        "serviceSpecification" : {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "version" : "string",
+          "targetServiceSchema" : {
+            "@baseType" : "string",
+            "@schemaLocation" : "string",
+            "@type" : "string"
+          },
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "state" : "FeasibilityChecked",
+        "supportingResource" : [ {
+          "id" : "string",
+          "href" : "string",
+          "name" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "supportingService" : [ {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        } ],
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      },
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "category" : {
+      "id" : "string",
+      "href" : "string",
+      "name" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string",
+      "@referredType" : "string"
+    },
+    "eligibilityUnavailabilityReason" : [ {
+      "code" : "string",
+      "label" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationItemRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "qualificationRelationship" : [ {
+      "id" : "string",
+      "relationshipType" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "service" : {
+      "id" : "string",
+      "href" : "string",
+      "category" : "string",
+      "name" : "string",
+      "serviceType" : "string",
+      "place" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "relatedParty" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "role" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "serviceCharacteristic" : [ {
+        "name" : "string",
+        "valueType" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceRelationship" : [ {
+        "relationshipType" : "string",
+        "service" : {
+          "id" : "string",
+          "href" : "string",
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string",
+          "@referredType" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string"
+      } ],
+      "serviceSpecification" : {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "version" : "string",
+        "targetServiceSchema" : {
+          "@baseType" : "string",
+          "@schemaLocation" : "string",
+          "@type" : "string"
+        },
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      },
+      "state" : "FeasibilityChecked",
+      "supportingResource" : [ {
+        "id" : "string",
+        "href" : "string",
+        "name" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "supportingService" : [ {
+        "id" : "string",
+        "href" : "string",
+        "@baseType" : "string",
+        "@schemaLocation" : "string",
+        "@type" : "string",
+        "@referredType" : "string"
+      } ],
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    },
+    "terminationError" : [ {
+      "id" : "string",
+      "value" : "string",
+      "@baseType" : "string",
+      "@schemaLocation" : "string",
+      "@type" : "string"
+    } ],
+    "@baseType" : "string",
+    "@schemaLocation" : "string",
+    "@type" : "string"
+  } ],
+  "@baseType" : "string",
+  "@schemaLocation" : "string",
+  "@type" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="5b7fa529-e1ff-46e5-a949-1f2727688501" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "description" : "string",\r
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",\r
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "expirationDate" : "2015-07-20T15:49:04-07:00",\r
+  "externalId" : "string",\r
+  "provideAlternative" : true,\r
+  "provideOnlyAvailable" : true,\r
+  "provideUnavailabilityReason" : true,\r
+  "qualificationResult" : "string",\r
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "state" : "string",\r
+  "relatedParty" : [ {\r
+    "id" : "string",\r
+    "href" : "string",\r
+    "name" : "string",\r
+    "role" : "string",\r
+    "@baseType" : "string",\r
+    "@schemaLocation" : "string",\r
+    "@type" : "string",\r
+    "@referredType" : "string"\r
+  } ],\r
+  "serviceQualificationItem" : [ {\r
+    "id" : "string",\r
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",\r
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",\r
+    "expirationDate" : "2015-07-20T15:49:04-07:00",\r
+    "qualificationResult" : "string",\r
+    "state" : "string",\r
+    "alternateServiceProposal" : [ {\r
+      "id" : "string",\r
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",\r
+      "alternateService" : {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "category" : "string",\r
+        "name" : "string",\r
+        "serviceType" : "string",\r
+        "place" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "role" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "relatedParty" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "role" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "serviceCharacteristic" : [ {\r
+          "name" : "string",\r
+          "valueType" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "serviceRelationship" : [ {\r
+          "relationshipType" : "string",\r
+          "service" : {\r
+            "id" : "string",\r
+            "href" : "string",\r
+            "@baseType" : "string",\r
+            "@schemaLocation" : "string",\r
+            "@type" : "string",\r
+            "@referredType" : "string"\r
+          },\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "serviceSpecification" : {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "version" : "string",\r
+          "targetServiceSchema" : {\r
+            "@baseType" : "string",\r
+            "@schemaLocation" : "string",\r
+            "@type" : "string"\r
+          },\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        },\r
+        "state" : "FeasibilityChecked",\r
+        "supportingResource" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "supportingService" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      },\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "category" : {\r
+      "id" : "string",\r
+      "href" : "string",\r
+      "name" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string",\r
+      "@referredType" : "string"\r
+    },\r
+    "eligibilityUnavailabilityReason" : [ {\r
+      "code" : "string",\r
+      "label" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "qualificationItemRelationship" : [ {\r
+      "id" : "string",\r
+      "relationshipType" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "qualificationRelationship" : [ {\r
+      "id" : "string",\r
+      "relationshipType" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "service" : {\r
+      "id" : "string",\r
+      "href" : "string",\r
+      "category" : "string",\r
+      "name" : "string",\r
+      "serviceType" : "string",\r
+      "place" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "role" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "relatedParty" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "role" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "serviceCharacteristic" : [ {\r
+        "name" : "string",\r
+        "valueType" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "serviceRelationship" : [ {\r
+        "relationshipType" : "string",\r
+        "service" : {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        },\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "serviceSpecification" : {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "version" : "string",\r
+        "targetServiceSchema" : {\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        },\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      },\r
+      "state" : "FeasibilityChecked",\r
+      "supportingResource" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "supportingService" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    },\r
+    "terminationError" : [ {\r
+      "id" : "string",\r
+      "value" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "@baseType" : "string",\r
+    "@schemaLocation" : "string",\r
+    "@type" : "string"\r
+  } ],\r
+  "@baseType" : "string",\r
+  "@schemaLocation" : "string",\r
+  "@type" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+          <con:authProfile>ReadyAPI_Dev</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:request name="Request 2" id="7d98fec2-48e1-4612-a19a-80ba2ac83749" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "description" : "string",\r
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",\r
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "expirationDate" : "2015-07-20T15:49:04-07:00",\r
+  "externalId" : "string",\r
+  "provideAlternative" : true,\r
+  "provideOnlyAvailable" : true,\r
+  "provideUnavailabilityReason" : true,\r
+  "qualificationResult" : "string",\r
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "state" : "string",\r
+  "relatedParty" : [ {\r
+    "id" : "string",\r
+    "href" : "string",\r
+    "name" : "string",\r
+    "role" : "string",\r
+    "@baseType" : "string",\r
+    "@schemaLocation" : "string",\r
+    "@type" : "string",\r
+    "@referredType" : "string"\r
+  } ],\r
+  "serviceQualificationItem" : [ {\r
+    "id" : "string",\r
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",\r
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",\r
+    "expirationDate" : "2015-07-20T15:49:04-07:00",\r
+    "qualificationResult" : "string",\r
+    "state" : "string",\r
+    "alternateServiceProposal" : [ {\r
+      "id" : "string",\r
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",\r
+      "alternateService" : {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "category" : "string",\r
+        "name" : "string",\r
+        "serviceType" : "string",\r
+        "place" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "role" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "relatedParty" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "role" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "serviceCharacteristic" : [ {\r
+          "name" : "string",\r
+          "valueType" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "serviceRelationship" : [ {\r
+          "relationshipType" : "string",\r
+          "service" : {\r
+            "id" : "string",\r
+            "href" : "string",\r
+            "@baseType" : "string",\r
+            "@schemaLocation" : "string",\r
+            "@type" : "string",\r
+            "@referredType" : "string"\r
+          },\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "serviceSpecification" : {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "version" : "string",\r
+          "targetServiceSchema" : {\r
+            "@baseType" : "string",\r
+            "@schemaLocation" : "string",\r
+            "@type" : "string"\r
+          },\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        },\r
+        "state" : "FeasibilityChecked",\r
+        "supportingResource" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "supportingService" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      },\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "category" : {\r
+      "id" : "string",\r
+      "href" : "string",\r
+      "name" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string",\r
+      "@referredType" : "string"\r
+    },\r
+    "eligibilityUnavailabilityReason" : [ {\r
+      "code" : "string",\r
+      "label" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "qualificationItemRelationship" : [ {\r
+      "id" : "string",\r
+      "relationshipType" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "qualificationRelationship" : [ {\r
+      "id" : "string",\r
+      "relationshipType" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "service" : {\r
+      "id" : "string",\r
+      "href" : "string",\r
+      "category" : "string",\r
+      "name" : "string",\r
+      "serviceType" : "string",\r
+      "place" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "role" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "relatedParty" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "role" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "serviceCharacteristic" : [ {\r
+        "name" : "string",\r
+        "valueType" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "serviceRelationship" : [ {\r
+        "relationshipType" : "string",\r
+        "service" : {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        },\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "serviceSpecification" : {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "version" : "string",\r
+        "targetServiceSchema" : {\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        },\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      },\r
+      "state" : "FeasibilityChecked",\r
+      "supportingResource" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "supportingService" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    },\r
+    "terminationError" : [ {\r
+      "id" : "string",\r
+      "value" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "@baseType" : "string",\r
+    "@schemaLocation" : "string",\r
+    "@type" : "string"\r
+  } ],\r
+  "@baseType" : "string",\r
+  "@schemaLocation" : "string",\r
+  "@type" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+          <con:authProfile>ReadyAPI_Dev</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+    <con:request name="Request 3" id="d85d1935-cc2b-4974-98ea-e324d847c92d" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "description" : "string",\r
+  "effectiveQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "estimatedResponseDate" : "2015-07-20T15:49:04-07:00",\r
+  "expectedQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "expirationDate" : "2015-07-20T15:49:04-07:00",\r
+  "externalId" : "string",\r
+  "provideAlternative" : true,\r
+  "provideOnlyAvailable" : true,\r
+  "provideUnavailabilityReason" : true,\r
+  "qualificationResult" : "string",\r
+  "serviceQualificationDate" : "2015-07-20T15:49:04-07:00",\r
+  "state" : "string",\r
+  "relatedParty" : [ {\r
+    "id" : "string",\r
+    "href" : "string",\r
+    "name" : "string",\r
+    "role" : "string",\r
+    "@baseType" : "string",\r
+    "@schemaLocation" : "string",\r
+    "@type" : "string",\r
+    "@referredType" : "string"\r
+  } ],\r
+  "serviceQualificationItem" : [ {\r
+    "id" : "string",\r
+    "expectedActivationDate" : "2015-07-20T15:49:04-07:00",\r
+    "expectedServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",\r
+    "expirationDate" : "2015-07-20T15:49:04-07:00",\r
+    "qualificationResult" : "string",\r
+    "state" : "string",\r
+    "alternateServiceProposal" : [ {\r
+      "id" : "string",\r
+      "alternateServiceAvailabilityDate" : "2015-07-20T15:49:04-07:00",\r
+      "alternateService" : {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "category" : "string",\r
+        "name" : "string",\r
+        "serviceType" : "string",\r
+        "place" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "role" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "relatedParty" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "role" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "serviceCharacteristic" : [ {\r
+          "name" : "string",\r
+          "valueType" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "serviceRelationship" : [ {\r
+          "relationshipType" : "string",\r
+          "service" : {\r
+            "id" : "string",\r
+            "href" : "string",\r
+            "@baseType" : "string",\r
+            "@schemaLocation" : "string",\r
+            "@type" : "string",\r
+            "@referredType" : "string"\r
+          },\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        } ],\r
+        "serviceSpecification" : {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "version" : "string",\r
+          "targetServiceSchema" : {\r
+            "@baseType" : "string",\r
+            "@schemaLocation" : "string",\r
+            "@type" : "string"\r
+          },\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        },\r
+        "state" : "FeasibilityChecked",\r
+        "supportingResource" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "name" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "supportingService" : [ {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        } ],\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      },\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "category" : {\r
+      "id" : "string",\r
+      "href" : "string",\r
+      "name" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string",\r
+      "@referredType" : "string"\r
+    },\r
+    "eligibilityUnavailabilityReason" : [ {\r
+      "code" : "string",\r
+      "label" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "qualificationItemRelationship" : [ {\r
+      "id" : "string",\r
+      "relationshipType" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "qualificationRelationship" : [ {\r
+      "id" : "string",\r
+      "relationshipType" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "service" : {\r
+      "id" : "string",\r
+      "href" : "string",\r
+      "category" : "string",\r
+      "name" : "string",\r
+      "serviceType" : "string",\r
+      "place" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "role" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "relatedParty" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "role" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "serviceCharacteristic" : [ {\r
+        "name" : "string",\r
+        "valueType" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "serviceRelationship" : [ {\r
+        "relationshipType" : "string",\r
+        "service" : {\r
+          "id" : "string",\r
+          "href" : "string",\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string",\r
+          "@referredType" : "string"\r
+        },\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string"\r
+      } ],\r
+      "serviceSpecification" : {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "version" : "string",\r
+        "targetServiceSchema" : {\r
+          "@baseType" : "string",\r
+          "@schemaLocation" : "string",\r
+          "@type" : "string"\r
+        },\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      },\r
+      "state" : "FeasibilityChecked",\r
+      "supportingResource" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "name" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "supportingService" : [ {\r
+        "id" : "string",\r
+        "href" : "string",\r
+        "@baseType" : "string",\r
+        "@schemaLocation" : "string",\r
+        "@type" : "string",\r
+        "@referredType" : "string"\r
+      } ],\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    },\r
+    "terminationError" : [ {\r
+      "id" : "string",\r
+      "value" : "string",\r
+      "@baseType" : "string",\r
+      "@schemaLocation" : "string",\r
+      "@type" : "string"\r
+    } ],\r
+    "@baseType" : "string",\r
+    "@schemaLocation" : "string",\r
+    "@type" : "string"\r
+  } ],\r
+  "@baseType" : "string",\r
+  "@schemaLocation" : "string",\r
+  "@type" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+      <con:environmentSpec>
+        <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+          <con:authProfile>ReadyAPI_Dev</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

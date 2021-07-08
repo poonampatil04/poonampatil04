@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testSuite id="abc32bae-37d7-4354-852a-a608738be120" name="Go.CoverageChecker" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="abc32bae-37d7-4354-852a-a608738be120fileName">Go.CoverageChecker</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:runType>SEQUENTIAL</con:runType>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testSuite>

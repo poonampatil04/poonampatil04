@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Coverage/CheckCoverage" path="/api/Coverage/CheckCoverage" id="c956da42-7223-41de-8381-fb1e1226bb7c" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="c956da42-7223-41de-8381-fb1e1226bb7cfileName">%2Fapi%2FCoverage%2FCheckCoverage</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="3733c941-39ce-41a7-9452-28cad18bab2a" method="GET">
+    <con:description>Get the list of possible services available at the given address</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter>
+        <con:name>ispId</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>postalCode</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>houseNumber</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>houseNumberAddition</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>filter</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>showClosed</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>clientLogInfo</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+      <con:parameter>
+        <con:name>useOfflineFpiData</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:default/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "Coverage" : [ {
+    "Address" : {
+      "PostalCode" : "string",
+      "HouseNumber" : 0,
+      "HouseNumberAddition" : "string",
+      "Room" : "string",
+      "Street" : "string",
+      "City" : "string"
+    },
+    "Options" : [ {
+      "IspId" : "string",
+      "Technology" : "GofWithFallback",
+      "PassiveOperator" : "string",
+      "ActiveOperator" : "None",
+      "CoverageArea" : "string",
+      "TariffRegion" : "string",
+      "FirstPossibleDeliveryDate" : "2015-07-20T15:49:04-07:00",
+      "State" : "Unknown",
+      "LeadTimeWorkingDays" : 0,
+      "ExpectedDownSpeed" : 0,
+      "ExpectedUpSpeed" : 0,
+      "DeliveryScenario" : "string",
+      "ReasonNotOrderable" : "string",
+      "WbaAccessArea" : "string",
+      "FtuType" : "string",
+      "DataProvider" : "string",
+      "WbaDslAansluitwaarde" : 0,
+      "AllowOdfPatchByInstaller" : true,
+      "RequireInHouseInstaller" : true,
+      "PresentOntType" : "string",
+      "IsDslOption" : true,
+      "KpnFpiDown" : true
+    } ]
+  } ],
+  "CommunicationLogs" : [ {
+    "Source" : "string",
+    "CommentCode" : "string",
+    "FpiErrorCode" : 0
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "Coverage" : [ {
+    "Address" : {
+      "PostalCode" : "string",
+      "HouseNumber" : 0,
+      "HouseNumberAddition" : "string",
+      "Room" : "string",
+      "Street" : "string",
+      "City" : "string"
+    },
+    "Options" : [ {
+      "IspId" : "string",
+      "Technology" : "GofWithFallback",
+      "PassiveOperator" : "string",
+      "ActiveOperator" : "None",
+      "CoverageArea" : "string",
+      "TariffRegion" : "string",
+      "FirstPossibleDeliveryDate" : "2015-07-20T15:49:04-07:00",
+      "State" : "Unknown",
+      "LeadTimeWorkingDays" : 0,
+      "ExpectedDownSpeed" : 0,
+      "ExpectedUpSpeed" : 0,
+      "DeliveryScenario" : "string",
+      "ReasonNotOrderable" : "string",
+      "WbaAccessArea" : "string",
+      "FtuType" : "string",
+      "DataProvider" : "string",
+      "WbaDslAansluitwaarde" : 0,
+      "AllowOdfPatchByInstaller" : true,
+      "RequireInHouseInstaller" : true,
+      "PresentOntType" : "string",
+      "IsDslOption" : true,
+      "KpnFpiDown" : true
+    } ]
+  } ],
+  "CommunicationLogs" : [ {
+    "Source" : "string",
+    "CommentCode" : "string",
+    "FpiErrorCode" : 0
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>400</con:status>
+      <con:params/>
+      <con:description>Bad Request</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>401</con:status>
+      <con:params/>
+      <con:description>Unauthorized</con:description>
+      <con:sampleContent>{
+  "type" : "string",
+  "title" : "string",
+  "status" : 0,
+  "detail" : "string",
+  "instance" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent xsi:nil="true"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>{
+  "Code" : 0,
+  "Message" : "string",
+  "ObjectPath" : "string",
+  "ObjectValue" : "string",
+  "StackTrace" : "string",
+  "Type" : "string",
+  "InnerException" : {
+    "Code" : 0,
+    "Message" : "string",
+    "ObjectPath" : "string",
+    "ObjectValue" : "string",
+    "StackTrace" : "string",
+    "Type" : "string",
+    "InnerException" : { },
+    "Source" : "string"
+  },
+  "Source" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>500</con:status>
+      <con:params/>
+      <con:description>Server Error</con:description>
+      <con:sampleContent>{
+  "Code" : 0,
+  "Message" : "string",
+  "ObjectPath" : "string",
+  "ObjectValue" : "string",
+  "StackTrace" : "string",
+  "Type" : "string",
+  "InnerException" : {
+    "Code" : 0,
+    "Message" : "string",
+    "ObjectPath" : "string",
+    "ObjectValue" : "string",
+    "StackTrace" : "string",
+    "Type" : "string",
+    "InnerException" : { },
+    "Source" : "string"
+  },
+  "Source" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="accept" value="text/plain" xmlns="http://eviware.com/soapui/config"/></con:setting>
+      </con:settings>
+      <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+      <con:request/>
+      <con:originalUri>https://goispapicoveragecheck2018-dev.glasoperator.nl/swagger/v1/swagger.json/api/Coverage/CheckCoverage</con:originalUri>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="filter" value=""/>
+        <con:entry key="clientLogInfo" value=""/>
+        <con:entry key="showClosed" value=""/>
+        <con:entry key="useOfflineFpiData" value=""/>
+        <con:entry key="postalCode" value=""/>
+        <con:entry key="houseNumber" value=""/>
+        <con:entry key="ispId" value=""/>
+        <con:entry key="houseNumberAddition" value=""/>
+      </con:parameters>
+      <con:environmentSpec>
+        <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+          <con:authProfile>No Authorization</con:authProfile>
+        </con:entry>
+        <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+          <con:authProfile>ReadyAPI_Dev</con:authProfile>
+        </con:entry>
+      </con:environmentSpec>
+    </con:request>
+  </con:method>
+</con:resource>

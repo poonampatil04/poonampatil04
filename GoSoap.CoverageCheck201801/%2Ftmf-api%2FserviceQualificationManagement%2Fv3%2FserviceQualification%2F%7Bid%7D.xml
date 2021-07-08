@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/tmf-api/serviceQualificationManagement/v3/serviceQualification/{id}" path="/tmf-api/serviceQualificationManagement/v3/serviceQualification/{id}" id="6eafcbc8-3c2a-4ab9-8499-fb695bbf9e5d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="6eafcbc8-3c2a-4ab9-8499-fb695bbf9e5dfileName">%2Ftmf-api%2FserviceQualificationManagement%2Fv3%2FserviceQualification%2F%7Bid%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+</con:resource>

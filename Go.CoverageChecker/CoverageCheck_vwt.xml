@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="0d515c6d-835d-4d7b-97a3-367b1440be71" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CoverageCheck_vwt" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0d515c6d-835d-4d7b-97a3-367b1440be71fileName">CoverageCheck_vwt</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="restrequest" name="CoverageCheck_VWT" id="78516690-1771-4c68-954c-ca4343c10573">
+    <con:settings/>
+    <con:config service="GoSoap.CoverageCheck201801" resourcePath="/api/Coverage/CheckCoverage" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CoverageCheck_VWT" id="b0f6bef4-2026-436e-96d6-c7dad64b708a" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://goispapicoveragecheck2018-dev.glasoperator.nl/swagger/v1/swagger.json/api/Coverage/CheckCoverage</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="2f8b4c2c-981a-48e6-941d-5d0fd64b2720" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="filter" value="All"/>
+          <con:entry key="clientLogInfo" value=""/>
+          <con:entry key="showClosed" value="true"/>
+          <con:entry key="useOfflineFpiData" value=""/>
+          <con:entry key="postalCode" value="1234XX"/>
+          <con:entry key="houseNumber" value="2"/>
+          <con:entry key="ispId" value="VDF"/>
+          <con:entry key="houseNumberAddition" value="vwt"/>
+        </con:parameters>
+        <con:environmentSpec>
+          <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+            <con:authProfile>No Authorization</con:authProfile>
+          </con:entry>
+          <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+            <con:authProfile>ReadyAPI_Dev</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+</con:testCase>

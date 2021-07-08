@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/tmf-api/serviceQualificationManagement/v3/listener/serviceQualificationDeleteNotification" path="/tmf-api/serviceQualificationManagement/v3/listener/serviceQualificationDeleteNotification" id="e4523623-fa18-4efd-bda5-3639542e3e8b" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="e4523623-fa18-4efd-bda5-3639542e3e8bfileName">%2Ftmf-api%2FserviceQualificationManagement%2Fv3%2Flistener%2FserviceQualificationDeleteNotification</con:setting>
+  </con:settings>
+  <con:parameters/>
+</con:resource>

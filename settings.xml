@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="c48fe9ba-e521-4652-a824-ebd4b8e3784a" created="3.9.0" activeEnvironment="Default environment" name="OssSmokeTests" compositeProjectFormat="1.3" updated="3.9.0" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
+<con:soapui-project id="c48fe9ba-e521-4652-a824-ebd4b8e3784a" created="3.9.0" activeEnvironment="Dev" name="OssSmokeTests" compositeProjectFormat="1.3" updated="3.9.0" encryptionMode="Not encrypted" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="c48fe9ba-e521-4652-a824-ebd4b8e3784afileName">OssSmokeTests-readyapi-project</con:setting>
   </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:requirements/>
   <con:properties/>
   <con:wssContainer/>
   <con:databaseConnectionContainer/>
   <con:jmsConnectionContainer/>
-  <con:oAuth2ProfileContainer/>
+  <con:oAuth2ProfileContainer>
+    <con:oAuth2Profile>
+      <con:name>ReadyAPI_Dev</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
+      <con:accessToken>DF52E7CF514C63E16B0EFAF16D9FBC3DE6CE761AAAEFA606D249A88B6ADF6637</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
+      <con:accessTokenIssuedTime>1625564446</con:accessTokenIssuedTime>
+      <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
+      <con:useManualAccessTokenExpirationTime>false</con:useManualAccessTokenExpirationTime>
+      <con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit>
+      <con:clientID>glasoperator.readyapi</con:clientID>
+      <con:clientSecret>A64FF00502E55AECA3FEE4F84DCBA09FB52FA6AF</con:clientSecret>
+      <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:accessTokenExpirationTime>1200</con:accessTokenExpirationTime>
+      <con:useAuthHeader>true</con:useAuthHeader>
+      <con:jwtConfiguration/>
+      <con:enablePKCE>true</con:enablePKCE>
+      <con:PKCECodeChallengeMethod>S256</con:PKCECodeChallengeMethod>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth2Profile>
+  </con:oAuth2ProfileContainer>
   <con:oAuth1ProfileContainer/>
   <con:eventHandlers type="RequestFilter.filterRequest" name="RequestFilter.filterRequest">
     <con:script>// Sample event script to add custom HTTP header to all outgoing REST, SOAP and HTTP(S) calls
@@ -38,6 +64,62 @@
 // pw.close()
 // fos.close()</con:script>
   </con:eventHandlers>
-  <con:authRepository/>
+  <con:environment id="8b18c016-7cf1-4def-ac45-e447b6c2efd7" name="Dev" index="0">
+    <con:service type="REST" name="GoSoap.CoverageCheck201801">
+      <con:endpoint authProfile="ReadyAPI_Dev" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-dev.glasoperator.nl/</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="c6dd11d2-45d8-4197-b7b7-981e4798e119" name="Test" index="1">
+    <con:service type="REST" name="GoSoap.CoverageCheck201801">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-test.glasoperator.nl/</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:environment id="2a159e40-3e93-4e94-914a-11146d1254b9" name="Acc" index="2">
+    <con:service type="REST" name="GoSoap.CoverageCheck201801">
+      <con:endpoint authProfile="No Authorization" proxyHost="" proxyPort="" proxyUsername="" proxyPassword="">https://goispapicoveragecheck2018-acc.glasoperator.nl/</con:endpoint>
+    </con:service>
+    <con:databaseConnectionContainer/>
+    <con:jmsConnectionContainer/>
+  </con:environment>
+  <con:authRepository>
+    <con:oAuth20AuthEntry>
+      <con:name>ReadyAPI_Dev</con:name>
+      <con:type>OAuth 2.0</con:type>
+      <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
+      <con:accessToken>DF52E7CF514C63E16B0EFAF16D9FBC3DE6CE761AAAEFA606D249A88B6ADF6637</con:accessToken>
+      <con:accessTokenPosition>HEADER</con:accessTokenPosition>
+      <con:accessTokenStatus>RETRIEVED_FROM_SERVER</con:accessTokenStatus>
+      <con:accessTokenStartingStatus>RETRIEVED_FROM_SERVER</con:accessTokenStartingStatus>
+      <con:accessTokenIssuedTime>1625564446</con:accessTokenIssuedTime>
+      <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
+      <con:useManualAccessTokenExpirationTime>false</con:useManualAccessTokenExpirationTime>
+      <con:manualAccessTokenExpirationTimeUnit>HOURS</con:manualAccessTokenExpirationTimeUnit>
+      <con:clientID>glasoperator.readyapi</con:clientID>
+      <con:clientSecret>A64FF00502E55AECA3FEE4F84DCBA09FB52FA6AF</con:clientSecret>
+      <con:oAuth2Flow>CLIENT_CREDENTIALS_GRANT</con:oAuth2Flow>
+      <con:refreshAccessTokenMethod>AUTOMATIC</con:refreshAccessTokenMethod>
+      <con:accessTokenExpirationTime>1200</con:accessTokenExpirationTime>
+      <con:useAuthHeader>true</con:useAuthHeader>
+      <con:jwtConfiguration/>
+      <con:enablePKCE>true</con:enablePKCE>
+      <con:PKCECodeChallengeMethod>S256</con:PKCECodeChallengeMethod>
+      <con:responseType>id_token</con:responseType>
+    </con:oAuth20AuthEntry>
+  </con:authRepository>
+  <con:environmentSpec>
+    <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+    <con:entry environmentId="2a159e40-3e93-4e94-914a-11146d1254b9">
+      <con:authProfile>No Authorization</con:authProfile>
+    </con:entry>
+  </con:environmentSpec>
   <con:tags/>
 </con:soapui-project>

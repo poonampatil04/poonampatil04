@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/tmf-api/serviceQualificationManagement/v3/listener/serviceQualificationCreateNotification" path="/tmf-api/serviceQualificationManagement/v3/listener/serviceQualificationCreateNotification" id="84fecd0d-ed4d-46bd-9c22-4e8e31578276" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="84fecd0d-ed4d-46bd-9c22-4e8e31578276fileName">%2Ftmf-api%2FserviceQualificationManagement%2Fv3%2Flistener%2FserviceQualificationCreateNotification</con:setting>
+  </con:settings>
+  <con:parameters/>
+</con:resource>
