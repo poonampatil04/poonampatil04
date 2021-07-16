@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Patch/{connectionId}" path="/api/Patch/{connectionId}" id="f994cd61-b942-4cb4-9e24-b78905119e24" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="f994cd61-b942-4cb4-9e24-b78905119e24fileName">%2Fapi%2FPatch%2F%7BconnectionId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="f65f29cc-3a40-4371-b82c-af472812dc08" method="GET">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "state" : "created",
+  "installRequestDt" : "2015-07-20T15:49:04-07:00",
+  "installPlanDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "removeRequestDt" : "2015-07-20T15:49:04-07:00",
+  "removePlanDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00",
+  "cancelledDt" : "2015-07-20T15:49:04-07:00",
+  "removeCancelledDt" : "2015-07-20T15:49:04-07:00",
+  "popName" : "string",
+  "frame" : 0,
+  "patchPanel" : "string",
+  "port" : "string",
+  "passiveOperator" : "string",
+  "patchOrders" : [ {
+    "patchOrderId" : "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "type" : "install",
+    "createDt" : "2015-07-20T15:49:04-07:00",
+    "wishDt" : "2015-07-20T15:49:04-07:00",
+    "state" : {
+      "planPeriod" : "morning",
+      "plannedFrom" : "2015-07-20T15:49:04-07:00",
+      "plannedTill" : "2015-07-20T15:49:04-07:00",
+      "status" : "new",
+      "statusReason" : "string",
+      "completeDt" : "2015-07-20T15:49:04-07:00"
+    },
+    "history" : [ {
+      "changeDt" : "2015-07-20T15:49:04-07:00",
+      "state" : {
+        "planPeriod" : "morning",
+        "plannedFrom" : "2015-07-20T15:49:04-07:00",
+        "plannedTill" : "2015-07-20T15:49:04-07:00",
+        "status" : "new",
+        "statusReason" : "string",
+        "completeDt" : "2015-07-20T15:49:04-07:00"
+      }
+    } ],
+    "taskJson" : "string",
+    "taskVersion" : "string"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{
+  "state" : "created",
+  "installRequestDt" : "2015-07-20T15:49:04-07:00",
+  "installPlanDt" : "2015-07-20T15:49:04-07:00",
+  "inServiceDt" : "2015-07-20T15:49:04-07:00",
+  "removeRequestDt" : "2015-07-20T15:49:04-07:00",
+  "removePlanDt" : "2015-07-20T15:49:04-07:00",
+  "outServiceDt" : "2015-07-20T15:49:04-07:00",
+  "cancelledDt" : "2015-07-20T15:49:04-07:00",
+  "removeCancelledDt" : "2015-07-20T15:49:04-07:00",
+  "popName" : "string",
+  "frame" : 0,
+  "patchPanel" : "string",
+  "port" : "string",
+  "passiveOperator" : "string",
+  "patchOrders" : [ {
+    "patchOrderId" : "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "type" : "install",
+    "createDt" : "2015-07-20T15:49:04-07:00",
+    "wishDt" : "2015-07-20T15:49:04-07:00",
+    "state" : {
+      "planPeriod" : "morning",
+      "plannedFrom" : "2015-07-20T15:49:04-07:00",
+      "plannedTill" : "2015-07-20T15:49:04-07:00",
+      "status" : "new",
+      "statusReason" : "string",
+      "completeDt" : "2015-07-20T15:49:04-07:00"
+    },
+    "history" : [ {
+      "changeDt" : "2015-07-20T15:49:04-07:00",
+      "state" : {
+        "planPeriod" : "morning",
+        "plannedFrom" : "2015-07-20T15:49:04-07:00",
+        "plannedTill" : "2015-07-20T15:49:04-07:00",
+        "status" : "new",
+        "statusReason" : "string",
+        "completeDt" : "2015-07-20T15:49:04-07:00"
+      }
+    } ],
+    "taskJson" : "string",
+    "taskVersion" : "string"
+  } ]
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="5e01a09d-486d-4574-9734-145d18a7c4eb" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="DELETE" id="3ce72e3b-4c58-4988-86a1-c1e789953204" method="DELETE">
+    <con:description>Attempts to reach the target OutService state for the given connection</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+      <con:parameter>
+        <con:name>wishDt</con:name>
+        <con:style>QUERY</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="bce11828-eaf1-4ea1-bde4-81e36ea03ff8" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:request/>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+  <con:method name="PUT" id="c7438b12-5366-4a82-8020-382bf0e0aa34" method="PUT">
+    <con:description>Attempts to reach the target InService state for the given connection</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>{ }</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "address" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "firstName" : "string",
+  "lastName" : "string",
+  "intercalation" : "string",
+  "phoneNumber" : "string",
+  "additionalPhoneNumber" : "string",
+  "email" : "string",
+  "contactAddress" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "popName" : "string",
+  "ppfPortInfo" : {
+    "frame" : 0,
+    "block" : "string",
+    "module" : "string",
+    "port" : "string",
+    "row" : 0
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "address" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "firstName" : "string",
+  "lastName" : "string",
+  "intercalation" : "string",
+  "phoneNumber" : "string",
+  "additionalPhoneNumber" : "string",
+  "email" : "string",
+  "contactAddress" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "popName" : "string",
+  "ppfPortInfo" : {
+    "frame" : 0,
+    "block" : "string",
+    "module" : "string",
+    "port" : "string",
+    "row" : 0
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "address" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "firstName" : "string",
+  "lastName" : "string",
+  "intercalation" : "string",
+  "phoneNumber" : "string",
+  "additionalPhoneNumber" : "string",
+  "email" : "string",
+  "contactAddress" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "popName" : "string",
+  "ppfPortInfo" : {
+    "frame" : 0,
+    "block" : "string",
+    "module" : "string",
+    "port" : "string",
+    "row" : 0
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "address" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "firstName" : "string",
+  "lastName" : "string",
+  "intercalation" : "string",
+  "phoneNumber" : "string",
+  "additionalPhoneNumber" : "string",
+  "email" : "string",
+  "contactAddress" : {
+    "postalCode" : "string",
+    "houseNumber" : 0,
+    "houseNumberAddition" : "string",
+    "room" : "string"
+  },
+  "wishDt" : "2015-07-20T15:49:04-07:00",
+  "reorderDenied" : true,
+  "requiresMigration" : true,
+  "popName" : "string",
+  "ppfPortInfo" : {
+    "frame" : 0,
+    "block" : "string",
+    "module" : "string",
+    "port" : "string",
+    "row" : 0
+  }
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="4ae3fa3b-0f26-455c-afa9-054b18f4cfce" mediaType="application/json-patch+json" postQueryString="false">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "address" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "firstName" : "string",\r
+  "lastName" : "string",\r
+  "intercalation" : "string",\r
+  "phoneNumber" : "string",\r
+  "additionalPhoneNumber" : "string",\r
+  "email" : "string",\r
+  "contactAddress" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "popName" : "string",\r
+  "ppfPortInfo" : {\r
+    "frame" : 0,\r
+    "block" : "string",\r
+    "module" : "string",\r
+    "port" : "string",\r
+    "row" : 0\r
+  }\r
+}</con:request>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="f12fda4f-b8ee-4f56-886e-dfd81366eaab" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "address" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "firstName" : "string",\r
+  "lastName" : "string",\r
+  "intercalation" : "string",\r
+  "phoneNumber" : "string",\r
+  "additionalPhoneNumber" : "string",\r
+  "email" : "string",\r
+  "contactAddress" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "popName" : "string",\r
+  "ppfPortInfo" : {\r
+    "frame" : 0,\r
+    "block" : "string",\r
+    "module" : "string",\r
+    "port" : "string",\r
+    "row" : 0\r
+  }\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="307feaaf-054d-48d0-acb0-46f114b783d9" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "address" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "firstName" : "string",\r
+  "lastName" : "string",\r
+  "intercalation" : "string",\r
+  "phoneNumber" : "string",\r
+  "additionalPhoneNumber" : "string",\r
+  "email" : "string",\r
+  "contactAddress" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "popName" : "string",\r
+  "ppfPortInfo" : {\r
+    "frame" : 0,\r
+    "block" : "string",\r
+    "module" : "string",\r
+    "port" : "string",\r
+    "row" : 0\r
+  }\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="d1e6c2d2-217b-4c99-9465-44b56f55bd24" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "address" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "firstName" : "string",\r
+  "lastName" : "string",\r
+  "intercalation" : "string",\r
+  "phoneNumber" : "string",\r
+  "additionalPhoneNumber" : "string",\r
+  "email" : "string",\r
+  "contactAddress" : {\r
+    "postalCode" : "string",\r
+    "houseNumber" : 0,\r
+    "houseNumberAddition" : "string",\r
+    "room" : "string"\r
+  },\r
+  "wishDt" : "2015-07-20T15:49:04-07:00",\r
+  "reorderDenied" : true,\r
+  "requiresMigration" : true,\r
+  "popName" : "string",\r
+  "ppfPortInfo" : {\r
+    "frame" : 0,\r
+    "block" : "string",\r
+    "module" : "string",\r
+    "port" : "string",\r
+    "row" : 0\r
+  }\r
+}</con:request>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

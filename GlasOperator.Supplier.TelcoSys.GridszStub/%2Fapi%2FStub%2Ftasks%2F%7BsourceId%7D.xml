@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Stub/tasks/{sourceId}" path="/api/Stub/tasks/{sourceId}" id="fb862930-371f-41d8-86d7-318796274e7d" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="fb862930-371f-41d8-86d7-318796274e7dfileName">%2Fapi%2FStub%2Ftasks%2F%7BsourceId%7D</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST" id="361b1550-32e6-420b-979f-b9973ca4cd6c" method="POST">
+    <con:description>Updates a task</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>sourceId</con:name>
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "mainStatus" : "NEW",
+  "timeslot" : "MORNING",
+  "from" : "2015-07-20T15:49:04-07:00",
+  "till" : "2015-07-20T15:49:04-07:00",
+  "completeDt" : "2015-07-20T15:49:04-07:00",
+  "reason" : "string",
+  "subStatus" : "TEMPORARY-FIX",
+  "clarification" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "mainStatus" : "NEW",
+  "timeslot" : "MORNING",
+  "from" : "2015-07-20T15:49:04-07:00",
+  "till" : "2015-07-20T15:49:04-07:00",
+  "completeDt" : "2015-07-20T15:49:04-07:00",
+  "reason" : "string",
+  "subStatus" : "TEMPORARY-FIX",
+  "clarification" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>text/json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "mainStatus" : "NEW",
+  "timeslot" : "MORNING",
+  "from" : "2015-07-20T15:49:04-07:00",
+  "till" : "2015-07-20T15:49:04-07:00",
+  "completeDt" : "2015-07-20T15:49:04-07:00",
+  "reason" : "string",
+  "subStatus" : "TEMPORARY-FIX",
+  "clarification" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:params/>
+      <con:sampleContent>{
+  "mainStatus" : "NEW",
+  "timeslot" : "MORNING",
+  "from" : "2015-07-20T15:49:04-07:00",
+  "till" : "2015-07-20T15:49:04-07:00",
+  "completeDt" : "2015-07-20T15:49:04-07:00",
+  "reason" : "string",
+  "subStatus" : "TEMPORARY-FIX",
+  "clarification" : "string"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "mainStatus" : "NEW",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 2" id="6620ce1c-bd37-4d45-984b-b16fd189382a" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "mainStatus" : "NEW",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 3" id="90ae5b64-3104-4565-8f3d-4b38b2ee05b6" mediaType="text/json">
+      <con:settings/>
+      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "mainStatus" : "NEW",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+    <con:request name="Request 4" id="78f40904-4098-4a6d-b049-97bcfffcb807" mediaType="application/*+json">
+      <con:settings/>
+      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
+      <con:request>{\r
+  "mainStatus" : "NEW",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
