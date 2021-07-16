@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="05366ce0-7e65-4a26-a586-c295dfe431ab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="05366ce0-7e65-4a26-a586-c295dfe431abfileName">%2Fapi%2FStub%2Findications</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="85dbf951-4894-4c18-8d59-df8b62802bdd" method="GET">
+    <con:description>Returns received taskIndications</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "header" : {
+    "from" : {
+      "orgId" : "string",
+      "systemId" : "string"
+    },
+    "updateCount" : 0,
+    "created" : "2015-07-20T15:49:04-07:00",
+    "priority" : "PREMIUM"
+  },
+  "InId" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "header" : {
+    "from" : {
+      "orgId" : "string",
+      "systemId" : "string"
+    },
+    "updateCount" : 0,
+    "created" : "2015-07-20T15:49:04-07:00",
+    "priority" : "PREMIUM"
+  },
+  "InId" : "string"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="302b7e52-e811-495d-aaad-df0f380aafb0" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

@@ -3,5 +3,3 @@ GoSoap.CoverageCheck201801
 GlasOperator.Supplier.TelcoSys.GridszStub
 GlasOperator.Supplier.TelcoSys.Api
 GlasOperator.Supplier.TelcoSys.Feedback
-Go.CoverageChecker
-Go.TelcosysApi

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Coverage/sync" path="/api/Coverage/sync" id="a19f579f-b1c5-47c0-937c-f1057851b42e" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="a19f579f-b1c5-47c0-937c-f1057851b42efileName">%2Fapi%2FCoverage%2Fsync</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="PUT" id="0c53799e-53c0-4792-9c24-e60c169819a9" method="PUT">
+    <con:description>Sync coverage with latest changes from TelcoSys</con:description>
+    <con:settings/>
+    <con:parameters/>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>0</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>0</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>0</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="55ad3f80-3665-41b2-8676-7c3fca935089" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>

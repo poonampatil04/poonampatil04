@@ -12,13 +12,15 @@
         <con:style>TEMPLATE</con:style>
       </con:parameter>
     </con:parameters>
-    <con:request name="Request 1" id="25f8eba8-b759-459f-a9c8-aef3b154921e" mediaType="application/json">
+    <con:request name="Request 1" id="25f8eba8-b759-459f-a9c8-aef3b154921e" mediaType="application/json" postQueryString="false">
       <con:settings/>
       <con:endpoint>https://vwtapi-dev.glasoperator.nl</con:endpoint>
+      <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
       <con:parameters/>
       <con:environmentSpec>
         <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">

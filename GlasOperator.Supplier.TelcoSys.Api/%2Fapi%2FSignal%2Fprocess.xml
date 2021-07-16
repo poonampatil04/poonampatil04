@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Signal/process" path="/api/Signal/process" id="5c65c278-964c-422c-b303-e631a9cb766f" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="5c65c278-964c-422c-b303-e631a9cb766ffileName">%2Fapi%2FSignal%2Fprocess</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="1edebde8-cd5a-4796-a287-425fe7f9a964" method="GET">
+    <con:settings/>
+    <con:parameters/>
+    <con:request name="Request 1" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:parameters/>
+    </con:request>
+  </con:method>
+</con:resource>
