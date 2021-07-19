@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ec215a79-6933-4a95-ad6e-1ee14cbd1df1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="PatchOrderManualStatuslUpdates" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="d0ec08dd-44b3-4c18-b7f3-923392a9eb41" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RemovePatchOrderManualRetry" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="ec215a79-6933-4a95-ad6e-1ee14cbd1df1fileName">PatchOrderManualStatuslUpdates</con:setting>
+    <con:setting id="d0ec08dd-44b3-4c18-b7f3-923392a9eb41fileName">RemovePatchOrderManualRetry</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="CreateInstallPatchOrderInDeniedState" id="82560d86-ab3b-42d9-be99-6890bf6c6b1b">
+  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchOrderInDeniedState" id="16c423ec-6905-4873-b4d0-a93c0db89ead">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:targetTestCase>b1a25f0b-5c9d-4a88-857f-0c2520a4f0c2</con:targetTestCase>
+      <con:targetTestCase>e50685b4-7212-49b9-bdf3-6d9ccb2b112b</con:targetTestCase>
       <con:properties/>
       <con:returnProperties/>
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="RetryInstallPatchOrder" id="dce917bc-a4ee-4776-b28d-89a7521c4ab6">
+  <con:testStep type="restrequest" name="RetryRemovePatchOrder" id="f5c57a2b-9e82-416a-b9a0-ab58d9490571">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/retry" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="RetryInstallPatchOrder" id="dbab8adc-123e-4aa0-b69f-415c9c6620f2" mediaType="application/json" postQueryString="false">
+      <con:restRequest name="RetryRemovePatchOrder" id="dbab8adc-123e-4aa0-b69f-415c9c6620f2" mediaType="application/json" postQueryString="false">
         <con:description xsi:nil="true"/>
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -35,8 +35,8 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
-          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#GetInstallPatchId]#Response#$['patchOrders'][0]['patchOrderId']}"/>
+          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
+          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInDeniedState#GetPatchStateAfterTelcoAPIUpdate]#Response#$['patchOrders'][1]['patchOrderId']}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>connectionId</con:entry>
@@ -45,7 +45,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="9d8c9fb9-aabb-4471-9181-13f0a3ccb85a">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="a132d5ee-24b4-415c-b635-e90f37379a10">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -70,10 +70,10 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="VerifyNewInstallPatchOrderCreated" id="1a65a9f3-d2a5-437b-938a-8d4469a001b8">
+  <con:testStep type="restrequest" name="VerifyNewRemovePatchOrderCreated" id="4fae5f40-09e1-4026-b445-37529cc5a7cf">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="VerifyNewInstallPatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
+      <con:restRequest name="VerifyNewRemovePatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -101,6 +101,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>created</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -111,6 +112,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:57:15.7672204+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -121,6 +123,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-14T08:05:01.904+00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -130,6 +133,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -140,6 +145,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -149,6 +155,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -159,6 +167,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -168,6 +177,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -178,6 +189,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -187,6 +199,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -197,6 +211,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -206,6 +221,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -216,6 +233,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -225,6 +243,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -235,6 +255,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -245,6 +266,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>bdg-klp</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -255,6 +277,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>105</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -265,6 +288,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>GLOP PP/11</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -275,6 +299,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>30</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -285,6 +310,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -295,6 +321,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>60a2ffd3-e487-4055-72c3-08d94abe4ff9</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -305,6 +332,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>9319332863</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -315,6 +343,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>install</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -325,6 +354,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:53:52.0624329+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -335,6 +365,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-14T08:05:01.904+00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -345,6 +376,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>morning</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -354,6 +386,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -364,6 +398,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -373,6 +408,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -383,6 +420,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -393,6 +431,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>denied</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -403,6 +442,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>Ready</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -412,6 +452,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -422,6 +464,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -432,6 +475,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:53:52.0626453+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -442,6 +486,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-14T08:05:01.904+00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -451,6 +496,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -461,6 +508,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -470,6 +518,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -480,6 +530,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -489,6 +540,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -499,6 +552,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -509,6 +563,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -518,6 +573,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -528,6 +585,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -537,6 +595,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -547,6 +607,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -557,6 +618,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:53:53.2902291+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -567,6 +629,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-14T08:05:01.904+00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -577,6 +640,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>morning</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -586,6 +650,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -596,6 +662,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -605,6 +672,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -615,6 +684,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -625,6 +695,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>denied</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -635,6 +706,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>Ready</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -644,6 +716,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -654,6 +728,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -664,6 +739,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 14:53:52Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DENIED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"60a2ffd3-e487-4055-72c3-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -674,6 +750,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>1.0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -684,6 +761,7 @@
               <con:operator>exists</con:operator>
               <con:enabled>true</con:enabled>
               <con:expectedValue>76ae67f4-2d92-4dd1-72c4-08d94abe4ff9</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -694,6 +772,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>9319332863</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -704,6 +783,7 @@
               <con:operator>=</con:operator>
               <con:enabled>true</con:enabled>
               <con:expectedValue>install</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -714,6 +794,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:54:44.6176475+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -723,6 +804,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -733,6 +816,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -742,6 +826,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -752,6 +838,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -761,6 +848,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -771,6 +860,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -780,6 +870,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -790,6 +882,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -800,6 +893,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -809,6 +903,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -819,6 +915,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -828,6 +925,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -838,6 +937,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -848,6 +948,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:54:44.617875+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -857,6 +958,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -867,6 +970,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -876,6 +980,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -886,6 +992,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -895,6 +1002,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -905,6 +1014,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -914,6 +1024,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -924,6 +1036,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -934,6 +1047,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -943,6 +1057,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -953,6 +1069,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -962,6 +1079,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -972,6 +1091,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -982,6 +1102,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 14:54:44Z","priority":"BASIC"},"action":"INSTALL","status":{"mainStatus":"NEW"},"inId":"76ae67f4-2d92-4dd1-72c4-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -992,6 +1113,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>1.0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1002,6 +1124,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>bac3f6e3-5598-4d14-72c6-08d94abe4ff9</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1012,6 +1135,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>9319332863</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1022,6 +1146,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>install</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1032,6 +1157,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:57:15.7670245+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1041,6 +1167,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1051,6 +1179,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1060,6 +1189,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1070,6 +1201,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1079,6 +1211,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1089,6 +1223,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1098,6 +1233,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1108,6 +1245,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1118,6 +1256,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1127,6 +1266,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1137,6 +1278,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1146,6 +1288,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1156,6 +1300,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1166,6 +1311,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>2021-07-19T16:57:15.7672167+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1175,6 +1321,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1185,6 +1333,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1194,6 +1343,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1204,6 +1355,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1213,6 +1365,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1223,6 +1377,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1232,6 +1387,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1242,6 +1399,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1252,6 +1410,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1261,6 +1420,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1271,6 +1432,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1280,6 +1442,8 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1290,6 +1454,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1300,6 +1465,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 14:57:15Z","priority":"BASIC"},"action":"INSTALL","status":{"mainStatus":"NEW"},"inId":"bac3f6e3-5598-4d14-72c6-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:elements>
@@ -1310,6 +1476,7 @@
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue>1.0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:originalMessage><![CDATA[<Response xmlns="https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/9319332863">
@@ -1448,7 +1615,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="CleanUpDbTables" id="b1e230e4-b4f0-4a3b-8fa3-65c385b9cca9" disabled="true">
+  <con:testStep type="jdbc" name="CleanUpDbTables" id="a073758e-8750-40d9-baa0-6025790afdbf" disabled="true">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -1480,6 +1647,11 @@ Delete  from Patch where ConnectionId= '${ConnectionIdDataSource#connectionId}';
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>1a65a9f3-d2a5-437b-938a-8d4469a001b8</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>16c423ec-6905-4873-b4d0-a93c0db89ead</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
