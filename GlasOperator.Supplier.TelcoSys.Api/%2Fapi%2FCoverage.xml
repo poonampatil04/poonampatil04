@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Coverage" path="/api/Coverage" id="0e73095b-b3c5-4e85-8b8a-37e9c5c6afc5" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="0e73095b-b3c5-4e85-8b8a-37e9c5c6afc5fileName">%2Fapi%2FCoverage</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="GET" id="208e96ab-1add-49be-9e66-391891bfbc62" method="GET">
+    <con:description>Get coverage for given address</con:description>
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>PostalCode</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="false">
+        <con:name>HouseNumber</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>UseHouseNumberAdditions</con:name>
+        <con:value>false</con:value>
+        <con:style>QUERY</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="false">
+        <con:name>HouseNumberAdditions</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>UseRoom</con:name>
+        <con:value>false</con:value>
+        <con:style>QUERY</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="false">
+        <con:name>Room</con:name>
+        <con:value/>
+        <con:style>QUERY</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE" id="">
+      <con:mediaType>text/plain</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE" id="">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "postalCode" : "string",
+  "houseNumber" : 0,
+  "houseNumberAddition" : "string",
+  "room" : "string",
+  "street" : "string",
+  "city" : "string",
+  "fiber" : 0,
+  "passiveOperator" : "string",
+  "coverageArea" : "string",
+  "passiveConnectScenario" : "string",
+  "ftuType" : "string",
+  "planDate" : "2015-07-20T15:49:04-07:00"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:representation type="RESPONSE" id="">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status>200</con:status>
+      <con:params/>
+      <con:description>Success</con:description>
+      <con:sampleContent>[ {
+  "postalCode" : "string",
+  "houseNumber" : 0,
+  "houseNumberAddition" : "string",
+  "room" : "string",
+  "street" : "string",
+  "city" : "string",
+  "fiber" : 0,
+  "passiveOperator" : "string",
+  "coverageArea" : "string",
+  "passiveConnectScenario" : "string",
+  "ftuType" : "string",
+  "planDate" : "2015-07-20T15:49:04-07:00"
+} ]</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="1b557ea2-37ad-4dd7-b3ca-bfb7cfad8412" mediaType="application/json">
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:request/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>PostalCode</con:entry>
+        <con:entry>HouseNumber</con:entry>
+        <con:entry>UseHouseNumberAdditions</con:entry>
+        <con:entry>HouseNumberAdditions</con:entry>
+        <con:entry>UseRoom</con:entry>
+        <con:entry>Room</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

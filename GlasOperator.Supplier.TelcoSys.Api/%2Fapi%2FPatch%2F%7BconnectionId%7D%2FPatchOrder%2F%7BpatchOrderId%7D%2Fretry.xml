@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/retry" path="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/retry" id="69740ff3-0a51-4790-a790-f6c6b81940a0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="69740ff3-0a51-4790-a790-f6c6b81940a0fileName">%2Fapi%2FPatch%2F%7BconnectionId%7D%2FPatchOrder%2F%7BpatchOrderId%7D%2Fretry</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST" id="b3a99746-426e-4f65-8a65-770aa6cc2b2a" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:value/>
+        <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>patchOrderId</con:name>
+        <con:value/>
+        <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:request name="Request 1" id="dbab8adc-123e-4aa0-b69f-415c9c6620f2" mediaType="application/json">
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:settings/>
+      <con:request/>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>connectionId</con:entry>
+        <con:entry>patchOrderId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

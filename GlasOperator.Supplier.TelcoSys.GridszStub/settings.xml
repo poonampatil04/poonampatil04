@@ -1,0 +1,1096 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:interface xsi:type="con:RestService" id="bd8458be-616b-4291-b635-15a5f9607762" name="GlasOperator.Supplier.TelcoSys.GridszStub" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://gridszstub-dev.glasoperator.nl/swagger/v1/swagger.json" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+  <con:description xsi:nil="true"/>
+  <con:settings>
+    <con:setting id="bd8458be-616b-4291-b635-15a5f9607762fileName">GlasOperator.Supplier.TelcoSys.GridszStub</con:setting>
+  </con:settings>
+  <con:definitionCache type="TEXT" rootPart="https://gridszstub-dev.glasoperator.nl/swagger/v1/swagger.json">
+    <con:part>
+      <con:url>https://gridszstub-dev.glasoperator.nl/swagger/v1/swagger.json</con:url>
+      <con:content>{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GlasOperator.Supplier.TelcoSys.GridszStub",
+    "version": "v1"
+  },
+  "paths": {
+    "/SP/{orgId}/tasks": {
+      "post": {
+        "tags": [
+          "Gridsz"
+        ],
+        "summary": "Indicates that the given task has changed and should be fetched and synced",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskIndication"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskIndication"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskIndication"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TaskIndication"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/SP/{orgId}/tasks/{sourceId}": {
+      "get": {
+        "tags": [
+          "Gridsz"
+        ],
+        "summary": "Returns task information",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Gridsz"
+        ],
+        "summary": "Indicates that taskIndication was processed successfully",
+        "parameters": [
+          {
+            "name": "orgId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sourceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": { }
+            },
+            "application/json": {
+              "schema": { }
+            },
+            "text/json": {
+              "schema": { }
+            },
+            "application/*+json": {
+              "schema": { }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Stub/indications": {
+      "get": {
+        "tags": [
+          "Stub"
+        ],
+        "summary": "Returns received taskIndications",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaskIndication"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaskIndication"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TaskIndication"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Stub/taskFetchResponses": {
+      "get": {
+        "tags": [
+          "Stub"
+        ],
+        "summary": "Returns received TaskFetch responses",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InTaskType"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InTaskType"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/InTaskType"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Stub/tasks/{sourceId}": {
+      "post": {
+        "tags": [
+          "Stub"
+        ],
+        "summary": "Updates a task",
+        "parameters": [
+          {
+            "name": "sourceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskModel"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskModel"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskModel"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskModel"
+              }
+            }
+          }
+        },
+        "responses": {
+          "204": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActiveEquipment": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "$ref": "#/components/schemas/ActiveEquipmentEndpoint"
+          },
+          "connectorType": {
+            "$ref": "#/components/schemas/ActiveEquipmentConnectorType"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ActiveEquipmentConnectorType": {
+        "enum": [
+          "SC/PC",
+          "SC/APC"
+        ],
+        "type": "string"
+      },
+      "ActiveEquipmentEndpoint": {
+        "required": [
+          "frame",
+          "PoP",
+          "port",
+          "row"
+        ],
+        "type": "object",
+        "properties": {
+          "PoP": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "frame": {
+            "maximum": 9999,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "block": {
+            "maxLength": 1,
+            "minLength": 1,
+            "pattern": "[A-Z]",
+            "type": "string"
+          },
+          "module": {
+            "maxLength": 50,
+            "minLength": 0,
+            "type": "string"
+          },
+          "port": {
+            "maxLength": 20,
+            "minLength": 0,
+            "type": "string"
+          },
+          "row": {
+            "maximum": 99,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Attachment": {
+        "required": [
+          "author",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "maxLength": 32,
+            "minLength": 0,
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 100,
+            "minLength": 0,
+            "type": "string"
+          },
+          "size": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "lastUpdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "author": {
+            "$ref": "#/components/schemas/Author"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Author": {
+        "required": [
+          "lastName"
+        ],
+        "type": "object",
+        "properties": {
+          "firstName": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "intercalation": {
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Closure": {
+        "required": [
+          "level1"
+        ],
+        "type": "object",
+        "properties": {
+          "level1": {
+            "type": "string"
+          },
+          "level2": {
+            "type": "string"
+          },
+          "level3": {
+            "type": "string"
+          },
+          "clarification": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Comment": {
+        "required": [
+          "note",
+          "orgId"
+        ],
+        "type": "object",
+        "properties": {
+          "orgId": {
+            "maxLength": 15,
+            "minLength": 2,
+            "type": "string"
+          },
+          "author": {
+            "$ref": "#/components/schemas/Author"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "note": {
+            "maxLength": 1500,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "ConnectionInfo": {
+        "required": [
+          "DHid",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "maxLength": 80,
+            "minLength": 0,
+            "type": "string"
+          },
+          "problemDescription": {
+            "maxLength": 65500,
+            "minLength": 0,
+            "type": "string"
+          },
+          "analysis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "connectionAddress": {
+            "$ref": "#/components/schemas/NLAddressType"
+          },
+          "DHid": {
+            "pattern": "^dhid[1-3]_\\d{10}$",
+            "type": "string"
+          },
+          "fiberNumber": {
+            "$ref": "#/components/schemas/FiberNumber"
+          },
+          "closure": {
+            "$ref": "#/components/schemas/Closure"
+          },
+          "activePort": {
+            "$ref": "#/components/schemas/ActiveEquipmentEndpoint"
+          },
+          "affected": {
+            "$ref": "#/components/schemas/ContactPerson"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Contact": {
+        "type": "object",
+        "properties": {
+          "contact": {
+            "$ref": "#/components/schemas/Contact1"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Contact1": {
+        "type": "object",
+        "additionalProperties": { }
+      },
+      "ContactPerson": {
+        "required": [
+          "lastName",
+          "phoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "intercalation": {
+            "maxLength": 64,
+            "minLength": 1,
+            "type": "string"
+          },
+          "lastName": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "firstName": {
+            "maxLength": 128,
+            "minLength": 1,
+            "type": "string"
+          },
+          "phoneNumber": {
+            "maxLength": 25,
+            "minLength": 2,
+            "type": "string"
+          },
+          "additionalPhoneNumber": {
+            "maxLength": 25,
+            "minLength": 2,
+            "type": "string"
+          },
+          "email": {
+            "maxLength": 200,
+            "minLength": 3,
+            "type": "string"
+          },
+          "note": {
+            "maxLength": 200,
+            "minLength": 0,
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 6,
+            "minLength": 2,
+            "type": "string"
+          },
+          "mailingAddress": {
+            "$ref": "#/components/schemas/NLAddressType"
+          },
+          "contact": {
+            "$ref": "#/components/schemas/Contact1"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "FiberNumber": {
+        "enum": [
+          "FIBER_1",
+          "FIBER_2",
+          "FIBER_3",
+          "FIBER_4"
+        ],
+        "type": "string"
+      },
+      "GPSLocation": {
+        "type": "object",
+        "properties": {
+          "lat": {
+            "type": "number",
+            "format": "double"
+          },
+          "long": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "HASInfo": {
+        "required": [
+          "DHid"
+        ],
+        "type": "object",
+        "properties": {
+          "connectionAddress": {
+            "$ref": "#/components/schemas/NLAddressType"
+          },
+          "DHid": {
+            "pattern": "^dhid[1-3]_\\d{10}$",
+            "type": "string"
+          },
+          "fiberNumber": {
+            "$ref": "#/components/schemas/FiberNumber"
+          },
+          "contactPerson": {
+            "$ref": "#/components/schemas/ContactPerson"
+          },
+          "fiberStatus": {
+            "$ref": "#/components/schemas/OutletStatus"
+          },
+          "targetFiberStatus": {
+            "$ref": "#/components/schemas/OutletStatus"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "InTaskType": {
+        "required": [
+          "action",
+          "status",
+          "taskHeader"
+        ],
+        "type": "object",
+        "properties": {
+          "taskHeader": {
+            "$ref": "#/components/schemas/TaskHeader"
+          },
+          "taskGroup": {
+            "maxLength": 36,
+            "minLength": 0,
+            "type": "string"
+          },
+          "action": {
+            "$ref": "#/components/schemas/TaskType"
+          },
+          "planned": {
+            "$ref": "#/components/schemas/Planned"
+          },
+          "status": {
+            "$ref": "#/components/schemas/TaskStatus"
+          },
+          "wishdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "inId": {
+            "maxLength": 36,
+            "minLength": 1,
+            "type": "string"
+          },
+          "enddate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "taskId": {
+            "maxLength": 20,
+            "minLength": 10,
+            "type": "string"
+          },
+          "relatedTask": {
+            "maxLength": 20,
+            "minLength": 10,
+            "type": "string"
+          },
+          "taskInfo": {
+            "$ref": "#/components/schemas/TaskInfo"
+          },
+          "attachments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Attachment"
+            }
+          },
+          "comments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comment"
+            }
+          },
+          "deadlines": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SlaType"
+            }
+          }
+        },
+        "additionalProperties": { }
+      },
+      "MainStatus": {
+        "enum": [
+          "NEW",
+          "RECEIVED",
+          "NETWORK_CHECK",
+          "PLANNING",
+          "CONFIRMED",
+          "PREPARED",
+          "WIP",
+          "ON_HOLD",
+          "PROVIDED",
+          "ADMINISTRATION",
+          "DELIVERED",
+          "TO_BE_CANCELLED",
+          "CANCELLED",
+          "TERMINATED",
+          "DENIED"
+        ],
+        "type": "string"
+      },
+      "NetworkInfo": {
+        "type": "object",
+        "properties": {
+          "analysis": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "domainPermission": {
+            "$ref": "#/components/schemas/NetworkInfoDomainPermission"
+          },
+          "areaCode": {
+            "maxLength": 6,
+            "minLength": 0,
+            "type": "string"
+          },
+          "impact": {
+            "type": "string"
+          },
+          "escalation": {
+            "$ref": "#/components/schemas/NetworkInfoEscalation"
+          },
+          "gpsLocations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GPSLocation"
+            }
+          },
+          "cables": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "mechanicOnSite": {
+            "type": "boolean"
+          },
+          "deliveryIssue": {
+            "type": "boolean"
+          },
+          "executorEnd": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "contacts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contact"
+            }
+          },
+          "closure": {
+            "$ref": "#/components/schemas/Closure"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "NetworkInfoDomainPermission": {
+        "enum": [
+          "CityRing-1V_OUTAGE",
+          "CityRing-1V_MUTED",
+          "CityRing-GT1V_OUTAGE",
+          "CityRing-GT1V_MUTED",
+          "NO Domain",
+          "NO-AO Domain",
+          "NO-AO-NT Domain",
+          "NO-NT Domain",
+          "NO Domain (CabelDamage without service disruption)",
+          "NO Domain (CabelDamage with service disruption)",
+          "FTU move"
+        ],
+        "type": "string"
+      },
+      "NetworkInfoEscalation": {
+        "enum": [
+          "White",
+          "Grey",
+          "Blue",
+          "Green",
+          "Yellow",
+          "Orange",
+          "Red"
+        ],
+        "type": "string"
+      },
+      "NLAddressType": {
+        "type": "object",
+        "properties": {
+          "searchCode": {
+            "pattern": "^([1-9][0-9]{3}[A-Z]{2})\\|(\\d+)\\|(.*)\\|(.*)$",
+            "type": "string"
+          },
+          "postalcode": {
+            "pattern": "^[1-9][0-9]{3}[A-Z]{2}$",
+            "type": "string"
+          },
+          "streetName": {
+            "type": "string"
+          },
+          "houseNumber": {
+            "maximum": 9999,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "houseNumberExtension": {
+            "type": "string"
+          },
+          "room": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "municipality": {
+            "type": "string"
+          },
+          "country": {
+            "maxLength": 3,
+            "minLength": 3,
+            "type": "string"
+          },
+          "township": {
+            "type": "string"
+          },
+          "neighborhood": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "OutletStatus": {
+        "enum": [
+          "GV",
+          "SMK",
+          "SLAG",
+          "EG",
+          "KLDR",
+          "IDP",
+          "PASS",
+          "SWON",
+          "Ande",
+          "ANDERS",
+          "Hal",
+          "IEVP",
+          "ONB",
+          "RESV",
+          "IHB"
+        ],
+        "type": "string"
+      },
+      "Party": {
+        "required": [
+          "orgId"
+        ],
+        "type": "object",
+        "properties": {
+          "orgId": {
+            "maxLength": 15,
+            "minLength": 2,
+            "type": "string"
+          },
+          "systemId": {
+            "maxLength": 15,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "Planned": {
+        "type": "object",
+        "additionalProperties": { }
+      },
+      "PlanPeriodTypeTimeslot": {
+        "enum": [
+          "MORNING",
+          "EARLY_AFTERNOON",
+          "LATE_AFTERNOON",
+          "EVENING",
+          "NIGHT",
+          "EARLY_MORNING",
+          "LATE_MORNING",
+          "AFTERNOON",
+          "EOB"
+        ],
+        "type": "string"
+      },
+      "PoPInfo": {
+        "required": [
+          "DHid"
+        ],
+        "type": "object",
+        "properties": {
+          "DHid": {
+            "pattern": "^dhid[1-3]_\\d{10}$",
+            "type": "string"
+          },
+          "fiberNumber": {
+            "$ref": "#/components/schemas/FiberNumber"
+          },
+          "activePort": {
+            "$ref": "#/components/schemas/ActiveEquipment"
+          },
+          "donorPort": {
+            "$ref": "#/components/schemas/ActiveEquipment"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "PriorityType": {
+        "enum": [
+          "PREMIUM",
+          "BASIC",
+          "prio1",
+          "prio2",
+          "prio3"
+        ],
+        "type": "string"
+      },
+      "SlaType": {
+        "required": [
+          "deadline",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 15,
+            "minLength": 3,
+            "type": "string"
+          },
+          "start": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "deadline": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TaskHeader": {
+        "required": [
+          "created",
+          "from",
+          "updateCount"
+        ],
+        "type": "object",
+        "properties": {
+          "from": {
+            "$ref": "#/components/schemas/Party"
+          },
+          "updateCount": {
+            "maximum": 2147483647,
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "priority": {
+            "$ref": "#/components/schemas/PriorityType"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TaskIndication": {
+        "required": [
+          "header",
+          "InId"
+        ],
+        "type": "object",
+        "properties": {
+          "header": {
+            "$ref": "#/components/schemas/TaskHeader"
+          },
+          "InId": {
+            "maxLength": 36,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TaskInfo": {
+        "type": "object",
+        "properties": {
+          "PoPInfo": {
+            "$ref": "#/components/schemas/PoPInfo"
+          },
+          "HASInfo": {
+            "$ref": "#/components/schemas/HASInfo"
+          },
+          "connectionInfo": {
+            "$ref": "#/components/schemas/ConnectionInfo"
+          },
+          "networkInfo": {
+            "$ref": "#/components/schemas/NetworkInfo"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TaskStatus": {
+        "required": [
+          "mainStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "mainStatus": {
+            "$ref": "#/components/schemas/MainStatus"
+          },
+          "subStatus": {
+            "$ref": "#/components/schemas/TaskStatusSubStatus"
+          },
+          "reason": {
+            "pattern": "^[A-Z]{3}-[0-9]{2}$",
+            "type": "string"
+          },
+          "clarification": {
+            "maxLength": 250,
+            "minLength": 0,
+            "type": "string"
+          }
+        },
+        "additionalProperties": { }
+      },
+      "TaskStatusSubStatus": {
+        "enum": [
+          "TEMPORARY-FIX",
+          "CANCEL-OK",
+          "CANCEL-EXPIRED",
+          "RESOLVED-OK",
+          "RESOLVED-CANCEL"
+        ],
+        "type": "string"
+      },
+      "TaskType": {
+        "enum": [
+          "INSTALL",
+          "TERMINATE",
+          "MIGRATE",
+          "AFTER_CONNECT",
+          "NEW_CONNECTION",
+          "FTU_REPLACEMENT",
+          "FTU_MOVE",
+          "CONNECTION_INCIDENT",
+          "NETWORK_INCIDENT"
+        ],
+        "type": "string"
+      },
+      "UpdateTaskModel": {
+        "required": [
+          "mainStatus"
+        ],
+        "type": "object",
+        "properties": {
+          "mainStatus": {
+            "$ref": "#/components/schemas/MainStatus"
+          },
+          "timeslot": {
+            "$ref": "#/components/schemas/PlanPeriodTypeTimeslot"
+          },
+          "from": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "till": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "completeDt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "reason": {
+            "type": "string",
+            "nullable": true
+          },
+          "subStatus": {
+            "$ref": "#/components/schemas/TaskStatusSubStatus"
+          },
+          "clarification": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}</con:content>
+      <con:type>https://swagger.io/openapiv3/specification</con:type>
+    </con:part>
+  </con:definitionCache>
+  <con:endpoints/>
+</con:interface>

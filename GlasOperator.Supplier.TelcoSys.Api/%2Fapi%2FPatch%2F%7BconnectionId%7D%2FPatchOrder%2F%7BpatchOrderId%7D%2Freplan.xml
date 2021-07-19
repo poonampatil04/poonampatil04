@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:resource name="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" path="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" id="7ebd8bd9-272b-482a-8b42-a8a50a412be0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="7ebd8bd9-272b-482a-8b42-a8a50a412be0fileName">%2Fapi%2FPatch%2F%7BconnectionId%7D%2FPatchOrder%2F%7BpatchOrderId%7D%2Freplan</con:setting>
+  </con:settings>
+  <con:parameters/>
+  <con:method name="POST" id="fbef0acf-a29f-46db-a566-e06a5b6610da" method="POST">
+    <con:settings/>
+    <con:parameters>
+      <con:parameter required="true">
+        <con:name>connectionId</con:name>
+        <con:value/>
+        <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+      <con:parameter required="true">
+        <con:name>patchOrderId</con:name>
+        <con:value/>
+        <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="REQUEST" id="">
+      <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:status/>
+      <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent>{
+  "planDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST" id="">
+      <con:mediaType>application/json</con:mediaType>
+      <con:status/>
+      <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent>{
+  "planDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST" id="">
+      <con:mediaType>text/json</con:mediaType>
+      <con:status/>
+      <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent>{
+  "planDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:representation type="REQUEST" id="">
+      <con:mediaType>application/*+json</con:mediaType>
+      <con:status/>
+      <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent>{
+  "planDt" : "2015-07-20T15:49:04-07:00"
+}</con:sampleContent>
+    </con:representation>
+    <con:request name="Request 1" id="77a89b65-c6e6-4a17-9845-5bd2c0a5d068" mediaType="application/json-patch+json">
+      <con:settings/>
+      <con:request>{\r
+  "planDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>connectionId</con:entry>
+        <con:entry>patchOrderId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+    <con:request name="Request 2" id="31a4548d-8980-4ac4-a7e8-bed477071bdd" mediaType="application/json">
+      <con:settings/>
+      <con:request>{\r
+  "planDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>connectionId</con:entry>
+        <con:entry>patchOrderId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+    <con:request name="Request 3" id="65ec4108-81fe-4907-b1b8-4fd8f8e2ff02" mediaType="text/json">
+      <con:settings/>
+      <con:request>{\r
+  "planDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>connectionId</con:entry>
+        <con:entry>patchOrderId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+    <con:request name="Request 4" id="9a179cd7-998d-40d6-a8db-29f21ad6b4a0" mediaType="application/*+json">
+      <con:settings/>
+      <con:request>{\r
+  "planDt" : "2015-07-20T15:49:04-07:00"\r
+}</con:request>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>connectionId</con:entry>
+        <con:entry>patchOrderId</con:entry>
+      </con:parameterOrder>
+    </con:request>
+  </con:method>
+</con:resource>

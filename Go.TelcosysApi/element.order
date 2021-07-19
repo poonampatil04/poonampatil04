@@ -1,0 +1,4 @@
+PatchOrderStateUpdatesForInstall.xml
+PatchOrderStateUpdatesForRemove.xml
+PatchOrderManualStatuslUpdates.xml
+CreateInstallPatchStateInDeniedState.xml

@@ -1,0 +1,898 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:testCase id="b1a25f0b-5c9d-4a88-857f-0c2520a4f0c2" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateInstallPatchStateInDeniedState" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings>
+    <con:setting id="b1a25f0b-5c9d-4a88-857f-0c2520a4f0c2fileName">CreateInstallPatchStateInDeniedState</con:setting>
+  </con:settings>
+  <con:savedRecentRuns>1</con:savedRecentRuns>
+  <con:testStep type="datasource" name="ConnectionIdDataSource" id="873ea3f9-084a-4397-88ad-16a49a7c4d33">
+    <con:settings/>
+    <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:dataSource type="Data Generator">
+        <con:configuration>
+          <generatedDataCount>1</generatedDataCount>
+          <generatorsTotalNumber>2</generatorsTotalNumber>
+          <lastSelectedProperty>0</lastSelectedProperty>
+          <GeneratorType0>STR</GeneratorType0>
+          <PropertyName0>connectionId</PropertyName0>
+          <repetitionCountconnectionId>0</repetitionCountconnectionId>
+          <repeatValuesconnectionId>false</repeatValuesconnectionId>
+          <PasswordDataGeneratorUseSpacesconnectionId>false</PasswordDataGeneratorUseSpacesconnectionId>
+          <PasswordDataGeneratorUsePunctuationMarksconnectionId>false</PasswordDataGeneratorUsePunctuationMarksconnectionId>
+          <PasswordDataGeneratorUseLettersconnectionId>false</PasswordDataGeneratorUseLettersconnectionId>
+          <PasswordDataGeneratorUseDigitsconnectionId>true</PasswordDataGeneratorUseDigitsconnectionId>
+          <PasswordDataGeneratorMaxCharacterCountconnectionId>10</PasswordDataGeneratorMaxCharacterCountconnectionId>
+          <PasswordDataGeneratorMinCharacterCountconnectionId>10</PasswordDataGeneratorMinCharacterCountconnectionId>
+          <GeneratorType1>BOOL</GeneratorType1>
+          <PropertyName1>PatchOrderMainStatus</PropertyName1>
+          <repetitionCountPatchOrderMainStatus>0</repetitionCountPatchOrderMainStatus>
+          <repeatValuesPatchOrderMainStatus>false</repeatValuesPatchOrderMainStatus>
+          <boolViewPatchOrderMainStatus>Classic</boolViewPatchOrderMainStatus>
+          <escapeSpaceSequence/>
+        </con:configuration>
+      </con:dataSource>
+      <con:shared>true</con:shared>
+      <con:restartShared>true</con:restartShared>
+      <con:property>connectionId</con:property>
+      <con:completeLastOperation>true</con:completeLastOperation>
+      <con:restartOnRun>true</con:restartOnRun>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="CreatePatchOrder" id="e529f715-b946-409a-9234-5f3d54a363a4">
+    <con:settings/>
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="CreatePatchOrder" id="4ae3fa3b-0f26-455c-afa9-054b18f4cfce" mediaType="application/json-patch+json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+        <con:request>{
+  "address": {
+    "postalCode": "1234XX",
+    "houseNumber": 2,
+    "houseNumberAddition": "D"
+
+  },
+  "firstName": "InstallPatch",
+  "lastName": "DeniedState",
+  "intercalation": "ReadyAPI",
+  "phoneNumber": "0646287440",
+  "additionalPhoneNumber": "string",
+  "email": "telcodetester@gmail.com",
+  "contactAddress": {
+    "postalCode": "1234XX",
+    "houseNumber": 2,
+    "houseNumberAddition": "D"
+
+  },
+  "wishDt": "2021-07-14T08:05:01.904Z",
+  "reorderDenied": true,
+  "requiresMigration": true,
+  "popName": "bdg-klp",
+  "ppfPortInfo": {
+ "frame": 105,
+"block": "A",
+"module": "GLOP PP/11",
+"port": "30",
+"row": 4
+  }
+}</con:request>
+        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="894d8c3f-3444-448c-a42e-be91efb52c7a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="connectionId" value="${ConnectionIdDataSource#connectionId}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>connectionId</con:entry>
+        </con:parameterOrder>
+        <con:environmentSpec>
+          <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
+            <con:authProfile>ReadyAPI_Dev</con:authProfile>
+          </con:entry>
+        </con:environmentSpec>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetInstallPatchId" id="007edcb1-b08c-4f58-bdea-2716fce2b600">
+    <con:settings/>
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetInstallPatchId" id="5e01a09d-486d-4574-9734-145d18a7c4eb" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="17bbba99-9143-4d82-acc1-33bccd5df665" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="connectionId" value="${ConnectionIdDataSource#connectionId}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>connectionId</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="UpdatePatchOrderStateFromGridz" id="22e67878-74ee-4f05-b62b-1fa51c0f0603">
+    <con:settings/>
+    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" resourcePath="/api/Stub/tasks/{sourceId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdatePatchOrderStateFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
+        <con:request>{\r
+   "mainStatus" : "DENIED",\r
+   "timeslot" : "MORNING",\r
+   "completeDt" : "",\r
+   "reason" : "Ready",\r
+   "subStatus" : "TEMPORARY-FIX",\r
+   "clarification" : "string"\r
+}</con:request>
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>204</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="sourceId" value="${GetInstallPatchId#Response#$['patchOrders'][0]['patchOrderId']}"/>
+        </con:parameters>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="11b3445f-9746-48a5-9ee5-2a467e18b630">
+    <con:settings/>
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+        <con:request/>
+        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Signal/process</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="846551e1-598a-4485-8449-4bcfbf48a0ee" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters/>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="GetPatchStateAfterGridzUpdate" id="f0fc1243-3755-4dbf-82bc-04394465953c">
+    <con:settings/>
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="GetPatchStateAfterGridzUpdate" id="f457fc36-eac1-40e7-8e12-c0469e6d4039" mediaType="application/json">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:request/>
+        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="577b9aef-e83f-482c-9230-eb979775d568" name="Valid HTTP Status Codes">
+          <con:settings/>
+          <con:configuration>
+            <codes>200</codes>
+          </con:configuration>
+        </con:assertion>
+        <con:assertion type="MessageContentAssertion" id="e3516cfc-641d-4a66-be72-ec062aff72dc" name="Message Content Assertion">
+          <con:configuration xsi:type="con:MessageContentAssertion">
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:state[1]</con:xpath>
+              <con:element>state</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>created</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:installRequestDt[1]</con:xpath>
+              <con:element>installRequestDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-14T17:43:22.3343961+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:installPlanDt[1]</con:xpath>
+              <con:element>installPlanDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-14T08:05:01.904+00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:inServiceDt[1]</con:xpath>
+              <con:element>inServiceDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:inServiceDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:removeRequestDt[1]</con:xpath>
+              <con:element>removeRequestDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:removeRequestDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:removePlanDt[1]</con:xpath>
+              <con:element>removePlanDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:removePlanDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:outServiceDt[1]</con:xpath>
+              <con:element>outServiceDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:outServiceDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:cancelledDt[1]</con:xpath>
+              <con:element>cancelledDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:cancelledDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:removeCancelledDt[1]</con:xpath>
+              <con:element>removeCancelledDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:removeCancelledDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:popName[1]</con:xpath>
+              <con:element>popName</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>bdg-klp</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:frame[1]</con:xpath>
+              <con:element>frame</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>105</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchPanel[1]</con:xpath>
+              <con:element>patchPanel</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>GLOP PP/11</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:port[1]</con:xpath>
+              <con:element>port</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>30</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:passiveOperator[1]</con:xpath>
+              <con:element>passiveOperator</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>OPF</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:patchOrderId[1]</con:xpath>
+              <con:element>patchOrderId</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:type[1]</con:xpath>
+              <con:element>type</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>install</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:createDt[1]</con:xpath>
+              <con:element>createDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-14T17:43:22.3341363+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:wishDt[1]</con:xpath>
+              <con:element>wishDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-14T08:05:01.904+00:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
+              <con:element>planPeriod</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>morning</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
+              <con:element>plannedFrom</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
+              <con:element>plannedTill</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:status[1]</con:xpath>
+              <con:element>status</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>Confirmed</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
+              <con:element>statusReason</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>877899</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
+              <con:element>completeDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2015-07-20T15:49:04-07:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:changeDt[1]</con:xpath>
+              <con:element>changeDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-14T17:43:22.3343927+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
+              <con:element>planPeriod</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:planPeriod[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
+              <con:element>plannedFrom</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
+              <con:element>plannedTill</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:status[1]</con:xpath>
+              <con:element>status</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
+              <con:element>statusReason</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:statusReason[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
+              <con:element>completeDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:changeDt[1]</con:xpath>
+              <con:element>changeDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2021-07-15T09:21:09.3468744+02:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
+              <con:element>planPeriod</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>morning</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
+              <con:element>plannedFrom</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:plannedFrom[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
+              <con:element>plannedTill</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue xsi:nil="true"/>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:plannedTill[1]/@null</con:xpath>
+              <con:element>@null</con:element>
+              <con:type/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>true</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:status[1]</con:xpath>
+              <con:element>status</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>new</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
+              <con:element>statusReason</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>877899</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
+              <con:element>completeDt</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>2015-07-20T15:49:04-07:00</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:taskJson[1]</con:xpath>
+              <con:element>taskJson</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-14 15:43:22Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"RECEIVED","subStatus":"TEMPORARY-FIX","reason":"877899","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"4f3d08e9-721f-4e47-655c-08d946cfdbcd","enddate":"2015-07-20 22:49:04Z","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"de","lastName":"Smoke","firstName":"Test","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:elements>
+              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115';
+//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:taskVersion[1]</con:xpath>
+              <con:element>taskVersion</con:element>
+              <con:type xsi:nil="true"/>
+              <con:operator>=</con:operator>
+              <con:enabled>false</con:enabled>
+              <con:expectedValue>1.0</con:expectedValue>
+              <con:hasValue>false</con:hasValue>
+              <con:numberType>false</con:numberType>
+            </con:elements>
+            <con:originalMessage><![CDATA[<Response xmlns="https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/2461445115">
+   <state>created</state>
+   <installRequestDt>2021-07-14T17:43:22.3343961+02:00</installRequestDt>
+   <installPlanDt>2021-07-14T08:05:01.904+00:00</installPlanDt>
+   <inServiceDt null="true"/>
+   <removeRequestDt null="true"/>
+   <removePlanDt null="true"/>
+   <outServiceDt null="true"/>
+   <cancelledDt null="true"/>
+   <removeCancelledDt null="true"/>
+   <popName>bdg-klp</popName>
+   <frame>105</frame>
+   <patchPanel>GLOP PP/11</patchPanel>
+   <port>30</port>
+   <passiveOperator>OPF</passiveOperator>
+   <patchOrders>
+      <e>
+         <patchOrderId>4f3d08e9-721f-4e47-655c-08d946cfdbcd</patchOrderId>
+         <type>install</type>
+         <createDt>2021-07-14T17:43:22.3341363+02:00</createDt>
+         <wishDt>2021-07-14T08:05:01.904+00:00</wishDt>
+         <state>
+            <planPeriod>morning</planPeriod>
+            <plannedFrom null="true"/>
+            <plannedTill null="true"/>
+            <status>new</status>
+            <statusReason>877899</statusReason>
+            <completeDt>2015-07-20T15:49:04-07:00</completeDt>
+         </state>
+         <history>
+            <e>
+               <changeDt>2021-07-14T17:43:22.3343927+02:00</changeDt>
+               <state>
+                  <planPeriod null="true"/>
+                  <plannedFrom null="true"/>
+                  <plannedTill null="true"/>
+                  <status>new</status>
+                  <statusReason null="true"/>
+                  <completeDt null="true"/>
+               </state>
+            </e>
+            <e>
+               <changeDt>2021-07-15T09:21:09.3468744+02:00</changeDt>
+               <state>
+                  <planPeriod>morning</planPeriod>
+                  <plannedFrom null="true"/>
+                  <plannedTill null="true"/>
+                  <status>new</status>
+                  <statusReason>877899</statusReason>
+                  <completeDt>2015-07-20T15:49:04-07:00</completeDt>
+               </state>
+            </e>
+         </history>
+         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-14 15:43:22Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"RECEIVED","subStatus":"TEMPORARY-FIX","reason":"877899","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"4f3d08e9-721f-4e47-655c-08d946cfdbcd","enddate":"2015-07-20 22:49:04Z","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"de","lastName":"Smoke","firstName":"Test","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</taskJson>
+         <taskVersion>1.0</taskVersion>
+      </e>
+   </patchOrders>
+</Response>]]></con:originalMessage>
+          </con:configuration>
+        </con:assertion>
+        <con:credentials>
+          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:parameters>
+          <con:entry key="connectionId" value="${ConnectionIdDataSource#connectionId}"/>
+        </con:parameters>
+        <con:parameterOrder>
+          <con:entry>connectionId</con:entry>
+        </con:parameterOrder>
+      </con:restRequest>
+    </con:config>
+  </con:testStep>
+  <con:properties/>
+  <con:reportParameters/>
+  <con:breakPoints>
+    <con:testStepId>873ea3f9-084a-4397-88ad-16a49a7c4d33</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+</con:testCase>
