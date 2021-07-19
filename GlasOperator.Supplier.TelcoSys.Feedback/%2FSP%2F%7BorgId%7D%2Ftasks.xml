@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/SP/{orgId}/tasks" path="/SP/{orgId}/tasks" id="72f6a6dd-988c-4331-9821-fd02579aefb5" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/SP/{orgId}/tasks" path="/SP/{orgId}/tasks" id="72f6a6dd-988c-4331-9821-fd02579aefb5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="72f6a6dd-988c-4331-9821-fd02579aefb5fileName">%2FSP%2F%7BorgId%7D%2Ftasks</con:setting>
   </con:settings>
@@ -39,21 +39,37 @@
     <con:request name="Request 1" id="acec0361-2d13-407a-ad88-7581f1b4de66" mediaType="application/json-patch+json">
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosysfeedback-dev.glasoperator.nl/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
     </con:request>
     <con:request name="Request 2" id="7e9d4325-21f2-4610-84bf-bf4fc490eff6" mediaType="application/json">
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosysfeedback-dev.glasoperator.nl/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
     </con:request>
     <con:request name="Request 3" id="ae0ef443-9301-4c98-902e-edd5134690cc" mediaType="text/json">
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosysfeedback-dev.glasoperator.nl/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
     </con:request>
     <con:request name="Request 4" id="19a572f9-e698-4350-acd9-4ebe49452840" mediaType="application/*+json">
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosysfeedback-dev.glasoperator.nl/</con:endpoint>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
     </con:request>
   </con:method>

@@ -9,6 +9,7 @@
     <con:parameters>
       <con:parameter required="true">
         <con:name>connectionId</con:name>
+<<<<<<< HEAD
         <con:value/>
         <con:style>TEMPLATE</con:style>
         <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
@@ -16,13 +17,23 @@
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE" id="">
+=======
+        <con:style>TEMPLATE</con:style>
+      </con:parameter>
+    </con:parameters>
+    <con:representation type="RESPONSE">
+>>>>>>> master
       <con:mediaType>text/plain</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
       <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:representation>
+<<<<<<< HEAD
     <con:representation type="RESPONSE" id="">
+=======
+    <con:representation type="RESPONSE">
+>>>>>>> master
       <con:mediaType>application/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -39,7 +50,11 @@
   "outServiceDt" : "2015-07-20T15:49:04-07:00"
 }</con:sampleContent>
     </con:representation>
+<<<<<<< HEAD
     <con:representation type="RESPONSE" id="">
+=======
+    <con:representation type="RESPONSE">
+>>>>>>> master
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -57,6 +72,7 @@
 }</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="c91c06be-b5d3-41c6-8d4a-3e79aa931b24" mediaType="application/json">
+<<<<<<< HEAD
       <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
@@ -65,6 +81,11 @@
       <con:parameterOrder>
         <con:entry>connectionId</con:entry>
       </con:parameterOrder>
+=======
+      <con:settings/>
+      <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
+      <con:parameters/>
+>>>>>>> master
     </con:request>
   </con:method>
 </con:resource>

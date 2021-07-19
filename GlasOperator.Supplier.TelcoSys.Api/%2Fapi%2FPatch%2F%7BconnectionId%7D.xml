@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Patch/{connectionId}" path="/api/Patch/{connectionId}" id="f994cd61-b942-4cb4-9e24-b78905119e24" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Patch/{connectionId}" path="/api/Patch/{connectionId}" id="f994cd61-b942-4cb4-9e24-b78905119e24" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="f994cd61-b942-4cb4-9e24-b78905119e24fileName">%2Fapi%2FPatch%2F%7BconnectionId%7D</con:setting>
   </con:settings>
@@ -12,7 +12,7 @@
         <con:value/>
         <con:style>TEMPLATE</con:style>
         <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE" id="">
@@ -20,7 +20,7 @@
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:representation type="RESPONSE" id="">
       <con:mediaType>application/json</con:mediaType>
@@ -125,10 +125,14 @@
 }</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="5e01a09d-486d-4574-9734-145d18a7c4eb" mediaType="application/json">
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
       <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
       <con:parameterOrder>
         <con:entry>connectionId</con:entry>
@@ -144,14 +148,14 @@
         <con:value/>
         <con:style>TEMPLATE</con:style>
         <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
       <con:parameter required="false">
         <con:name>wishDt</con:name>
         <con:value/>
         <con:style>QUERY</con:style>
         <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE" id="">
@@ -159,7 +163,7 @@
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:representation type="RESPONSE" id="">
       <con:mediaType>application/json</con:mediaType>
@@ -176,10 +180,14 @@
       <con:sampleContent>{ }</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="bce11828-eaf1-4ea1-bde4-81e36ea03ff8" mediaType="application/json">
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
       <con:request/>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
       <con:parameterOrder>
         <con:entry>connectionId</con:entry>
@@ -196,7 +204,7 @@
         <con:value/>
         <con:style>TEMPLATE</con:style>
         <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+        <con:description xsi:nil="true"/>
       </con:parameter>
     </con:parameters>
     <con:representation type="RESPONSE" id="">
@@ -204,7 +212,7 @@
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
-      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true"/>
     </con:representation>
     <con:representation type="RESPONSE" id="">
       <con:mediaType>application/json</con:mediaType>
@@ -224,7 +232,7 @@
       <con:mediaType>application/json-patch+json</con:mediaType>
       <con:status/>
       <con:params/>
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
       <con:sampleContent>{
   "address" : {
     "postalCode" : "string",
@@ -261,7 +269,7 @@
       <con:mediaType>application/json</con:mediaType>
       <con:status/>
       <con:params/>
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
       <con:sampleContent>{
   "address" : {
     "postalCode" : "string",
@@ -298,7 +306,7 @@
       <con:mediaType>text/json</con:mediaType>
       <con:status/>
       <con:params/>
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
       <con:sampleContent>{
   "address" : {
     "postalCode" : "string",
@@ -335,7 +343,7 @@
       <con:mediaType>application/*+json</con:mediaType>
       <con:status/>
       <con:params/>
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:description xsi:nil="true"/>
       <con:sampleContent>{
   "address" : {
     "postalCode" : "string",
@@ -404,6 +412,7 @@
   }\r
 }</con:request>
       <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
@@ -447,6 +456,10 @@
     "row" : 0\r
   }\r
 }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
       <con:parameterOrder>
         <con:entry>connectionId</con:entry>
@@ -487,6 +500,10 @@
     "row" : 0\r
   }\r
 }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
       <con:parameterOrder>
         <con:entry>connectionId</con:entry>
@@ -527,6 +544,10 @@
     "row" : 0\r
   }\r
 }</con:request>
+      <con:credentials>
+        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
       <con:parameters/>
       <con:parameterOrder>
         <con:entry>connectionId</con:entry>

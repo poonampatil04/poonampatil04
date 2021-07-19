@@ -1,33 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ec215a79-6933-4a95-ad6e-1ee14cbd1df1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="InstallPatchOrderManualRetry" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="a7c8db16-d4e8-45ae-8c31-86f6fc427c83" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RemovePatchOrderManualReplan" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="ec215a79-6933-4a95-ad6e-1ee14cbd1df1fileName">InstallPatchOrderManualRetry</con:setting>
+    <con:setting id="a7c8db16-d4e8-45ae-8c31-86f6fc427c83fileName">RemovePatchOrderManualReplan</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="CreateInstallPatchOrderInDeniedState" id="82560d86-ab3b-42d9-be99-6890bf6c6b1b">
+  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchStateInPlanState" id="978a683a-1e5d-420c-a0fd-f30aeca25945">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:targetTestCase>b1a25f0b-5c9d-4a88-857f-0c2520a4f0c2</con:targetTestCase>
+      <con:targetTestCase>e3c48d6c-c8d6-486b-9835-c14625e3e71f</con:targetTestCase>
       <con:properties>
         <con:property>
-          <con:name>PatchOrderState</con:name>
+          <con:name>PatchOrderStatus</con:name>
+          <con:value>WIP</con:value>
         </con:property>
       </con:properties>
-      <con:returnProperties/>
+      <con:returnProperties>
+        <con:entry>PatchOrderStatus</con:entry>
+      </con:returnProperties>
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="RetryInstallPatchOrder" id="dce917bc-a4ee-4776-b28d-89a7521c4ab6">
+  <con:testStep type="properties" name="replanDate" id="79247d91-753c-4a53-b134-ae2bca724c80">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/retry" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="RetryInstallPatchOrder" id="dbab8adc-123e-4aa0-b69f-415c9c6620f2" mediaType="application/json" postQueryString="false">
-        <con:description xsi:nil="true"/>
+    <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties>
+        <con:property>
+          <con:name>planDt</con:name>
+          <con:value>ASAP</con:value>
+        </con:property>
+      </con:properties>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="transfer" name="PropertyTransfer 1" id="d2d7e9ee-5d0a-4a64-8c28-21ab85d77d8d">
+    <con:settings/>
+    <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+        <con:name>planDt</con:name>
+        <con:sourceType>planDt</con:sourceType>
+        <con:sourceStep>replanDate</con:sourceStep>
+        <con:sourcePath/>
+        <con:targetType>Request</con:targetType>
+        <con:targetStep>ReplanRemovePatchOrder</con:targetStep>
+        <con:targetPath>$['planDt']</con:targetPath>
+        <con:type>JSONPATH</con:type>
+        <con:targetTransferType>JSONPATH</con:targetTransferType>
+        <con:upgraded>true</con:upgraded>
+      </con:transfers>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="restrequest" name="ReplanRemovePatchOrder" id="17f1c026-7dff-45e7-b083-4178ce950f66">
+    <con:settings/>
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="ReplanRemovePatchOrder" id="77a89b65-c6e6-4a17-9845-5bd2c0a5d068" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:request/>
-        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/PatchOrder/4ddf2029-d75a-4d01-8eec-08d94aacf897/retry</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="6ea7db19-1a74-45d6-9fe0-3f2ab6d9bb08" name="Valid HTTP Status Codes">
+        <con:request>{"planDt":"2021-12-12"}</con:request>
+        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/6816111017/PatchOrder/7600863d-dadd-4b77-72f2-08d94abe4ff9/replan</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="a8268efc-ca65-4c7d-88e6-09eb0f3b63aa" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>200</codes>
@@ -39,8 +69,8 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
-          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#GetInstallPatchId]#Response#$['patchOrders'][0]['patchOrderId']}"/>
+          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInPlanState#ConnectionIdDataSource]#connectionId}"/>
+          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInPlanState#GetRemovePatchId]#Response#$['patchOrders'][1]['patchOrderId']}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>connectionId</con:entry>
@@ -49,7 +79,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="9d8c9fb9-aabb-4471-9181-13f0a3ccb85a">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="96744e4e-e0ed-4c9c-b14c-e42c85a68c78">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -74,10 +104,10 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="VerifyNewInstallPatchOrderCreated" id="1a65a9f3-d2a5-437b-938a-8d4469a001b8">
+  <con:testStep type="restrequest" name="VerifyNewRemovePatchOrderCreated" id="d66519ab-1cf9-4f1f-8e48-0303160b82e4">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="VerifyNewInstallPatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
+      <con:restRequest name="VerifyNewRemovePatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
@@ -90,11 +120,6 @@
             <codes>200</codes>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="06533798-2d07-4206-8023-abf74a7bd4cb" name="Response SLA">
-          <con:configuration>
-            <SLA>200</SLA>
-          </con:configuration>
-        </con:assertion>
         <con:assertion type="MessageContentAssertion" id="43dacaef-33c9-4398-81b7-5be3f88eac89" name="Message Content Assertion">
           <con:configuration xsi:type="con:MessageContentAssertion">
             <con:elements>
@@ -104,7 +129,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>created</con:expectedValue>
+              <con:expectedValue>inService</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -115,7 +140,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:57:15.7672204+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:22:21.9081762+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -135,7 +160,7 @@
 //ns1:Response[1]/ns1:inServiceDt[1]</con:xpath>
               <con:element>inServiceDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -159,18 +184,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue xsi:nil="true"/>
-              <con:hasValue>false</con:hasValue>
-              <con:numberType>false</con:numberType>
-            </con:elements>
-            <con:elements>
-              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/9319332863';
-//ns1:Response[1]/ns1:removeRequestDt[1]/@null</con:xpath>
-              <con:element>@null</con:element>
-              <con:type/>
-              <con:operator>=</con:operator>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue>true</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:23:08.5732466+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -179,7 +193,7 @@
 //ns1:Response[1]/ns1:removePlanDt[1]</con:xpath>
               <con:element>removePlanDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -201,7 +215,7 @@
 //ns1:Response[1]/ns1:outServiceDt[1]</con:xpath>
               <con:element>outServiceDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -223,7 +237,7 @@
 //ns1:Response[1]/ns1:cancelledDt[1]</con:xpath>
               <con:element>cancelledDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -245,7 +259,7 @@
 //ns1:Response[1]/ns1:removeCancelledDt[1]</con:xpath>
               <con:element>removeCancelledDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -324,7 +338,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>60a2ffd3-e487-4055-72c3-08d94abe4ff9</con:expectedValue>
+              <con:expectedValue>f3329ab3-735c-4f43-72e8-08d94abe4ff9</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -335,7 +349,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>9319332863</con:expectedValue>
+              <con:expectedValue>9290581833</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -357,7 +371,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:53:52.0624329+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:22:21.9079796+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -388,7 +402,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -410,7 +424,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -434,7 +448,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>denied</con:expectedValue>
+              <con:expectedValue>delivered</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -454,7 +468,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -478,7 +492,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:53:52.0626453+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:22:21.9081734+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -498,7 +512,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
               <con:element>planPeriod</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -520,7 +534,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -542,7 +556,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -575,7 +589,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
               <con:element>statusReason</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -597,7 +611,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -621,7 +635,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:53:53.2902291+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:22:23.6811711+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -652,7 +666,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -674,7 +688,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -698,7 +712,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>denied</con:expectedValue>
+              <con:expectedValue>delivered</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -718,7 +732,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[1]/ns1:history[1]/ns1:e[2]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -742,7 +756,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 14:53:52Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DENIED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"60a2ffd3-e487-4055-72c3-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 20:22:21Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DELIVERED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"f3329ab3-735c-4f43-72e8-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -762,9 +776,9 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:patchOrderId[1]</con:xpath>
               <con:element>patchOrderId</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>exists</con:operator>
+              <con:operator>=</con:operator>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>76ae67f4-2d92-4dd1-72c4-08d94abe4ff9</con:expectedValue>
+              <con:expectedValue>cdf4d752-4513-4f2d-72e9-08d94abe4ff9</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -775,7 +789,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>9319332863</con:expectedValue>
+              <con:expectedValue>9290581833</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -786,7 +800,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>true</con:enabled>
-              <con:expectedValue>install</con:expectedValue>
+              <con:expectedValue>remove</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -797,7 +811,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:54:44.6176475+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:22:25.4253786+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -806,7 +820,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:wishDt[1]</con:xpath>
               <con:element>wishDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -830,18 +844,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue xsi:nil="true"/>
-              <con:hasValue>false</con:hasValue>
-              <con:numberType>false</con:numberType>
-            </con:elements>
-            <con:elements>
-              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/9319332863';
-//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:state[1]/ns1:planPeriod[1]/@null</con:xpath>
-              <con:element>@null</con:element>
-              <con:type/>
-              <con:operator>=</con:operator>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue>true</con:expectedValue>
+              <con:expectedValue>morning</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -850,7 +853,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -872,7 +875,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -896,7 +899,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>new</con:expectedValue>
+              <con:expectedValue>denied</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -907,18 +910,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue xsi:nil="true"/>
-              <con:hasValue>false</con:hasValue>
-              <con:numberType>false</con:numberType>
-            </con:elements>
-            <con:elements>
-              <con:xpath>declare namespace ns1='https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/9319332863';
-//ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:state[1]/ns1:statusReason[1]/@null</con:xpath>
-              <con:element>@null</con:element>
-              <con:type/>
-              <con:operator>=</con:operator>
-              <con:enabled>false</con:enabled>
-              <con:expectedValue>true</con:expectedValue>
+              <con:expectedValue>Ready</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -927,7 +919,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -951,7 +943,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:54:44.617875+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:22:25.4255405+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -960,7 +952,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:history[1]/ns1:e[1]/ns1:wishDt[1]</con:xpath>
               <con:element>wishDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -982,7 +974,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
               <con:element>planPeriod</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1004,7 +996,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1026,7 +1018,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1059,7 +1051,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
               <con:element>statusReason</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1081,7 +1073,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[2]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1105,7 +1097,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 14:54:44Z","priority":"BASIC"},"action":"INSTALL","status":{"mainStatus":"NEW"},"inId":"76ae67f4-2d92-4dd1-72c4-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 20:22:25Z","priority":"BASIC"},"action":"TERMINATE","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DENIED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"inId":"cdf4d752-4513-4f2d-72e9-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}}}}</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1127,7 +1119,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>bac3f6e3-5598-4d14-72c6-08d94abe4ff9</con:expectedValue>
+              <con:expectedValue>2da10ae8-4d7d-48e0-72ec-08d94abe4ff9</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1138,7 +1130,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>9319332863</con:expectedValue>
+              <con:expectedValue>9290581833</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1149,7 +1141,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>install</con:expectedValue>
+              <con:expectedValue>remove</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1160,7 +1152,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:57:15.7670245+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:23:08.5730349+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1169,7 +1161,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:wishDt[1]</con:xpath>
               <con:element>wishDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1191,7 +1183,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
               <con:element>planPeriod</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1213,7 +1205,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1235,7 +1227,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1268,7 +1260,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
               <con:element>statusReason</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1290,7 +1282,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1314,7 +1306,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>2021-07-19T16:57:15.7672167+02:00</con:expectedValue>
+              <con:expectedValue>2021-07-19T22:23:08.573243+02:00</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1323,7 +1315,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:history[1]/ns1:e[1]/ns1:wishDt[1]</con:xpath>
               <con:element>wishDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1345,7 +1337,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:planPeriod[1]</con:xpath>
               <con:element>planPeriod</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1367,7 +1359,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedFrom[1]</con:xpath>
               <con:element>plannedFrom</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1389,7 +1381,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:plannedTill[1]</con:xpath>
               <con:element>plannedTill</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1422,7 +1414,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:statusReason[1]</con:xpath>
               <con:element>statusReason</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1444,7 +1436,7 @@
 //ns1:Response[1]/ns1:patchOrders[1]/ns1:e[3]/ns1:history[1]/ns1:e[1]/ns1:state[1]/ns1:completeDt[1]</con:xpath>
               <con:element>completeDt</con:element>
               <con:type xsi:nil="true"/>
-              <con:operator>=</con:operator>
+              <con:operator>exists</con:operator>
               <con:enabled>false</con:enabled>
               <con:expectedValue xsi:nil="true"/>
               <con:hasValue>false</con:hasValue>
@@ -1468,7 +1460,7 @@
               <con:type xsi:nil="true"/>
               <con:operator>=</con:operator>
               <con:enabled>false</con:enabled>
-              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 14:57:15Z","priority":"BASIC"},"action":"INSTALL","status":{"mainStatus":"NEW"},"inId":"bac3f6e3-5598-4d14-72c6-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</con:expectedValue>
+              <con:expectedValue>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 20:23:08Z","priority":"BASIC"},"action":"TERMINATE","status":{"mainStatus":"NEW"},"inId":"2da10ae8-4d7d-48e0-72ec-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}}}}</con:expectedValue>
               <con:hasValue>false</con:hasValue>
               <con:numberType>false</con:numberType>
             </con:elements>
@@ -1484,11 +1476,11 @@
               <con:numberType>false</con:numberType>
             </con:elements>
             <con:originalMessage><![CDATA[<Response xmlns="https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/9319332863">
-   <state>created</state>
-   <installRequestDt>2021-07-19T16:57:15.7672204+02:00</installRequestDt>
+   <state>inService</state>
+   <installRequestDt>2021-07-19T22:22:21.9081762+02:00</installRequestDt>
    <installPlanDt>2021-07-14T08:05:01.904+00:00</installPlanDt>
    <inServiceDt null="true"/>
-   <removeRequestDt null="true"/>
+   <removeRequestDt>2021-07-19T22:23:08.5732466+02:00</removeRequestDt>
    <removePlanDt null="true"/>
    <outServiceDt null="true"/>
    <cancelledDt null="true"/>
@@ -1500,11 +1492,54 @@
    <passiveOperator>OPF</passiveOperator>
    <patchOrders>
       <e>
-         <patchOrderId>60a2ffd3-e487-4055-72c3-08d94abe4ff9</patchOrderId>
-         <connectionId>9319332863</connectionId>
+         <patchOrderId>f3329ab3-735c-4f43-72e8-08d94abe4ff9</patchOrderId>
+         <connectionId>9290581833</connectionId>
          <type>install</type>
-         <createDt>2021-07-19T16:53:52.0624329+02:00</createDt>
+         <createDt>2021-07-19T22:22:21.9079796+02:00</createDt>
          <wishDt>2021-07-14T08:05:01.904+00:00</wishDt>
+         <state>
+            <planPeriod>morning</planPeriod>
+            <plannedFrom null="true"/>
+            <plannedTill null="true"/>
+            <status>delivered</status>
+            <statusReason>Ready</statusReason>
+            <completeDt null="true"/>
+         </state>
+         <history>
+            <e>
+               <changeDt>2021-07-19T22:22:21.9081734+02:00</changeDt>
+               <wishDt>2021-07-14T08:05:01.904+00:00</wishDt>
+               <state>
+                  <planPeriod null="true"/>
+                  <plannedFrom null="true"/>
+                  <plannedTill null="true"/>
+                  <status>new</status>
+                  <statusReason null="true"/>
+                  <completeDt null="true"/>
+               </state>
+            </e>
+            <e>
+               <changeDt>2021-07-19T22:22:23.6811711+02:00</changeDt>
+               <wishDt>2021-07-14T08:05:01.904+00:00</wishDt>
+               <state>
+                  <planPeriod>morning</planPeriod>
+                  <plannedFrom null="true"/>
+                  <plannedTill null="true"/>
+                  <status>delivered</status>
+                  <statusReason>Ready</statusReason>
+                  <completeDt null="true"/>
+               </state>
+            </e>
+         </history>
+         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 20:22:21Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DELIVERED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"f3329ab3-735c-4f43-72e8-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</taskJson>
+         <taskVersion>1.0</taskVersion>
+      </e>
+      <e>
+         <patchOrderId>cdf4d752-4513-4f2d-72e9-08d94abe4ff9</patchOrderId>
+         <connectionId>9290581833</connectionId>
+         <type>remove</type>
+         <createDt>2021-07-19T22:22:25.4253786+02:00</createDt>
+         <wishDt null="true"/>
          <state>
             <planPeriod>morning</planPeriod>
             <plannedFrom null="true"/>
@@ -1515,8 +1550,8 @@
          </state>
          <history>
             <e>
-               <changeDt>2021-07-19T16:53:52.0626453+02:00</changeDt>
-               <wishDt>2021-07-14T08:05:01.904+00:00</wishDt>
+               <changeDt>2021-07-19T22:22:25.4255405+02:00</changeDt>
+               <wishDt null="true"/>
                <state>
                   <planPeriod null="true"/>
                   <plannedFrom null="true"/>
@@ -1527,8 +1562,8 @@
                </state>
             </e>
             <e>
-               <changeDt>2021-07-19T16:53:53.2902291+02:00</changeDt>
-               <wishDt>2021-07-14T08:05:01.904+00:00</wishDt>
+               <changeDt>2021-07-19T22:22:28.0711713+02:00</changeDt>
+               <wishDt null="true"/>
                <state>
                   <planPeriod>morning</planPeriod>
                   <plannedFrom null="true"/>
@@ -1539,14 +1574,14 @@
                </state>
             </e>
          </history>
-         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 14:53:52Z","priority":"BASIC"},"action":"INSTALL","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DENIED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"wishdate":"2021-07-14 08:05:01Z","inId":"60a2ffd3-e487-4055-72c3-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</taskJson>
+         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":2,"created":"2021-07-19 20:22:25Z","priority":"BASIC"},"action":"TERMINATE","planned":{"timeslot":"MORNING"},"status":{"mainStatus":"DENIED","subStatus":"TEMPORARY-FIX","reason":"Ready","clarification":"string"},"inId":"cdf4d752-4513-4f2d-72e9-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}}}}</taskJson>
          <taskVersion>1.0</taskVersion>
       </e>
       <e>
-         <patchOrderId>76ae67f4-2d92-4dd1-72c4-08d94abe4ff9</patchOrderId>
-         <connectionId>9319332863</connectionId>
-         <type>install</type>
-         <createDt>2021-07-19T16:54:44.6176475+02:00</createDt>
+         <patchOrderId>2da10ae8-4d7d-48e0-72ec-08d94abe4ff9</patchOrderId>
+         <connectionId>9290581833</connectionId>
+         <type>remove</type>
+         <createDt>2021-07-19T22:23:08.5730349+02:00</createDt>
          <wishDt null="true"/>
          <state>
             <planPeriod null="true"/>
@@ -1558,7 +1593,7 @@
          </state>
          <history>
             <e>
-               <changeDt>2021-07-19T16:54:44.617875+02:00</changeDt>
+               <changeDt>2021-07-19T22:23:08.573243+02:00</changeDt>
                <wishDt null="true"/>
                <state>
                   <planPeriod null="true"/>
@@ -1570,38 +1605,7 @@
                </state>
             </e>
          </history>
-         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 14:54:44Z","priority":"BASIC"},"action":"INSTALL","status":{"mainStatus":"NEW"},"inId":"76ae67f4-2d92-4dd1-72c4-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</taskJson>
-         <taskVersion>1.0</taskVersion>
-      </e>
-      <e>
-         <patchOrderId>bac3f6e3-5598-4d14-72c6-08d94abe4ff9</patchOrderId>
-         <connectionId>9319332863</connectionId>
-         <type>install</type>
-         <createDt>2021-07-19T16:57:15.7670245+02:00</createDt>
-         <wishDt null="true"/>
-         <state>
-            <planPeriod null="true"/>
-            <plannedFrom null="true"/>
-            <plannedTill null="true"/>
-            <status>new</status>
-            <statusReason null="true"/>
-            <completeDt null="true"/>
-         </state>
-         <history>
-            <e>
-               <changeDt>2021-07-19T16:57:15.7672167+02:00</changeDt>
-               <wishDt null="true"/>
-               <state>
-                  <planPeriod null="true"/>
-                  <plannedFrom null="true"/>
-                  <plannedTill null="true"/>
-                  <status>new</status>
-                  <statusReason null="true"/>
-                  <completeDt null="true"/>
-               </state>
-            </e>
-         </history>
-         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 14:57:15Z","priority":"BASIC"},"action":"INSTALL","status":{"mainStatus":"NEW"},"inId":"bac3f6e3-5598-4d14-72c6-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}},"HASInfo":{"connectionAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"},"DHid":"STUB12","fiberNumber":"FIBER_1","contactPerson":{"intercalation":"ReadyAPI","lastName":"DeniedState","firstName":"InstallPatch","phoneNumber":"0646287440","additionalPhoneNumber":"string","mailingAddress":{"postalcode":"1234XX","houseNumber":2,"houseNumberExtension":"D","country":"NLD"}}}}}</taskJson>
+         <taskJson>{"taskHeader":{"from":{"orgId":"TMNL","systemId":"GoBoss"},"updateCount":1,"created":"2021-07-19 20:23:08Z","priority":"BASIC"},"action":"TERMINATE","status":{"mainStatus":"NEW"},"inId":"2da10ae8-4d7d-48e0-72ec-08d94abe4ff9","taskInfo":{"PoPInfo":{"DHid":"STUB12","fiberNumber":"FIBER_1","activePort":{"location":{"PoP":"bdg-klp","frame":105,"block":"A","module":"GLOP PP/11","port":"30","row":4},"connectorType":"SC/APC"}}}}</taskJson>
          <taskVersion>1.0</taskVersion>
       </e>
    </patchOrders>
@@ -1614,12 +1618,12 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
+          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
         </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="CleanUpDbTables" id="b1e230e4-b4f0-4a3b-8fa3-65c385b9cca9">
+  <con:testStep type="jdbc" name="CleanUpDbTables" id="20e00c98-2b6e-48e1-a1d1-ad2ed3eaee62" disabled="true">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
@@ -1630,9 +1634,12 @@
       <con:query>Delete from PatchOrder where PatchOrderId='${GetInstallPatchId#Response#$['patchOrders'][0]['patchOrderId']}';
 Delete from PatchOrderHistory  where PatchOrderId='${GetInstallPatchId#Response#$['patchOrders'][0]['patchOrderId']}';
 Delete from Signal where SourceId='${GetInstallPatchId#Response#$['patchOrders'][0]['patchOrderId']}';
-Delete from PatchOrder where PatchOrderId='${GetInstallPatchId#Response#$['patchOrders'][1]['patchOrderId']}';
-Delete from PatchOrderHistory  where PatchOrderId='${GetInstallPatchId#Response#$['patchOrders'][1]['patchOrderId']}';
-Delete from Signal where SourceId='${GetInstallPatchId#Response#$['patchOrders'][1]['patchOrderId']}';
+Delete from PatchOrder where PatchOrderId='${GetRemovePatchId#Response#$['patchOrders'][1]['patchOrderId']}';
+Delete from PatchOrderHistory  where PatchOrderId='${GetRemovePatchId#Response#$['patchOrders'][1]['patchOrderId']}';
+Delete from Signal where SourceId='${GetRemovePatchId#Response#$['patchOrders'][1]['patchOrderId']}';
+Delete from PatchOrder where PatchOrderId='${VerifyNewRemovePatchOrderCreated#Response#$['patchOrders'][2]['patchOrderId']}';
+Delete from PatchOrderHistory  where PatchOrderId='${VerifyNewRemovePatchOrderCreated#Response#$['patchOrders'][2]['patchOrderId']}';
+Delete from Signal where SourceId='${VerifyNewRemovePatchOrderCreated#Response#$['patchOrders'][2]['patchOrderId']}';
 Delete  from Patch where ConnectionId= '${ConnectionIdDataSource#connectionId}';</con:query>
       <con:properties/>
     </con:config>
@@ -1651,6 +1658,16 @@ Delete  from Patch where ConnectionId= '${ConnectionIdDataSource#connectionId}';
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>1a65a9f3-d2a5-437b-938a-8d4469a001b8</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>16c423ec-6905-4873-b4d0-a93c0db89ead</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>17f1c026-7dff-45e7-b083-4178ce950f66</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>
