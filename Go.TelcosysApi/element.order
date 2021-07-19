@@ -1,6 +1,2 @@
 PatchOrderStateUpdatesForInstall.xml
 PatchOrderStateUpdatesForRemove.xml
-InstallPatchOrderManualRetry.xml
-CreateInstallPatchStateInDeniedState.xml
-CreateRemovePatchStateInDeniedState.xml
-RemovePatchOrderManualRetry.xml
