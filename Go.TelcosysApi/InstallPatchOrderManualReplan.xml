@@ -5,7 +5,7 @@
     <con:setting id="d74ec0c6-267c-4e61-a6ed-f637b0446c82fileName">InstallPatchOrderManualReplan</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="Execute_CreateIstallPatchStateInPlanState" id="f0b2f4c2-42c1-4f1a-8c37-29fb1c265e2b" disabled="true">
+  <con:testStep type="calltestcase" name="Execute_CreateIstallPatchStateInPlanState" id="f0b2f4c2-42c1-4f1a-8c37-29fb1c265e2b">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:properties/>
@@ -13,7 +13,7 @@
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="calltestcase" name="CreateInstallPatchStateInPlanState" id="0744e4a4-1e80-4202-8f0a-9e9555ed331f" disabled="true">
+  <con:testStep type="calltestcase" name="CreateInstallPatchStateInPlanState" id="0744e4a4-1e80-4202-8f0a-9e9555ed331f">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:properties/>

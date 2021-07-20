@@ -5,7 +5,7 @@
     <con:setting id="7aa770dc-1311-4d47-ab75-dc11f2deafe2fileName">RemovePatchOrderManualReplan</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchStateInPlanState" id="58b5dd3b-0d9a-4fba-830b-29638b8d5fea" disabled="true">
+  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchStateInPlanState" id="58b5dd3b-0d9a-4fba-830b-29638b8d5fea">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:targetTestCase>e3c48d6c-c8d6-486b-9835-c14625e3e71f</con:targetTestCase>
@@ -1612,6 +1612,14 @@ Delete from PatchOrderHistory  where PatchOrderId='${VerifyNewRemovePatchOrderCr
 Delete from Signal where SourceId='${VerifyNewRemovePatchOrderCreated#Response#$['patchOrders'][2]['patchOrderId']}';
 Delete  from Patch where ConnectionId= '${ConnectionIdDataSource#connectionId}';</con:query>
       <con:properties/>
+    </con:config>
+  </con:testStep>
+  <con:testStep type="calltestcase" name="test" id="9bcfaa4e-8a36-4045-b8d1-36f71017e9d8">
+    <con:settings/>
+    <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:properties/>
+      <con:returnProperties/>
+      <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
   <con:properties/>

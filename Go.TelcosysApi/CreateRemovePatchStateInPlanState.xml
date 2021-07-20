@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="e3c48d6c-c8d6-486b-9835-c14625e3e71f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateRemovePatchStateInPlanState" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="0595faed-6eba-4d7a-83c2-ad535ab08a4f" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateRemovePatchStateInPlanState" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="e3c48d6c-c8d6-486b-9835-c14625e3e71ffileName">CreateRemovePatchStateInPlanState</con:setting>
+    <con:setting id="0595faed-6eba-4d7a-83c2-ad535ab08a4ffileName">CreateRemovePatchStateInPlanState</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="ConnectionIdDataSource" id="456ab070-2b07-45de-b9a5-fe3d25774c69">
+  <con:testStep type="datasource" name="ConnectionIdDataSource" id="a7692f70-f3b9-44d4-8aa9-c0730363bee0">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Data Generator">
@@ -37,7 +37,7 @@
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreateInstallPatchOrder" id="f198d086-b039-4dfe-8433-6554e6b144ee">
+  <con:testStep type="restrequest" name="CreateInstallPatchOrder" id="96302e91-7871-4bd1-b81a-55d22f7fcbf6">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="CreateInstallPatchOrder" id="4ae3fa3b-0f26-455c-afa9-054b18f4cfce" mediaType="application/json-patch+json" postQueryString="false">
@@ -102,7 +102,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetInstallPatchId" id="749e9bf9-d86e-4dd0-ae2a-07ead8c01d00">
+  <con:testStep type="restrequest" name="GetInstallPatchId" id="22c71a8f-d652-4e59-93ce-342fb7f01a68">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetInstallPatchId" id="5e01a09d-486d-4574-9734-145d18a7c4eb" mediaType="application/json">
@@ -132,24 +132,25 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdatePatchOrderStateFromGridz" id="00f92438-0f5e-4640-9f8b-0fde3cb1d209">
+  <con:testStep type="restrequest" name="UpdateInstallPatchOrderToDeliveredFromStub" id="68d9132e-13bc-4d0e-90fa-86666072b5a0">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdatePatchOrderStateFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
+    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" resourcePath="/api/Stub/tasks/{sourceId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdateInstallPatchOrderToDeliveredFromStub" id="fb2cea55-49fe-42b8-9b2c-32890e340e08" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
-        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
         <con:request>{\r
-   "mainStatus" : "DELIVERED",\r
-   "timeslot" : "MORNING",\r
-   "completeDt" : "",\r
-   "reason" : "Ready",\r
-   "subStatus" : "TEMPORARY-FIX",\r
-   "clarification" : "string"\r
+  "mainStatus" : "${#TestCase#installPatchOrderState}",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
 }</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/b6f32eff-c4d7-43b2-05ea-08d94b44881a</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="28adff1e-c242-48aa-9e5c-0fc06a68fcd8" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>
@@ -166,7 +167,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="ca87fa5b-cb88-49cb-a8f5-d82509916519">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="01481e78-fd96-4b44-8c35-f4855e031bcc">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -191,7 +192,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="AddRemovePatchOrder" id="91354136-37f6-4137-addc-57a567004134">
+  <con:testStep type="restrequest" name="AddRemovePatchOrder" id="b3ced3a1-2229-4b3f-9d34-eb9fd8160126">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="DELETE" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="AddRemovePatchOrder" id="bce11828-eaf1-4ea1-bde4-81e36ea03ff8" mediaType="application/json" postQueryString="false">
@@ -223,7 +224,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessNewlyCreatedRemovePatchOrderSignalSignalsFromTelcoAPI" id="76d5c861-7a60-4a62-9d2c-a202d471824a">
+  <con:testStep type="restrequest" name="ProcessNewlyCreatedRemovePatchOrderSignalSignalsFromTelcoAPI" id="81d338d5-fe87-4309-bfdf-6cf6736c36d7">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessNewlyCreatedRemovePatchOrderSignalSignalsFromTelcoAPI" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -248,7 +249,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetRemovePatchId" id="4d6882d0-8ef7-4589-beb9-3c109a0b96c0">
+  <con:testStep type="restrequest" name="GetRemovePatchId" id="e43421ea-cfd4-42c5-9b71-18a29ecd3b07">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetRemovePatchId" id="5e01a09d-486d-4574-9734-145d18a7c4eb" mediaType="application/json">
@@ -287,24 +288,27 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdateRemovePatchOrderToPlanState" id="9834fefc-a4eb-4ec6-b634-cf958927b3f8">
+  <con:testStep type="restrequest" name="UpdateRemovePatchOrderToDenyFromStub" id="1f65fcfd-f12e-4462-af07-991356446d7a">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdateRemovePatchOrderToPlanState" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
+    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" methodName="POST" resourcePath="/api/Stub/tasks/{sourceId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdateRemovePatchOrderToDenyFromStub" id="7bfee880-2b52-4d54-a573-f9c7f18714f4" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
+        <con:encoding>UTF-8</con:encoding>
         <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
         <con:request>{\r
-   "mainStatus" : "${#TestCase#PatchOrderStatus}",\r
-   "timeslot" : "MORNING",\r
-   "completeDt" : "",\r
-   "reason" : "Ready",\r
-   "subStatus" : "TEMPORARY-FIX",\r
-   "clarification" : "string"\r
+  "mainStatus" : "${#TestCase#removePatchOrderState}",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
 }</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/0587fdc8-aa51-410a-05eb-08d94b44881a</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="957c2617-0acc-42b2-8ceb-b7d756b30389" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>
@@ -321,7 +325,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromTelcoAPI" id="e3db95dd-aad3-4899-84b7-a828c5ef3a97">
+  <con:testStep type="restrequest" name="ProcessSignalsFromTelcoAPI" id="6cbc92f4-f24f-402a-8978-215c38b4d472">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromTelcoAPI" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -346,7 +350,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetPatchStateAfterTelcoAPIUpdate" id="29256b87-228d-4f32-bbf9-4b2858485586">
+  <con:testStep type="restrequest" name="GetPatchStateAfterTelcoAPIUpdate" id="19c5734d-d8dd-4eac-bbe4-6ffd1480021b">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetPatchStateAfterTelcoAPIUpdate" id="f457fc36-eac1-40e7-8e12-c0469e6d4039" mediaType="application/json">
@@ -3255,16 +3259,6 @@
             <regEx>RemovePatchOrderStatusCheck</regEx>
           </con:configuration>
         </con:assertion>
-        <con:assertion type="JsonPath RegEx Match" id="eccde592-c57b-44f6-b785-d54ec7ae70ee" name="Match content of [status] using RegEx">
-          <con:configuration>
-            <path>$['patchOrders'][1]['state']['status']</path>
-            <content>true</content>
-            <allowWildcards>false</allowWildcards>
-            <ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
-            <ignoreComments>false</ignoreComments>
-            <regEx>planned</regEx>
-          </con:configuration>
-        </con:assertion>
         <con:credentials>
           <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
           <con:authType>No Authorization</con:authType>
@@ -3281,7 +3275,11 @@
   </con:testStep>
   <con:properties>
     <con:property>
-      <con:name>PatchOrderStatus</con:name>
+      <con:name>installPatchOrderState</con:name>
+      <con:value>DELIVERED</con:value>
+    </con:property>
+    <con:property>
+      <con:name>removePatchOrderState</con:name>
       <con:value>WIP</con:value>
     </con:property>
   </con:properties>
@@ -3313,6 +3311,16 @@
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>a3459b4d-6319-4a44-9724-c377c2c69778</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>f4a58aab-fd47-46e9-840f-43a5b7f4a521</con:testStepId>
+    <con:status>NONE</con:status>
+    <con:properties/>
+  </con:breakPoints>
+  <con:breakPoints>
+    <con:testStepId>dc4b158f-a90f-4e5f-b6c8-b4c0c136aa31</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

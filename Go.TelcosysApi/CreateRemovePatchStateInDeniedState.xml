@@ -168,40 +168,6 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdatePatchOrderStateFromGridz" id="899fd36d-a805-4ae4-bd65-c2c914d36ae9" disabled="true">
-    <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdatePatchOrderStateFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-        <con:request>{\r
-   "mainStatus" : "DELIVERED",\r
-   "timeslot" : "MORNING",\r
-   "completeDt" : "",\r
-   "reason" : "Ready",\r
-   "subStatus" : "TEMPORARY-FIX",\r
-   "clarification" : "string"\r
-}</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>204</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="sourceId" value="${GetInstallPatchId#Response#$['patchOrders'][0]['patchOrderId']}"/>
-        </con:parameters>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
   <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="00286349-f4b4-4a96-911a-a4e89578f801">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
@@ -344,40 +310,6 @@
 }</con:request>
         <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/0587fdc8-aa51-410a-05eb-08d94b44881a</con:originalUri>
         <con:assertion type="Valid HTTP Status Codes" id="957c2617-0acc-42b2-8ceb-b7d756b30389" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>204</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="sourceId" value="${GetRemovePatchId#Response#$['patchOrders'][1]['patchOrderId']}"/>
-        </con:parameters>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="UpdateRemovePatchOrderToDeniedState" id="b1d0a15b-94b3-4cfd-8660-42cfebe52e50" disabled="true">
-    <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdateRemovePatchOrderToDeniedState" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-        <con:request>{\r
-   "mainStatus" : "DENIED",\r
-   "timeslot" : "MORNING",\r
-   "completeDt" : "",\r
-   "reason" : "Ready",\r
-   "subStatus" : "TEMPORARY-FIX",\r
-   "clarification" : "string"\r
-}</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>

@@ -62,10 +62,11 @@ Go.CoverageChecker\CoverageCheck_vwt.xml
 Go.CoverageChecker\RemovePatchOrderManualRetry.xml
 Go.TelcosysApi\PatchOrderStateUpdatesForInstall.xml
 Go.TelcosysApi\PatchOrderStateUpdatesForRemove.xml
-Go.TelcosysApi\RemovePatchOrderManualReplan.xml
 Go.TelcosysApi\CreateInstallPatchStateInPlanState.xml
+Go.TelcosysApi\CreateInstallPatchStateInDeniedState-1.xml
+Go.TelcosysApi\RemovePatchOrderManualReplan.xml
 Go.TelcosysApi\CreateRemovePatchStateInDeniedState.xml
-Go.TelcosysApi\CreateInstallPatchStateInPlanState1.xml
+Go.TelcosysApi\CreateRemovePatchStateInPlanState.xml
 Go.TelcosysApi\RemovePatchOrderManualRetry.xml
 Go.TelcosysApi\InstallPatchOrderManualReplan.xml
 Go.TelcosysApi\InstallPatchOrderManualRetry.xml

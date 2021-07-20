@@ -5,7 +5,7 @@
     <con:setting id="66362eca-4b7b-4c6a-83cf-44a55ec07603fileName">RemovePatchOrderManualRetry</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchOrderInDeniedState" id="28012924-4df6-491e-b2fc-247d01bf536c" disabled="true">
+  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchOrderInDeniedState" id="28012924-4df6-491e-b2fc-247d01bf536c">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:targetTestCase>e50685b4-7212-49b9-bdf3-6d9ccb2b112b</con:targetTestCase>

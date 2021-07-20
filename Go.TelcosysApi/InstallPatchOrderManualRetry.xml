@@ -5,7 +5,7 @@
     <con:setting id="f121ce1f-0b99-424d-b9e2-0a646ea07f9bfileName">InstallPatchOrderManualRetry</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="CreateInstallPatchOrderInDeniedState" id="5e2b15da-99e9-46fd-8ff6-ecb2ececb69e" disabled="true">
+  <con:testStep type="calltestcase" name="CreateInstallPatchOrderInDeniedState" id="5e2b15da-99e9-46fd-8ff6-ecb2ececb69e">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:targetTestCase>b1a25f0b-5c9d-4a88-857f-0c2520a4f0c2</con:targetTestCase>
