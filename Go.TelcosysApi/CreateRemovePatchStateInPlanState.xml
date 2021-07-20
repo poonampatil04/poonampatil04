@@ -134,7 +134,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="UpdateInstallPatchOrderToDeliveredFromStub" id="68d9132e-13bc-4d0e-90fa-86666072b5a0">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" resourcePath="/api/Stub/tasks/{sourceId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdateInstallPatchOrderToDeliveredFromStub" id="fb2cea55-49fe-42b8-9b2c-32890e340e08" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -290,7 +290,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="UpdateRemovePatchOrderToDenyFromStub" id="1f65fcfd-f12e-4462-af07-991356446d7a">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" methodName="POST" resourcePath="/api/Stub/tasks/{sourceId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Signal/process" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdateRemovePatchOrderToDenyFromStub" id="7bfee880-2b52-4d54-a573-f9c7f18714f4" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
