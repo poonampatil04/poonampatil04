@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="eda5c5a9-64a7-43d1-9679-b225e237cd1c" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateInstallPatchStateInPlanState" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="3284930a-98b4-4351-a70b-64ff75031b02" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="CreateInstallPatchStateInPlanState" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="bde51e40-6481-4e01-b1c9-7ccc84fb02c8fileName">CreateInstallPatchStateInPlanState</con:setting>
-    <con:setting id="eda5c5a9-64a7-43d1-9679-b225e237cd1cfileName">CreateInstallPatchStateInPlanState</con:setting>
+    <con:setting id="3284930a-98b4-4351-a70b-64ff75031b02fileName">CreateInstallPatchStateInPlanState1</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="datasource" name="ConnectionIdDataSource" id="ecd58d8c-f96d-4165-bf42-bee1c7cef141">
+  <con:testStep type="datasource" name="ConnectionIdDataSource" id="906925bd-b7d1-4f0f-a9aa-d01c897c1619">
     <con:settings/>
     <con:config xsi:type="con:DataSourceStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:dataSource type="Data Generator">
@@ -38,7 +38,7 @@
       <con:restartOnRun>true</con:restartOnRun>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="CreatePatchOrder" id="012d671c-3f74-461c-8952-cfd85b4502ff">
+  <con:testStep type="restrequest" name="CreatePatchOrder" id="2734d758-d505-4708-bcfa-4d515690f549">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="PUT" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="CreatePatchOrder" id="4ae3fa3b-0f26-455c-afa9-054b18f4cfce" mediaType="application/json-patch+json" postQueryString="false">
@@ -103,7 +103,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetInstallPatchId" id="34da501a-83a4-45da-9b8c-b3edd4d995a9">
+  <con:testStep type="restrequest" name="GetInstallPatchId" id="417864c2-4cd3-4e8c-92ff-23dafdbf56ba">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetInstallPatchId" id="5e01a09d-486d-4574-9734-145d18a7c4eb" mediaType="application/json">
@@ -133,7 +133,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdateInstallPatchOrderStateToPlanFromGridz" id="ef6b86ba-c7d4-4083-a64e-e7e15aff94dd">
+  <con:testStep type="restrequest" name="UpdateInstallPatchOrderStateToPlanFromGridz" id="2b19f6a0-b147-48a0-90d6-bfa26d57913c">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdateInstallPatchOrderStateToPlanFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
@@ -167,7 +167,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="4be3f8d9-2d2a-4b30-8228-098c081f8a78">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="5f4b42e1-0ec9-4288-8d80-ed6ee401e8bb">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -192,7 +192,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="GetPatchStateAfterGridzUpdate" id="fa3f557c-64f3-4b00-aa79-0340e7bc4c86">
+  <con:testStep type="restrequest" name="GetPatchStateAfterGridzUpdate" id="eb6a8611-327a-4a44-b288-9373266c662a">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="GetPatchStateAfterGridzUpdate" id="f457fc36-eac1-40e7-8e12-c0469e6d4039" mediaType="application/json">

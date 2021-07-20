@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="c6db1ece-ff1b-46d2-a937-c5c7fc584362" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="InstallPatchOrderManualReplan" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="d74ec0c6-267c-4e61-a6ed-f637b0446c82" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="InstallPatchOrderManualReplan" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="c6db1ece-ff1b-46d2-a937-c5c7fc584362fileName">InstallPatchOrderManualReplan</con:setting>
+    <con:setting id="d74ec0c6-267c-4e61-a6ed-f637b0446c82fileName">InstallPatchOrderManualReplan</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="Execute_CreateIstallPatchStateInPlanState" id="7610e0b9-20bd-40a0-885e-159fc581ed5a">
+  <con:testStep type="calltestcase" name="Execute_CreateIstallPatchStateInPlanState" id="f0b2f4c2-42c1-4f1a-8c37-29fb1c265e2b" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:properties/>
@@ -12,7 +13,7 @@
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="calltestcase" name="CreateInstallPatchStateInPlanState" id="c2d0667a-3c61-40e7-962c-c9c6ba304c30">
+  <con:testStep type="calltestcase" name="CreateInstallPatchStateInPlanState" id="0744e4a4-1e80-4202-8f0a-9e9555ed331f" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:properties/>
@@ -20,45 +21,7 @@
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ReplanInstallPatchOrderManually" id="3cfcff0e-7366-4b0a-bd01-b1862b4f9440">
-    <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="ReplanInstallPatchOrderManually" id="77a89b65-c6e6-4a17-9845-5bd2c0a5d068" mediaType="application/json-patch+json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request>{\r
-   "planDt" : "2021-12-12"\r
-}</con:request>
-        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/1575617042/PatchOrder/f12a375a-9d77-4b23-7303-08d94abe4ff9/replan</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="856cba52-fce9-42b6-b1b9-b8095a6a0a60" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="4635474e-bc45-46f7-82a9-7ea439426b60" name="Response SLA">
-          <con:configuration>
-            <SLA>200</SLA>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInPlanState#ConnectionIdDataSource]#connectionId}"/>
-          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInPlanState#GetInstallPatchId]#Response#$['patchOrders'][0]['patchOrderId']}"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-          <con:entry>patchOrderId</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="31e2471d-5246-4343-9c72-bd8f251a0b9e">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="5f74f716-b799-44c9-a9a2-25c2bc165e30">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -83,7 +46,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="VerifyNewRePlanDate" id="ec752f47-f2ee-46d0-aaa9-69c7c32b6272">
+  <con:testStep type="restrequest" name="VerifyNewRePlanDate" id="ed08e587-9d78-46a1-bd93-0a1a8c4f3e58">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="VerifyNewRePlanDate" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
@@ -1628,7 +1591,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="CleanUpDbTables" id="fe67bfe2-6f9b-4619-b2fb-a217160b232e">
+  <con:testStep type="jdbc" name="CleanUpDbTables" id="16563964-063e-4751-ab85-1b7a1ef5181d">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

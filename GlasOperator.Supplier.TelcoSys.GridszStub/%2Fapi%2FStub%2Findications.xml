@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="a4d92c87-5298-41fd-9e02-adb2681ff7b6" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="f7db92c0-aba4-4c0c-85b1-e6a5b0d580f8" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a4d92c87-5298-41fd-9e02-adb2681ff7b6fileName">%2Fapi%2FStub%2Findications</con:setting>
+    <con:setting id="f7db92c0-aba4-4c0c-85b1-e6a5b0d580f8fileName">%2Fapi%2FStub%2Findications</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="bf478275-6e3d-4c58-a9ae-bec553eefcf4" method="GET">
+  <con:method name="GET" id="ab6c2021-39ba-4db8-b0dd-65cb317c01c3" method="GET">
     <con:description>Returns received taskIndications</con:description>
     <con:settings/>
     <con:parameters/>
@@ -51,7 +51,7 @@
   "InId" : "string"
 } ]</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="a28c5334-f221-4931-afe8-7cd26ad7dc6f" mediaType="application/json">
+    <con:request name="Request 1" id="8abb050f-70f7-43c9-88e7-c141095d9193" mediaType="application/json">
       <con:settings/>
       <con:parameters/>
     </con:request>

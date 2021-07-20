@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="ec215a79-6933-4a95-ad6e-1ee14cbd1df1" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="InstallPatchOrderManualRetry" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="f121ce1f-0b99-424d-b9e2-0a646ea07f9b" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="InstallPatchOrderManualRetry" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="ec215a79-6933-4a95-ad6e-1ee14cbd1df1fileName">InstallPatchOrderManualRetry</con:setting>
+    <con:setting id="f121ce1f-0b99-424d-b9e2-0a646ea07f9bfileName">InstallPatchOrderManualRetry</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="CreateInstallPatchOrderInDeniedState" id="82560d86-ab3b-42d9-be99-6890bf6c6b1b">
+  <con:testStep type="calltestcase" name="CreateInstallPatchOrderInDeniedState" id="5e2b15da-99e9-46fd-8ff6-ecb2ececb69e" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:targetTestCase>b1a25f0b-5c9d-4a88-857f-0c2520a4f0c2</con:targetTestCase>
@@ -17,39 +18,7 @@
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="RetryInstallPatchOrder" id="dce917bc-a4ee-4776-b28d-89a7521c4ab6">
-    <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/retry" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="RetryInstallPatchOrder" id="dbab8adc-123e-4aa0-b69f-415c9c6620f2" mediaType="application/json" postQueryString="false">
-        <con:description xsi:nil="true"/>
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request/>
-        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/PatchOrder/4ddf2029-d75a-4d01-8eec-08d94aacf897/retry</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="6ea7db19-1a74-45d6-9fe0-3f2ab6d9bb08" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
-          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateInstallPatchStateInDeniedState#GetInstallPatchId]#Response#$['patchOrders'][0]['patchOrderId']}"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-          <con:entry>patchOrderId</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="9d8c9fb9-aabb-4471-9181-13f0a3ccb85a">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="aee7f348-1807-4a44-80fe-8cb1bfbf2479">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -74,7 +43,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="VerifyNewInstallPatchOrderCreated" id="1a65a9f3-d2a5-437b-938a-8d4469a001b8">
+  <con:testStep type="restrequest" name="VerifyNewInstallPatchOrderCreated" id="a128cc81-f0e5-4dfc-841e-b77bca3753e8">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="VerifyNewInstallPatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
@@ -1619,7 +1588,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="CleanUpDbTables" id="b1e230e4-b4f0-4a3b-8fa3-65c385b9cca9">
+  <con:testStep type="jdbc" name="CleanUpDbTables" id="bdf5a447-db39-404a-a6c6-c9ae7dfa7523">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

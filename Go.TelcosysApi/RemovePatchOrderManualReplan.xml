@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="a7c8db16-d4e8-45ae-8c31-86f6fc427c83" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RemovePatchOrderManualReplan" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="7aa770dc-1311-4d47-ab75-dc11f2deafe2" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RemovePatchOrderManualReplan" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="a7c8db16-d4e8-45ae-8c31-86f6fc427c83fileName">RemovePatchOrderManualReplan</con:setting>
+    <con:setting id="7aa770dc-1311-4d47-ab75-dc11f2deafe2fileName">RemovePatchOrderManualReplan</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchStateInPlanState" id="978a683a-1e5d-420c-a0fd-f30aeca25945">
+  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchStateInPlanState" id="58b5dd3b-0d9a-4fba-830b-29638b8d5fea" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:targetTestCase>e3c48d6c-c8d6-486b-9835-c14625e3e71f</con:targetTestCase>
@@ -20,7 +21,7 @@
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="properties" name="replanDate" id="79247d91-753c-4a53-b134-ae2bca724c80">
+  <con:testStep type="properties" name="replanDate" id="479bc40c-8b38-4b86-94d7-8500e108fc97">
     <con:settings/>
     <con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:properties>
@@ -31,10 +32,10 @@
       </con:properties>
     </con:config>
   </con:testStep>
-  <con:testStep type="transfer" name="PropertyTransfer 1" id="d2d7e9ee-5d0a-4a64-8c28-21ab85d77d8d">
+  <con:testStep type="transfer" name="PropertyTransfer 1" id="4c8df9c2-d38d-4f52-b110-0b27c6ad31d8">
     <con:settings/>
     <con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false">
+      <con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" entitize="false" transferChildNodes="false" disabled="true">
         <con:name>planDt</con:name>
         <con:sourceType>planDt</con:sourceType>
         <con:sourceStep>replanDate</con:sourceStep>
@@ -48,38 +49,7 @@
       </con:transfers>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ReplanRemovePatchOrder" id="17f1c026-7dff-45e7-b083-4178ce950f66">
-    <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="ReplanRemovePatchOrder" id="77a89b65-c6e6-4a17-9845-5bd2c0a5d068" mediaType="application/json-patch+json" postQueryString="false">
-        <con:settings>
-          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-        </con:settings>
-        <con:request>{"planDt":"2021-12-12"}</con:request>
-        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/6816111017/PatchOrder/7600863d-dadd-4b77-72f2-08d94abe4ff9/replan</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="a8268efc-ca65-4c7d-88e6-09eb0f3b63aa" name="Valid HTTP Status Codes">
-          <con:settings/>
-          <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:credentials>
-          <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-          <con:authType>No Authorization</con:authType>
-        </con:credentials>
-        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters>
-          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInPlanState#ConnectionIdDataSource]#connectionId}"/>
-          <con:entry key="patchOrderId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInPlanState#GetRemovePatchId]#Response#$['patchOrders'][1]['patchOrderId']}"/>
-        </con:parameters>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-          <con:entry>patchOrderId</con:entry>
-        </con:parameterOrder>
-      </con:restRequest>
-    </con:config>
-  </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="96744e4e-e0ed-4c9c-b14c-e42c85a68c78">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="398c4bab-b5cd-4c1c-b142-a356f7defbe7">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -104,7 +74,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="VerifyNewRemovePatchOrderCreated" id="d66519ab-1cf9-4f1f-8e48-0303160b82e4">
+  <con:testStep type="restrequest" name="VerifyNewRemovePatchOrderCreated" id="562f9679-5b7f-4667-8228-a6ffd53fe7f0">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="VerifyNewRemovePatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
@@ -1623,7 +1593,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="CleanUpDbTables" id="20e00c98-2b6e-48e1-a1d1-ad2ed3eaee62" disabled="true">
+  <con:testStep type="jdbc" name="CleanUpDbTables" id="68f6b5ae-340a-4441-b462-277e5ecf9035" disabled="true">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>

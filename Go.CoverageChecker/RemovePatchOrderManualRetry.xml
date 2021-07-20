@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:testCase id="66362eca-4b7b-4c6a-83cf-44a55ec07603" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RemovePatchOrderManualRetry" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
+<con:testCase id="ba133cef-ad0b-490f-8c12-fcddfb34a350" discardOkResults="false" failOnError="true" failTestCaseOnErrors="true" keepSession="false" name="RemovePatchOrderManualRetry" searchProperties="true" timeout="0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
     <con:setting id="d0ec08dd-44b3-4c18-b7f3-923392a9eb41fileName">RemovePatchOrderManualRetry</con:setting>
-    <con:setting id="66362eca-4b7b-4c6a-83cf-44a55ec07603fileName">RemovePatchOrderManualRetry</con:setting>
+    <con:setting id="ba133cef-ad0b-490f-8c12-fcddfb34a350fileName">RemovePatchOrderManualRetry</con:setting>
   </con:settings>
   <con:savedRecentRuns>1</con:savedRecentRuns>
-  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchOrderInDeniedState" id="28012924-4df6-491e-b2fc-247d01bf536c" disabled="true">
+  <con:testStep type="calltestcase" name="Execute_CreateRemovePatchOrderInDeniedState" id="4fb35d0a-a706-4451-933b-72ae9711dba6" disabled="true">
     <con:settings/>
     <con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:targetTestCase>e50685b4-7212-49b9-bdf3-6d9ccb2b112b</con:targetTestCase>
@@ -14,7 +14,7 @@
       <con:runMode>PARALLELL</con:runMode>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="7a9d68e2-ddf3-4fe3-a299-31ee2d785006">
+  <con:testStep type="restrequest" name="ProcessSignalsFromGridz" id="58ec2f6a-2c8c-4d5a-846f-cfdad182e609">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="ProcessSignalsFromGridz" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
@@ -39,7 +39,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="VerifyNewRemovePatchOrderCreated" id="04681508-c9e4-4227-92e8-0542e6c1f2a4">
+  <con:testStep type="restrequest" name="VerifyNewRemovePatchOrderCreated" id="cdc7e873-c850-40a2-8103-cb1031144485">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" methodName="GET" resourcePath="/api/Patch/{connectionId}" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="VerifyNewRemovePatchOrderCreated" id="69cf3a80-57ef-4d85-b939-a3cb7746e896" mediaType="application/json">
@@ -1558,7 +1558,7 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="jdbc" name="CleanUpDbTables" id="adc3dcd2-3d10-4681-9684-109e61c8d5d8">
+  <con:testStep type="jdbc" name="CleanUpDbTables" id="81b7e798-d818-403a-88e6-2fb76f37e586">
     <con:settings>
       <con:setting id="prettyPrintResponse">true</con:setting>
     </con:settings>
