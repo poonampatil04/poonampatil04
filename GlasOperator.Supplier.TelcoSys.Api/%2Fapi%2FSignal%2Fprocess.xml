@@ -8,10 +8,8 @@
     <con:settings/>
     <con:parameters/>
     <con:request name="Request 1" id="3a509b9f-12ca-43b7-8603-3b5dc27be410" mediaType="application/json">
-      <con:description xsi:nil="true"/>
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
-      <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>

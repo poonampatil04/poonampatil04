@@ -10,55 +10,45 @@
     <con:parameters>
       <con:parameter required="true">
         <con:name>PostalCode</con:name>
-        <con:value/>
         <con:style>QUERY</con:style>
-        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true"/>
       </con:parameter>
-      <con:parameter required="false">
+      <con:parameter>
         <con:name>HouseNumber</con:name>
-        <con:value/>
         <con:style>QUERY</con:style>
-        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true"/>
       </con:parameter>
       <con:parameter required="true">
         <con:name>UseHouseNumberAdditions</con:name>
         <con:value>false</con:value>
         <con:style>QUERY</con:style>
-        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true"/>
+        <con:default>false</con:default>
       </con:parameter>
-      <con:parameter required="false">
+      <con:parameter>
         <con:name>HouseNumberAdditions</con:name>
         <con:value/>
         <con:style>QUERY</con:style>
-        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true"/>
+        <con:default/>
       </con:parameter>
       <con:parameter required="true">
         <con:name>UseRoom</con:name>
         <con:value>false</con:value>
         <con:style>QUERY</con:style>
-        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true"/>
+        <con:default>false</con:default>
       </con:parameter>
-      <con:parameter required="false">
+      <con:parameter>
         <con:name>Room</con:name>
         <con:value/>
         <con:style>QUERY</con:style>
-        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
-        <con:description xsi:nil="true"/>
+        <con:default/>
       </con:parameter>
     </con:parameters>
-    <con:representation type="RESPONSE" id="">
+    <con:representation type="RESPONSE">
       <con:mediaType>text/plain</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
       <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
     </con:representation>
-    <con:representation type="RESPONSE" id="">
+    <con:representation type="RESPONSE">
       <con:mediaType>application/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -78,7 +68,7 @@
   "planDate" : "2015-07-20T15:49:04-07:00"
 } ]</con:sampleContent>
     </con:representation>
-    <con:representation type="RESPONSE" id="">
+    <con:representation type="RESPONSE">
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -99,23 +89,13 @@
 } ]</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="1b557ea2-37ad-4dd7-b3ca-bfb7cfad8412" mediaType="application/json">
-      <con:description xsi:nil="true"/>
       <con:settings/>
       <con:endpoint>https://gosuppliertelcosys-dev.glasoperator.nl/</con:endpoint>
-      <con:request/>
       <con:credentials>
         <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:parameters/>
-      <con:parameterOrder>
-        <con:entry>PostalCode</con:entry>
-        <con:entry>HouseNumber</con:entry>
-        <con:entry>UseHouseNumberAdditions</con:entry>
-        <con:entry>HouseNumberAdditions</con:entry>
-        <con:entry>UseRoom</con:entry>
-        <con:entry>Room</con:entry>
-      </con:parameterOrder>
     </con:request>
   </con:method>
 </con:resource>

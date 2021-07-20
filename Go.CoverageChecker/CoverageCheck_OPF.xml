@@ -1012,50 +1012,6 @@
       <discardResults>false</discardResults>
     </con:config>
   </con:testStep>
-  <con:testStep type="multiConfigureTestStep" name="REST Request" id="92d66379-dbd6-44a9-8fe8-1ccbbbdabc42">
-    <con:settings/>
-    <con:config activeStep="restMultiTestStep" xsi:type="con:MultiConfigurationStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequestStep service="GlasOperator.Supplier.TelcoSys.GridszStub" methodName="POST" resourcePath="/api/Stub/tasks/{sourceId}" xsi:type="con:RestRequestStep">
-        <con:restRequest name="REST Request" id="6d8b5ae6-2a9a-49ec-8bce-cd68a590e2cd" mediaType="application/json-patch+json">
-          <con:settings>
-            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
-          </con:settings>
-          <con:encoding>UTF-8</con:encoding>
-          <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-          <con:request/>
-          <con:assertion type="Valid HTTP Status Codes" id="4f79eebb-4561-4d76-92fb-359667189bae" name="Valid HTTP Status Codes">
-            <con:settings/>
-            <con:configuration>
-              <codes>200</codes>
-            </con:configuration>
-          </con:assertion>
-          <con:assertion type="Response SLA Assertion" id="94457569-c514-4d75-a9e4-57b7b23864a3" name="Response SLA">
-            <con:configuration>
-              <SLA>200</SLA>
-            </con:configuration>
-          </con:assertion>
-          <con:parameters>
-            <con:entry key="sourceId" value=""/>
-          </con:parameters>
-          <con:parameterOrder/>
-          <con:parametersType>
-            <con:entry key="sourceId" value="Query"/>
-          </con:parametersType>
-          <con:parametersDisablesEncoding>
-            <con:entry key="sourceId" value="false"/>
-          </con:parametersDisablesEncoding>
-          <con:environmentSpec>
-            <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
-              <con:authProfile>No Authorization</con:authProfile>
-            </con:entry>
-            <con:entry environmentId="c6dd11d2-45d8-4197-b7b7-981e4798e119">
-              <con:authProfile>No Authorization</con:authProfile>
-            </con:entry>
-          </con:environmentSpec>
-        </con:restRequest>
-      </con:restRequestStep>
-    </con:config>
-  </con:testStep>
   <con:properties/>
   <con:reportParameters/>
   <con:breakPoints>

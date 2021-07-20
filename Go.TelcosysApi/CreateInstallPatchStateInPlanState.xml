@@ -132,25 +132,24 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdateInstallPatchOrderStateToPlanFromGridz" id="04806750-a0c0-4646-ad6e-b19ab8a6c927">
+  <con:testStep type="restrequest" name="UpdateInstallPatchOrderStateToPlanFromGridz" id="7a7dc53a-934b-4ba2-a65b-b1f7be90b26a">
     <con:settings/>
     <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdateInstallPatchOrderStateToPlanFromGridz" id="5af63d11-5266-4321-a3c4-09b84aa9168d" mediaType="application/json-patch+json" postQueryString="false">
+      <con:restRequest name="UpdateInstallPatchOrderStateToPlanFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
+        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
         <con:request>{\r
-  "mainStatus" : "${#TestCase#PatchOrderState}",\r
- 
-  "from" : "2021-12-20T15:49:04-07:00",\r
-  "till" : "2021-12-20T15:49:04-07:00",\r
-  "completeDt" : "2015-07-20T15:49:04-07:00",\r
-  "reason" : "string",\r
-  "subStatus" : "TEMPORARY-FIX",\r
-  "clarification" : "string"\r
+   "mainStatus" : "${#TestCase#PatchOrderState}",\r
+   "timeslot" : "MORNING",\r
+   "completeDt" : "",\r
+   "reason" : "Ready",\r
+   "subStatus" : "TEMPORARY-FIX",\r
+   "clarification" : "string"\r
 }</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="561c7d17-1a90-43a7-8bfc-18eae87ba807" name="Valid HTTP Status Codes">
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>
@@ -881,7 +880,7 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="connectionId" value="${ConnectionIdDataSource#connectionId}"/>
+          <con:entry key="connectionId" value="${#[Go.TelcosysApi#CreateRemovePatchStateInDeniedState#ConnectionIdDataSource]#connectionId}"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>connectionId</con:entry>
@@ -898,11 +897,6 @@
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>873ea3f9-084a-4397-88ad-16a49a7c4d33</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>04806750-a0c0-4646-ad6e-b19ab8a6c927</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

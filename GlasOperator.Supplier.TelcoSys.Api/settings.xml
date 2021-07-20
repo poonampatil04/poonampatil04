@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:interface xsi:type="con:RestService" id="6e1bed6a-bad5-4a27-85b0-da97bc0808f6" name="GlasOperator.Supplier.TelcoSys.Api" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://gosuppliertelcosys-dev.glasoperator.nl/swagger/v1/swagger.json" basePath="" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<con:interface xsi:type="con:RestService" id="6e1bed6a-bad5-4a27-85b0-da97bc0808f6" name="GlasOperator.Supplier.TelcoSys.Api" type="rest_ex" wadlVersion="https://swagger.io/openapiv3/specification" definitionUrl="https://gosuppliertelcosys-dev.glasoperator.nl/swagger/v1/swagger.json" xmlns:con="http://eviware.com/soapui/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <con:description xsi:nil="true"/>
   <con:settings>
     <con:setting id="6e1bed6a-bad5-4a27-85b0-da97bc0808f6fileName">GlasOperator.Supplier.TelcoSys.Api</con:setting>

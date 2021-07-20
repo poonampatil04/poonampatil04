@@ -132,26 +132,24 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdateInstallPatchOrderToDeliveredFromStub" id="0a6fb62a-7499-497d-9b99-8eae52dba95b">
+  <con:testStep type="restrequest" name="UpdatePatchOrderStateFromGridz" id="00f92438-0f5e-4640-9f8b-0fde3cb1d209">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdateInstallPatchOrderToDeliveredFromStub" id="5af63d11-5266-4321-a3c4-09b84aa9168d" mediaType="application/json-patch+json" postQueryString="false">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdatePatchOrderStateFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
+        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
         <con:request>{\r
    "mainStatus" : "DELIVERED",\r
-   "timeslot" : "MORNING",
-  "from" : "2015-07-20T15:49:04-07:00",
-  "till" : "2015-07-20T15:49:04-07:00",
-  "completeDt" : "2015-07-20T15:49:04-07:00",
-
-   "reason" : "string",\r
+   "timeslot" : "MORNING",\r
+   "completeDt" : "",\r
+   "reason" : "Ready",\r
    "subStatus" : "TEMPORARY-FIX",\r
    "clarification" : "string"\r
 }</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="322c2cf5-91b5-458c-8b15-16edf248caff" name="Valid HTTP Status Codes">
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>
@@ -217,7 +215,6 @@
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
           <con:entry key="connectionId" value="${ConnectionIdDataSource#connectionId}"/>
-          <con:entry key="wishDt" value="2021-12-12"/>
         </con:parameters>
         <con:parameterOrder>
           <con:entry>connectionId</con:entry>
@@ -290,26 +287,27 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdateRemovePatchOrderToPlanState" id="48d39ec0-d4ed-40c7-8ec6-1712eb316a2d">
+  <con:testStep type="restrequest" name="UpdateRemovePatchOrderToPlanState" id="9834fefc-a4eb-4ec6-b634-cf958927b3f8">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdateRemovePatchOrderToPlanState" id="77a89b65-c6e6-4a17-9845-5bd2c0a5d068" mediaType="application/json-patch+json" postQueryString="false">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdateRemovePatchOrderToPlanState" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
+        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
         <con:request>{\r
-  "planDt" : "2021-07-20T15:49:04-07:00"\r
+   "mainStatus" : "${#TestCase#PatchOrderStatus}",\r
+   "timeslot" : "MORNING",\r
+   "completeDt" : "",\r
+   "reason" : "Ready",\r
+   "subStatus" : "TEMPORARY-FIX",\r
+   "clarification" : "string"\r
 }</con:request>
-        <con:originalUri>https://gosuppliertelcosys-dev.glasoperator.nl/api/Patch/7824837381/PatchOrder/f507b7af-873c-4c7c-05e3-08d94b44881a/replan</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="8ac4de2b-16f5-448c-a195-60f989cddb15" name="Valid HTTP Status Codes">
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
-            <codes>200</codes>
-          </con:configuration>
-        </con:assertion>
-        <con:assertion type="Response SLA Assertion" id="4d978883-d4a3-442b-ae7d-774901656b8f" name="Response SLA">
-          <con:configuration>
-            <SLA>200</SLA>
+            <codes>204</codes>
           </con:configuration>
         </con:assertion>
         <con:credentials>
@@ -318,13 +316,8 @@
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
         <con:parameters>
-          <con:entry key="connectionId" value="${ConnectionIdDataSource#connectionId}"/>
-          <con:entry key="patchOrderId" value="${GetRemovePatchId#Response#$['patchOrders'][1]['patchOrderId']}"/>
+          <con:entry key="sourceId" value="${GetRemovePatchId#Response#$['patchOrders'][1]['patchOrderId']}"/>
         </con:parameters>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-          <con:entry>patchOrderId</con:entry>
-        </con:parameterOrder>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -3320,16 +3313,6 @@
   </con:breakPoints>
   <con:breakPoints>
     <con:testStepId>a3459b4d-6319-4a44-9724-c377c2c69778</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>0a6fb62a-7499-497d-9b99-8eae52dba95b</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>48d39ec0-d4ed-40c7-8ec6-1712eb316a2d</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

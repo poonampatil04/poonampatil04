@@ -132,25 +132,24 @@
       </con:restRequest>
     </con:config>
   </con:testStep>
-  <con:testStep type="restrequest" name="UpdateInstallPatchOrderStateToDeniedFromGridz" id="7f166b3b-ee87-4bbd-91c1-4d096c08a27b">
+  <con:testStep type="restrequest" name="UpdateInstallPatchOrderStateToDeniedFromGridz" id="22e67878-74ee-4f05-b62b-1fa51c0f0603">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      <con:restRequest name="UpdateInstallPatchOrderStateToDeniedFromGridz" id="5af63d11-5266-4321-a3c4-09b84aa9168d" mediaType="application/json-patch+json" postQueryString="false">
+    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" resourcePath="/api/Stub/tasks/{sourceId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      <con:restRequest name="UpdateInstallPatchOrderStateToDeniedFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
         </con:settings>
+        <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
         <con:request>{\r
-  "mainStatus" : "${#TestCase#PatchOrderState}",\r
-  "timeslot" : "MORNING",\r
-  "from" : "2015-07-20T15:49:04-07:00",\r
-  "till" : "2015-07-20T15:49:04-07:00",\r
-  "completeDt" : "2015-07-20T15:49:04-07:00",\r
-  "reason" : "string",\r
-  "subStatus" : "TEMPORARY-FIX",\r
-  "clarification" : "string"\r
+   "mainStatus" : "${#TestCase#PatchOrderState}",\r
+   "timeslot" : "MORNING",\r
+   "completeDt" : "",\r
+   "reason" : "Ready",\r
+   "subStatus" : "TEMPORARY-FIX",\r
+   "clarification" : "string"\r
 }</con:request>
-        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/bb90c54d-c8ae-46fc-05e8-08d94b44881a</con:originalUri>
-        <con:assertion type="Valid HTTP Status Codes" id="6d650a85-57cb-4440-aeab-90db51aade60" name="Valid HTTP Status Codes">
+        <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/4f3d08e9-721f-4e47-655c-08d946cfdbcd</con:originalUri>
+        <con:assertion type="Valid HTTP Status Codes" id="0bd0942a-5ecf-42ca-ae4e-1d9cf099a91a" name="Valid HTTP Status Codes">
           <con:settings/>
           <con:configuration>
             <codes>204</codes>
@@ -898,11 +897,6 @@
   <con:reportParameters/>
   <con:breakPoints>
     <con:testStepId>873ea3f9-084a-4397-88ad-16a49a7c4d33</con:testStepId>
-    <con:status>NONE</con:status>
-    <con:properties/>
-  </con:breakPoints>
-  <con:breakPoints>
-    <con:testStepId>7f166b3b-ee87-4bbd-91c1-4d096c08a27b</con:testStepId>
     <con:status>NONE</con:status>
     <con:properties/>
   </con:breakPoints>

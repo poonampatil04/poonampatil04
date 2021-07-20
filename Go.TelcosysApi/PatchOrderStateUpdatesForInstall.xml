@@ -88,10 +88,9 @@
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-        </con:parameterOrder>
+        <con:parameters>
+          <con:entry key="connectionId" value="${ConnectionIdDS#connectionId}"/>
+        </con:parameters>
         <con:environmentSpec>
           <con:entry environmentId="8b18c016-7cf1-4def-ac45-e447b6c2efd7">
             <con:authProfile>ReadyAPI_Dev</con:authProfile>
@@ -121,10 +120,9 @@
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-        </con:parameterOrder>
+        <con:parameters>
+          <con:entry key="connectionId" value="${ConnectionIdDS#connectionId}"/>
+        </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>
@@ -151,7 +149,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="UpdatePatchOrderStateFromGridz" id="47f762ec-3d05-4529-acad-7e0a4f0d1173">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Signal/process" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdatePatchOrderStateFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
@@ -924,10 +922,9 @@
           <con:authType>No Authorization</con:authType>
         </con:credentials>
         <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-        <con:parameters/>
-        <con:parameterOrder>
-          <con:entry>connectionId</con:entry>
-        </con:parameterOrder>
+        <con:parameters>
+          <con:entry key="connectionId" value="${ConnectionIdDS#connectionId}"/>
+        </con:parameters>
       </con:restRequest>
     </con:config>
   </con:testStep>

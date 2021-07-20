@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="04f0c42a-e209-4faf-a861-5eea42109547" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="a4d92c87-5298-41fd-9e02-adb2681ff7b6" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="04f0c42a-e209-4faf-a861-5eea42109547fileName">%2Fapi%2FStub%2Findications</con:setting>
+    <con:setting id="a4d92c87-5298-41fd-9e02-adb2681ff7b6fileName">%2Fapi%2FStub%2Findications</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="17f77126-c49e-4d6e-8ce2-b6cf4f6e72a4" method="GET">
+  <con:method name="GET" id="bf478275-6e3d-4c58-a9ae-bec553eefcf4" method="GET">
     <con:description>Returns received taskIndications</con:description>
     <con:settings/>
     <con:parameters/>
-    <con:representation type="RESPONSE" id="">
+    <con:representation type="RESPONSE">
       <con:mediaType>text/plain</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
       <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
     </con:representation>
-    <con:representation type="RESPONSE" id="">
+    <con:representation type="RESPONSE">
       <con:mediaType>application/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -33,7 +33,7 @@
   "InId" : "string"
 } ]</con:sampleContent>
     </con:representation>
-    <con:representation type="RESPONSE" id="">
+    <con:representation type="RESPONSE">
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -51,10 +51,8 @@
   "InId" : "string"
 } ]</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="cfad5d82-db51-451a-8f15-1a23375dda85" mediaType="application/json">
-      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+    <con:request name="Request 1" id="a28c5334-f221-4931-afe8-7cd26ad7dc6f" mediaType="application/json">
       <con:settings/>
-      <con:request/>
       <con:parameters/>
     </con:request>
   </con:method>
