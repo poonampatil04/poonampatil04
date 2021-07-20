@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/taskFetchResponses" path="/api/Stub/taskFetchResponses" id="9f6b572d-c17d-4476-a97f-8ccf5c32d9dc" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/taskFetchResponses" path="/api/Stub/taskFetchResponses" id="8b2d10c5-0329-4b9f-b85a-cb9feedefd4e" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="9f6b572d-c17d-4476-a97f-8ccf5c32d9dcfileName">%2Fapi%2FStub%2FtaskFetchResponses</con:setting>
+    <con:setting id="8b2d10c5-0329-4b9f-b85a-cb9feedefd4efileName">%2Fapi%2FStub%2FtaskFetchResponses</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="149d55c7-0d25-480f-9dac-e0652ce68573" method="GET">
+  <con:method name="GET" id="045af6d8-1e7a-48e3-b5f5-810f0c891cf0" method="GET">
     <con:description>Returns received TaskFetch responses</con:description>
     <con:settings/>
     <con:parameters/>
@@ -425,7 +425,7 @@
   } ]
 } ]</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="f6266541-f9e1-44e9-80e4-9162d01a4f5b" mediaType="application/json">
+    <con:request name="Request 1" id="96e78a60-03b5-40c3-8580-7d7331f63c3d" mediaType="application/json">
       <con:settings/>
       <con:parameters/>
     </con:request>

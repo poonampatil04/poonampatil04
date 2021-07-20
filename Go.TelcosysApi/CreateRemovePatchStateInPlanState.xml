@@ -134,7 +134,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="UpdateInstallPatchOrderToDeliveredFromStub" id="0a6fb62a-7499-497d-9b99-8eae52dba95b">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" resourcePath="/api/Stub/tasks/{sourceId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}" methodName="GET" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdateInstallPatchOrderToDeliveredFromStub" id="5af63d11-5266-4321-a3c4-09b84aa9168d" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>

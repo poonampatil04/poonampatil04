@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/SP/{orgId}/tasks" path="/SP/{orgId}/tasks" id="5020405b-815b-4d11-907d-157469e5432b" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/SP/{orgId}/tasks" path="/SP/{orgId}/tasks" id="c1ea5af3-40e7-44b9-80fa-726128563af0" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="5020405b-815b-4d11-907d-157469e5432bfileName">%2FSP%2F%7BorgId%7D%2Ftasks</con:setting>
+    <con:setting id="c1ea5af3-40e7-44b9-80fa-726128563af0fileName">%2FSP%2F%7BorgId%7D%2Ftasks</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="POST" id="eae9c83a-16db-4c7b-b563-70a70b1eb99c" method="POST">
+  <con:method name="POST" id="77bc22bd-4f87-4f2f-9131-23d54ae8f7f6" method="POST">
     <con:description>Indicates that the given task has changed and should be fetched and synced</con:description>
     <con:settings/>
     <con:parameters>
@@ -77,7 +77,7 @@
   "InId" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="ab8f87b7-a8c2-4f33-9b44-80240f733cbf" mediaType="application/json-patch+json">
+    <con:request name="Request 1" id="3655a758-337d-4b77-9d66-c07a9b841879" mediaType="application/json-patch+json">
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -93,7 +93,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 2" id="6ffc3df7-d68b-4207-a836-55cdb34f7329" mediaType="application/json">
+    <con:request name="Request 2" id="cb4e94a9-d499-4c19-b5e0-21b90fcb7fb0" mediaType="application/json">
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -109,7 +109,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 3" id="d13a6a87-605a-44ba-9d4f-dc1f45d77ba4" mediaType="text/json">
+    <con:request name="Request 3" id="fd42a91f-db1d-4df7-a431-66c5a40f9371" mediaType="text/json">
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -125,7 +125,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 4" id="f11eaeb8-2e6a-4885-9fdb-74db5ea292d6" mediaType="application/*+json">
+    <con:request name="Request 4" id="6f0c8b69-623d-4fe3-bd02-85b2c863091a" mediaType="application/*+json">
       <con:settings/>
       <con:request>{\r
   "header" : {\r

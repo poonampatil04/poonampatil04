@@ -16,7 +16,6 @@
       <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
       <con:accessToken>0C24B98E2466D9CED9CBE264CDD7FE47E3EC98C5E98C0A4E4ED6809F853A17E8</con:accessToken>
       <con:accessTokenPosition>HEADER</con:accessTokenPosition>
-      <con:accessTokenStatus>EXPIRED</con:accessTokenStatus>
       <con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus>
       <con:accessTokenIssuedTime>1626273057</con:accessTokenIssuedTime>
       <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>
@@ -110,7 +109,6 @@
       <con:accessTokenURI>https://thuis-sso-dev.glasoperator.nl/connect/token</con:accessTokenURI>
       <con:accessToken>0C24B98E2466D9CED9CBE264CDD7FE47E3EC98C5E98C0A4E4ED6809F853A17E8</con:accessToken>
       <con:accessTokenPosition>HEADER</con:accessTokenPosition>
-      <con:accessTokenStatus>EXPIRED</con:accessTokenStatus>
       <con:accessTokenStartingStatus>EXPIRED</con:accessTokenStartingStatus>
       <con:accessTokenIssuedTime>1626273057</con:accessTokenIssuedTime>
       <con:manualAccessTokenExpirationTime>2</con:manualAccessTokenExpirationTime>

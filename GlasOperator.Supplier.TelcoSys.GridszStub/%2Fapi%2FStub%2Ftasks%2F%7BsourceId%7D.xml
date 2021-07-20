@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/tasks/{sourceId}" path="/api/Stub/tasks/{sourceId}" id="a417dcf2-d72d-4f31-8fe1-8762582f9224" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/tasks/{sourceId}" path="/api/Stub/tasks/{sourceId}" id="d60d11cc-136f-4ea4-841e-cd5e78b6de64" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="a417dcf2-d72d-4f31-8fe1-8762582f9224fileName">%2Fapi%2FStub%2Ftasks%2F%7BsourceId%7D</con:setting>
+    <con:setting id="d60d11cc-136f-4ea4-841e-cd5e78b6de64fileName">%2Fapi%2FStub%2Ftasks%2F%7BsourceId%7D</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="POST" id="83726c3f-5313-4b6a-91ed-8f97d756c49f" method="POST">
+  <con:method name="POST" id="5f29ac6f-f7aa-4bb7-ace2-4836944acda9" method="POST">
     <con:description>Updates a task</con:description>
     <con:settings/>
     <con:parameters>
@@ -69,7 +69,7 @@
   "clarification" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="5af63d11-5266-4321-a3c4-09b84aa9168d" mediaType="application/json-patch+json">
+    <con:request name="Request 1" id="0d40c227-444f-4c4b-aee9-fa88ad8387bc" mediaType="application/json-patch+json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -83,7 +83,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 2" id="949721d2-b0d3-45f8-9d35-618d50c2c271" mediaType="application/json">
+    <con:request name="Request 2" id="a7a273c3-19f8-488e-9105-285992d0db04" mediaType="application/json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -97,7 +97,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 3" id="5dd14c82-2c50-4706-a6e5-b31895999a22" mediaType="text/json">
+    <con:request name="Request 3" id="54af9111-61e6-4006-b2ae-993845fce743" mediaType="text/json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -111,7 +111,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 4" id="8425dd00-c604-4936-a790-fac5d6502486" mediaType="application/*+json">
+    <con:request name="Request 4" id="ebbb5653-0a3b-4951-ba7b-d8af371b6105" mediaType="application/*+json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
