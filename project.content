@@ -63,7 +63,7 @@ Go.CoverageChecker\RemovePatchOrderManualRetry.xml
 Go.TelcosysApi\PatchOrderStateUpdatesForInstall.xml
 Go.TelcosysApi\PatchOrderStateUpdatesForRemove.xml
 Go.TelcosysApi\CreateInstallPatchStateInPlanState.xml
-Go.TelcosysApi\CreateInstallPatchStateInDeniedState-1.xml
+Go.TelcosysApi\CreateInstallPatchStateInDeniedState.xml
 Go.TelcosysApi\RemovePatchOrderManualReplan.xml
 Go.TelcosysApi\CreateRemovePatchStateInDeniedState.xml
 Go.TelcosysApi\CreateRemovePatchStateInPlanState.xml

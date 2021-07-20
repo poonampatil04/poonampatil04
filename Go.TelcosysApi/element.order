@@ -1,7 +1,7 @@
 PatchOrderStateUpdatesForInstall.xml
 PatchOrderStateUpdatesForRemove.xml
 CreateInstallPatchStateInPlanState.xml
-CreateInstallPatchStateInDeniedState-1.xml
+CreateInstallPatchStateInDeniedState.xml
 RemovePatchOrderManualReplan.xml
 CreateRemovePatchStateInDeniedState.xml
 CreateRemovePatchStateInPlanState.xml
