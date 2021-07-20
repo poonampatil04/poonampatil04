@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/SP/{orgId}/tasks/{sourceId}" path="/SP/{orgId}/tasks/{sourceId}" id="5c411218-d94f-451f-a130-b5fe23214910" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/SP/{orgId}/tasks/{sourceId}" path="/SP/{orgId}/tasks/{sourceId}" id="8826e255-6a06-4c2d-8413-cb2648370b49" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="5c411218-d94f-451f-a130-b5fe23214910fileName">%2FSP%2F%7BorgId%7D%2Ftasks%2F%7BsourceId%7D</con:setting>
+    <con:setting id="8826e255-6a06-4c2d-8413-cb2648370b49fileName">%2FSP%2F%7BorgId%7D%2Ftasks%2F%7BsourceId%7D</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="b064fe5f-881f-44b5-bc07-0f3178561815" method="GET">
+  <con:method name="GET" id="1f639084-2db1-48c2-9318-6cde90bb6afe" method="GET">
     <con:description>Returns task information</con:description>
     <con:settings/>
     <con:parameters>
@@ -17,12 +17,12 @@
         <con:style>TEMPLATE</con:style>
       </con:parameter>
     </con:parameters>
-    <con:request name="Request 1" id="98792d99-5494-48b6-8417-48bf2d4da093" mediaType="application/json">
+    <con:request name="Request 1" id="0d93d190-fe34-4d5a-9f94-a1237e999428" mediaType="application/json">
       <con:settings/>
       <con:parameters/>
     </con:request>
   </con:method>
-  <con:method name="PUT" id="e5cd603e-b156-4847-984d-e038f34888ca" method="PUT">
+  <con:method name="PUT" id="b0ac91a3-ac64-4565-b699-def81e442f64" method="PUT">
     <con:description>Indicates that taskIndication was processed successfully</con:description>
     <con:settings/>
     <con:parameters>
@@ -51,19 +51,19 @@
       <con:mediaType>application/*+json</con:mediaType>
       <con:params/>
     </con:representation>
-    <con:request name="Request 1" id="66c5548c-9faa-47df-818f-e6573ccbbcce" mediaType="application/json-patch+json">
+    <con:request name="Request 1" id="c64e74b3-dfa1-4e83-a493-e0e24dc185c9" mediaType="application/json-patch+json">
       <con:settings/>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 2" id="0bf1683b-56fa-436f-b08a-d7e9e474bb1f" mediaType="application/json">
+    <con:request name="Request 2" id="20afb757-7dd8-4229-ad7f-f50c287aef9b" mediaType="application/json">
       <con:settings/>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 3" id="36ab17aa-7b07-4486-af56-33bb0eb40b2c" mediaType="text/json">
+    <con:request name="Request 3" id="aaeb6207-fd28-49c6-9815-4471d9774293" mediaType="text/json">
       <con:settings/>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 4" id="7d14a98e-1525-4a1b-a183-90ff2715cb77" mediaType="application/*+json">
+    <con:request name="Request 4" id="cefc6258-1a36-434d-8d3a-4033b621c049" mediaType="application/*+json">
       <con:settings/>
       <con:parameters/>
     </con:request>
