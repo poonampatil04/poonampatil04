@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/tasks/{sourceId}" path="/api/Stub/tasks/{sourceId}" id="86906ef5-491c-45de-a2ba-09151a67cd40" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/tasks/{sourceId}" path="/api/Stub/tasks/{sourceId}" id="4b84f865-7688-418d-bd47-e77ecfca9371" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="86906ef5-491c-45de-a2ba-09151a67cd40fileName">%2Fapi%2FStub%2Ftasks%2F%7BsourceId%7D</con:setting>
+    <con:setting id="4b84f865-7688-418d-bd47-e77ecfca9371fileName">%2Fapi%2FStub%2Ftasks%2F%7BsourceId%7D</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="POST" id="11c10b3c-fa78-4aae-ab2f-15db9167d639" method="POST">
+  <con:method name="POST" id="5bfc2256-38f8-4e2a-9b37-aa410d3cd99a" method="POST">
     <con:description>Updates a task</con:description>
     <con:settings/>
     <con:parameters>
@@ -69,7 +69,29 @@
   "clarification" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="c4f31083-6d1e-486c-bae6-49d77298df37" mediaType="application/json-patch+json">
+    <con:request name="Request 1" id="b444fe3d-3a28-4591-9dcd-1e963c1b3521" mediaType="application/json-patch+json" postQueryString="false">
+      <con:settings>
+        <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+      </con:settings>
+      <con:request>{\r
+  "mainStatus" : "WIP",\r
+  "timeslot" : "MORNING",\r
+  "from" : "2015-07-20T15:49:04-07:00",\r
+  "till" : "2015-07-20T15:49:04-07:00",\r
+  "completeDt" : "2015-07-20T15:49:04-07:00",\r
+  "reason" : "string",\r
+  "subStatus" : "TEMPORARY-FIX",\r
+  "clarification" : "string"\r
+}</con:request>
+      <con:credentials>
+        <con:authType>No Authorization</con:authType>
+      </con:credentials>
+      <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+      <con:parameters>
+        <con:entry key="sourceId" value="c4ac0942-c8fb-46fd-05e5-08d94b44881a"/>
+      </con:parameters>
+    </con:request>
+    <con:request name="Request 2" id="b304bf54-c509-4ee7-a0b0-2ccb52ce801e" mediaType="application/json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -83,7 +105,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 2" id="53cdb6af-55ab-46ee-ba09-cedf3bfa2843" mediaType="application/json">
+    <con:request name="Request 3" id="54361a6d-697c-4a38-af94-6e61878708dd" mediaType="text/json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -97,21 +119,7 @@
 }</con:request>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 3" id="b33a0701-bf13-4995-b10a-bc8bff1a41fe" mediaType="text/json">
-      <con:settings/>
-      <con:request>{\r
-  "mainStatus" : "NEW",\r
-  "timeslot" : "MORNING",\r
-  "from" : "2015-07-20T15:49:04-07:00",\r
-  "till" : "2015-07-20T15:49:04-07:00",\r
-  "completeDt" : "2015-07-20T15:49:04-07:00",\r
-  "reason" : "string",\r
-  "subStatus" : "TEMPORARY-FIX",\r
-  "clarification" : "string"\r
-}</con:request>
-      <con:parameters/>
-    </con:request>
-    <con:request name="Request 4" id="a412eb1c-36cb-4fac-966f-f53f0af42999" mediaType="application/*+json">
+    <con:request name="Request 4" id="3e2f9819-5a0d-430a-b3cd-cc403d396df4" mediaType="application/*+json">
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
