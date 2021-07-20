@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/SP/{orgId}/tasks/{sourceId}" path="/SP/{orgId}/tasks/{sourceId}" id="4db203c0-1af0-421c-aff6-e13bc9d052b9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/SP/{orgId}/tasks/{sourceId}" path="/SP/{orgId}/tasks/{sourceId}" id="c1decc47-52a4-4704-8249-67f90a397d2e" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="4db203c0-1af0-421c-aff6-e13bc9d052b9fileName">%2FSP%2F%7BorgId%7D%2Ftasks%2F%7BsourceId%7D</con:setting>
+    <con:setting id="c1decc47-52a4-4704-8249-67f90a397d2efileName">%2FSP%2F%7BorgId%7D%2Ftasks%2F%7BsourceId%7D</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="6cd3c82a-19e6-4077-a604-d7a1a6654529" method="GET">
+  <con:method name="GET" id="dc3f8aae-1485-4df1-b553-757b2e5a5ce1" method="GET">
     <con:description>Returns task information</con:description>
     <con:settings/>
     <con:parameters>
@@ -17,17 +17,12 @@
         <con:style>TEMPLATE</con:style>
       </con:parameter>
     </con:parameters>
-    <con:request name="Request 1" id="e3aa9e38-8bc4-47bf-8805-fdd64bcbf00b" mediaType="application/json">
+    <con:request name="Request 1" id="4ba528d5-189c-4586-8de5-f3bb2da5014e" mediaType="application/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
   </con:method>
-  <con:method name="PUT" id="e2f6c93e-5ae7-4bf6-b86c-4ae1be528bbd" method="PUT">
+  <con:method name="PUT" id="217a8279-1083-4ae2-b297-05c8c41c6aae" method="PUT">
     <con:description>Indicates that taskIndication was processed successfully</con:description>
     <con:settings/>
     <con:parameters>
@@ -56,40 +51,20 @@
       <con:mediaType>application/*+json</con:mediaType>
       <con:params/>
     </con:representation>
-    <con:request name="Request 1" id="ca1f4f76-bcb0-45c9-9457-d5a4fc7901ae" mediaType="application/json-patch+json">
+    <con:request name="Request 1" id="d2d366b8-48ee-4ac9-ae7e-4bf237b4c086" mediaType="application/json-patch+json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 2" id="95cd0bb1-f831-49de-b574-7ee56a9044d9" mediaType="application/json">
+    <con:request name="Request 2" id="339262dd-81a2-4775-8b7c-81eb3499cf7c" mediaType="application/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 3" id="b760c1b5-08fc-4a24-b380-00165045cf77" mediaType="text/json">
+    <con:request name="Request 3" id="81c6a407-6690-4d76-8a07-3e8a2b238ca5" mediaType="text/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 4" id="982e8552-5a51-4674-af76-626ebd2d6133" mediaType="application/*+json">
+    <con:request name="Request 4" id="37f19d08-0145-4e65-809c-845fa234c21a" mediaType="application/*+json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
   </con:method>

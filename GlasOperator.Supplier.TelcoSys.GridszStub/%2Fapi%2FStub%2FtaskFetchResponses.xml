@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/taskFetchResponses" path="/api/Stub/taskFetchResponses" id="b35591df-bbe5-46fc-8b27-28d761376bf3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/taskFetchResponses" path="/api/Stub/taskFetchResponses" id="9f6b572d-c17d-4476-a97f-8ccf5c32d9dc" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="b35591df-bbe5-46fc-8b27-28d761376bf3fileName">%2Fapi%2FStub%2FtaskFetchResponses</con:setting>
+    <con:setting id="9f6b572d-c17d-4476-a97f-8ccf5c32d9dcfileName">%2Fapi%2FStub%2FtaskFetchResponses</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="b58e69f2-2904-4dc8-932f-c17ef99a0326" method="GET">
+  <con:method name="GET" id="149d55c7-0d25-480f-9dac-e0652ce68573" method="GET">
     <con:description>Returns received TaskFetch responses</con:description>
     <con:settings/>
     <con:parameters/>
@@ -425,13 +425,8 @@
   } ]
 } ]</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="309fc896-67ca-44b8-8840-2ab5bbe1138b" mediaType="application/json">
+    <con:request name="Request 1" id="f6266541-f9e1-44e9-80e4-9162d01a4f5b" mediaType="application/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
   </con:method>

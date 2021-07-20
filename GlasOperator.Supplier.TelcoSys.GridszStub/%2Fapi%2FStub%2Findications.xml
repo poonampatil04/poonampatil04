@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="05366ce0-7e65-4a26-a586-c295dfe431ab" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/api/Stub/indications" path="/api/Stub/indications" id="9a00a6f8-4c1c-48ab-87c6-5defa4c53e14" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="05366ce0-7e65-4a26-a586-c295dfe431abfileName">%2Fapi%2FStub%2Findications</con:setting>
+    <con:setting id="9a00a6f8-4c1c-48ab-87c6-5defa4c53e14fileName">%2Fapi%2FStub%2Findications</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="GET" id="85dbf951-4894-4c18-8d59-df8b62802bdd" method="GET">
+  <con:method name="GET" id="e66c1c7e-7e8b-44f8-a598-2e1508c85616" method="GET">
     <con:description>Returns received taskIndications</con:description>
     <con:settings/>
     <con:parameters/>
@@ -51,13 +51,8 @@
   "InId" : "string"
 } ]</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="302b7e52-e811-495d-aaad-df0f380aafb0" mediaType="application/json">
+    <con:request name="Request 1" id="ab2ee9e0-51bc-4935-a900-cbbc19d17e99" mediaType="application/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
   </con:method>

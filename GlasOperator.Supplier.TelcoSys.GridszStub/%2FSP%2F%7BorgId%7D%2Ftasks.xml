@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:resource name="/SP/{orgId}/tasks" path="/SP/{orgId}/tasks" id="36c36cca-c636-4cd2-8a20-dbeb1c4bad59" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:con="http://eviware.com/soapui/config">
+<con:resource name="/SP/{orgId}/tasks" path="/SP/{orgId}/tasks" id="5020405b-815b-4d11-907d-157469e5432b" xmlns:con="http://eviware.com/soapui/config">
   <con:settings>
-    <con:setting id="36c36cca-c636-4cd2-8a20-dbeb1c4bad59fileName">%2FSP%2F%7BorgId%7D%2Ftasks</con:setting>
+    <con:setting id="5020405b-815b-4d11-907d-157469e5432bfileName">%2FSP%2F%7BorgId%7D%2Ftasks</con:setting>
   </con:settings>
   <con:parameters/>
-  <con:method name="POST" id="62dd2e1d-c9e5-4323-b0e2-37095162a687" method="POST">
+  <con:method name="POST" id="eae9c83a-16db-4c7b-b563-70a70b1eb99c" method="POST">
     <con:description>Indicates that the given task has changed and should be fetched and synced</con:description>
     <con:settings/>
     <con:parameters>
@@ -77,9 +77,8 @@
   "InId" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:request name="Request 1" id="e85f199e-2d26-4fb8-9ba5-6e167f92b822" mediaType="application/json-patch+json">
+    <con:request name="Request 1" id="ab8f87b7-a8c2-4f33-9b44-80240f733cbf" mediaType="application/json-patch+json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
       <con:request>{\r
   "header" : {\r
     "from" : {\r
@@ -92,15 +91,10 @@
   },\r
   "InId" : "string"\r
 }</con:request>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 2" id="f916a239-c5c5-4c1f-95ac-ea9b12aa9bfa" mediaType="application/json">
+    <con:request name="Request 2" id="6ffc3df7-d68b-4207-a836-55cdb34f7329" mediaType="application/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
       <con:request>{\r
   "header" : {\r
     "from" : {\r
@@ -113,15 +107,10 @@
   },\r
   "InId" : "string"\r
 }</con:request>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 3" id="f5d8488a-696a-40ce-a72d-3a4a83a75606" mediaType="text/json">
+    <con:request name="Request 3" id="d13a6a87-605a-44ba-9d4f-dc1f45d77ba4" mediaType="text/json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
       <con:request>{\r
   "header" : {\r
     "from" : {\r
@@ -134,15 +123,10 @@
   },\r
   "InId" : "string"\r
 }</con:request>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
-    <con:request name="Request 4" id="2d590e45-a1bb-4ac2-92d7-2333cbc01d62" mediaType="application/*+json">
+    <con:request name="Request 4" id="f11eaeb8-2e6a-4885-9fdb-74db5ea292d6" mediaType="application/*+json">
       <con:settings/>
-      <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
       <con:request>{\r
   "header" : {\r
     "from" : {\r
@@ -155,10 +139,6 @@
   },\r
   "InId" : "string"\r
 }</con:request>
-      <con:credentials>
-        <con:selectedAuthProfile>No Authorization</con:selectedAuthProfile>
-        <con:authType>No Authorization</con:authType>
-      </con:credentials>
       <con:parameters/>
     </con:request>
   </con:method>

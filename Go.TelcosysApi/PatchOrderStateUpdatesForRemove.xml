@@ -108,7 +108,7 @@
   </con:testStep>
   <con:testStep type="restrequest" name="UpdatePatchOrderStateFromGridz" id="759b1bcc-4845-4813-b1db-28c702caf27f">
     <con:settings/>
-    <con:config service="GlasOperator.Supplier.TelcoSys.GridszStub" resourcePath="/api/Stub/tasks/{sourceId}" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:config service="GlasOperator.Supplier.TelcoSys.Api" resourcePath="/api/Patch/{connectionId}/PatchOrder/{patchOrderId}/replan" methodName="POST" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequest name="UpdatePatchOrderStateFromGridz" id="fa98a085-7034-4efa-9639-b3193ed770a1" mediaType="application/json-patch+json" postQueryString="false">
         <con:settings>
           <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
