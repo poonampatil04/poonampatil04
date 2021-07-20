@@ -10,12 +10,17 @@
     <con:parameters>
       <con:parameter required="true">
         <con:name>orgId</con:name>
+        <con:value/>
         <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
     </con:parameters>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "header" : {
     "from" : {
@@ -29,9 +34,11 @@
   "InId" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "header" : {
     "from" : {
@@ -45,9 +52,11 @@
   "InId" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>text/json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "header" : {
     "from" : {
@@ -61,9 +70,11 @@
   "InId" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/*+json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "header" : {
     "from" : {
@@ -78,6 +89,7 @@
 }</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="c17b605a-f9bc-491d-97de-37bc21cc9acc" mediaType="application/json-patch+json">
+      <con:description>Indicates that the given task has changed and should be fetched and synced</con:description>
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -92,8 +104,12 @@
   "InId" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 2" id="a251b87e-6cdd-4f65-abb2-47c99230639f" mediaType="application/json">
+      <con:description>Indicates that the given task has changed and should be fetched and synced</con:description>
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -108,8 +124,12 @@
   "InId" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 3" id="9c764ed4-059b-4046-b6bc-e1ee26b63988" mediaType="text/json">
+      <con:description>Indicates that the given task has changed and should be fetched and synced</con:description>
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -124,8 +144,12 @@
   "InId" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 4" id="2d98c735-bdd0-4b3b-9514-49a19ccc86b4" mediaType="application/*+json">
+      <con:description>Indicates that the given task has changed and should be fetched and synced</con:description>
       <con:settings/>
       <con:request>{\r
   "header" : {\r
@@ -140,6 +164,9 @@
   "InId" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+      </con:parameterOrder>
     </con:request>
   </con:method>
 </con:resource>

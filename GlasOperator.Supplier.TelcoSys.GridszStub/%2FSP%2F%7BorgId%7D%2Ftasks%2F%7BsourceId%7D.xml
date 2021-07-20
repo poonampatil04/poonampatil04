@@ -10,16 +10,28 @@
     <con:parameters>
       <con:parameter required="true">
         <con:name>orgId</con:name>
+        <con:value/>
         <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
       <con:parameter required="true">
         <con:name>sourceId</con:name>
+        <con:value/>
         <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
     </con:parameters>
     <con:request name="Request 1" id="de7192e7-993b-47cc-89cc-0867dd89f172" mediaType="application/json">
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:settings/>
+      <con:request/>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
   </con:method>
   <con:method name="PUT" id="f213ed2b-e833-4a85-952b-dc0cbe81e114" method="PUT">
@@ -28,44 +40,86 @@
     <con:parameters>
       <con:parameter required="true">
         <con:name>orgId</con:name>
+        <con:value/>
         <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
       <con:parameter required="true">
         <con:name>sourceId</con:name>
+        <con:value/>
         <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
     </con:parameters>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>text/json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/*+json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <con:sampleContent xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
     </con:representation>
     <con:request name="Request 1" id="64d14879-d9aa-4239-b21a-12dac303e685" mediaType="application/json-patch+json">
+      <con:description>Indicates that taskIndication was processed successfully</con:description>
       <con:settings/>
+      <con:request/>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 2" id="c622bbc7-5a44-4fe1-b639-e54fd76223c0" mediaType="application/json">
+      <con:description>Indicates that taskIndication was processed successfully</con:description>
       <con:settings/>
+      <con:request/>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 3" id="7ad83b2c-1f1f-4c78-9240-d6b381c3e55a" mediaType="text/json">
+      <con:description>Indicates that taskIndication was processed successfully</con:description>
       <con:settings/>
+      <con:request/>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 4" id="e8a83eaa-d754-4715-b910-80fc210e2c70" mediaType="application/*+json">
+      <con:description>Indicates that taskIndication was processed successfully</con:description>
       <con:settings/>
+      <con:request/>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>orgId</con:entry>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
   </con:method>
 </con:resource>

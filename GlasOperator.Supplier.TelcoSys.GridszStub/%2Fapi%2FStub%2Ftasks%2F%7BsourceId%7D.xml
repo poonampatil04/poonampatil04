@@ -10,12 +10,17 @@
     <con:parameters>
       <con:parameter required="true">
         <con:name>sourceId</con:name>
+        <con:value/>
         <con:style>TEMPLATE</con:style>
+        <con:type xmlns:xs="http://www.w3.org/2001/XMLSchema">xs:string</con:type>
+        <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       </con:parameter>
     </con:parameters>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/json-patch+json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "mainStatus" : "NEW",
   "timeslot" : "MORNING",
@@ -27,9 +32,11 @@
   "clarification" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "mainStatus" : "NEW",
   "timeslot" : "MORNING",
@@ -41,9 +48,11 @@
   "clarification" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>text/json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "mainStatus" : "NEW",
   "timeslot" : "MORNING",
@@ -55,9 +64,11 @@
   "clarification" : "string"
 }</con:sampleContent>
     </con:representation>
-    <con:representation type="REQUEST">
+    <con:representation type="REQUEST" id="">
       <con:mediaType>application/*+json</con:mediaType>
+      <con:status/>
       <con:params/>
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:sampleContent>{
   "mainStatus" : "NEW",
   "timeslot" : "MORNING",
@@ -70,28 +81,32 @@
 }</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="b444fe3d-3a28-4591-9dcd-1e963c1b3521" mediaType="application/json-patch+json" postQueryString="false">
+      <con:description>Updates a task</con:description>
       <con:settings>
         <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
       </con:settings>
-      <con:request>{\r
-  "mainStatus" : "WIP",\r
-  "timeslot" : "MORNING",\r
-  "from" : "2015-07-20T15:49:04-07:00",\r
-  "till" : "2015-07-20T15:49:04-07:00",\r
-  "completeDt" : "2015-07-20T15:49:04-07:00",\r
-  "reason" : "string",\r
-  "subStatus" : "TEMPORARY-FIX",\r
-  "clarification" : "string"\r
+      <con:request>{
+  "mainStatus" : "NEW",
+  "timeslot" : "MORNING",
+  "from" : "2015-07-20T15:49:04-07:00",
+  "till" : "2015-07-20T15:49:04-07:00",
+  "completeDt" : "2015-07-20T15:49:04-07:00",
+  "reason" : "string",
+  "subStatus" : "TEMPORARY-FIX",
+  "clarification" : "string"
 }</con:request>
+      <con:originalUri>https://gridszstub-dev.glasoperator.nl/api/Stub/tasks/c4ac0942-c8fb-46fd-05e5-08d94b44881a</con:originalUri>
       <con:credentials>
         <con:authType>No Authorization</con:authType>
       </con:credentials>
       <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
-      <con:parameters>
-        <con:entry key="sourceId" value="c4ac0942-c8fb-46fd-05e5-08d94b44881a"/>
-      </con:parameters>
+      <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 2" id="b304bf54-c509-4ee7-a0b0-2ccb52ce801e" mediaType="application/json">
+      <con:description>Updates a task</con:description>
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -104,8 +119,12 @@
   "clarification" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 3" id="54361a6d-697c-4a38-af94-6e61878708dd" mediaType="text/json">
+      <con:description>Updates a task</con:description>
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -118,8 +137,12 @@
   "clarification" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
     <con:request name="Request 4" id="3e2f9819-5a0d-430a-b3cd-cc403d396df4" mediaType="application/*+json">
+      <con:description>Updates a task</con:description>
       <con:settings/>
       <con:request>{\r
   "mainStatus" : "NEW",\r
@@ -132,6 +155,9 @@
   "clarification" : "string"\r
 }</con:request>
       <con:parameters/>
+      <con:parameterOrder>
+        <con:entry>sourceId</con:entry>
+      </con:parameterOrder>
     </con:request>
   </con:method>
 </con:resource>

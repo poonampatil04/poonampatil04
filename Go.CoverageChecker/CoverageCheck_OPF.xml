@@ -1017,7 +1017,9 @@
     <con:config activeStep="restMultiTestStep" xsi:type="con:MultiConfigurationStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       <con:restRequestStep service="GlasOperator.Supplier.TelcoSys.GridszStub" methodName="POST" resourcePath="/api/Stub/tasks/{sourceId}" xsi:type="con:RestRequestStep">
         <con:restRequest name="REST Request" id="6d8b5ae6-2a9a-49ec-8bce-cd68a590e2cd" mediaType="application/json-patch+json">
-          <con:settings/>
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+          </con:settings>
           <con:encoding>UTF-8</con:encoding>
           <con:endpoint>https://gridszstub-dev.glasoperator.nl/</con:endpoint>
           <con:request/>
@@ -1035,8 +1037,9 @@
           <con:parameters>
             <con:entry key="sourceId" value=""/>
           </con:parameters>
+          <con:parameterOrder/>
           <con:parametersType>
-            <con:entry key="sourceId" value="TEMPLATE"/>
+            <con:entry key="sourceId" value="Query"/>
           </con:parametersType>
           <con:parametersDisablesEncoding>
             <con:entry key="sourceId" value="false"/>

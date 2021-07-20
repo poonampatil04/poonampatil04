@@ -8,14 +8,14 @@
     <con:description>Returns received taskIndications</con:description>
     <con:settings/>
     <con:parameters/>
-    <con:representation type="RESPONSE">
+    <con:representation type="RESPONSE" id="">
       <con:mediaType>text/plain</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
       <con:description>Success</con:description>
       <con:sampleContent>[NOT IMPLEMENTED]</con:sampleContent>
     </con:representation>
-    <con:representation type="RESPONSE">
+    <con:representation type="RESPONSE" id="">
       <con:mediaType>application/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -33,7 +33,7 @@
   "InId" : "string"
 } ]</con:sampleContent>
     </con:representation>
-    <con:representation type="RESPONSE">
+    <con:representation type="RESPONSE" id="">
       <con:mediaType>text/json</con:mediaType>
       <con:status>200</con:status>
       <con:params/>
@@ -52,7 +52,9 @@
 } ]</con:sampleContent>
     </con:representation>
     <con:request name="Request 1" id="cfad5d82-db51-451a-8f15-1a23375dda85" mediaType="application/json">
+      <con:description xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
       <con:settings/>
+      <con:request/>
       <con:parameters/>
     </con:request>
   </con:method>
